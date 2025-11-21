@@ -1,0 +1,13 @@
+1.7 Skin cancers
+Malignant melanoma of the skin
+1.7.1 Refer people using a suspected cancer pathway referral for melanoma if they have a suspicious pigmented skin lesion with a weighted 7-point checklist score of 3 or more. [2015] 
+1.7.2 Refer people using a suspected cancer pathway referral if dermoscopy suggests melanoma of the skin. [2015]
+1.7.3 Consider a suspected cancer pathway referral for melanoma in people with a pigmented or non-pigmented skin lesion that suggests nodular melanoma. [2015]
+
+Squamous cell carcinoma
+1.7.4 Consider a suspected cancer pathway referral for people with a skin lesion that raises the suspicion of squamous cell carcinoma. [2015]
+
+Basal cell carcinoma
+1.7.5 Consider routine referral for people if they have a skin lesion that raises the suspicion of a basal cell carcinoma. (Typical features of basal cell carcinoma include: an ulcer with a raised rolled edge; prominent fine blood vessels around a lesion; or a nodule on the skin [particularly pearly or waxy nodules].) [2015]
+1.7.6 Only consider a suspected cancer pathway referral for people with a skin lesion that raises the suspicion of a basal cell carcinoma if there is particular concern that a delay may have a significant impact, because of factors such as lesion site or size. [2015]
+1.7.7 Follow NICE's guidance on improving outcomes for people with skin tumours including melanoma for advice on who should excise suspected basal cell carcinomas. [2015]

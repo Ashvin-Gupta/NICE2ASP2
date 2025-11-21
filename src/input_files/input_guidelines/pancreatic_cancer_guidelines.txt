@@ -1,0 +1,70 @@
+Overview
+This guideline covers diagnosing,staging and managing pancreatic cancer in adults aged 18 and over. It aims to improve care by ensuring quicker and more accurate diagnosis, and by specifying the most effective treatments for people depending on how advanced their cancer is. 
+
+1.1 Diagnosis
+People with obstructive jaundice
+1.1.1 For people with obstructive jaundice and suspected pancreatic cancer, offer a pancreatic protocol CT scan before draining the bile duct.
+1.1.2 If the diagnosis is still unclear, offer fluorodeoxyglucose-positron emission tomography/CT (FDG-PET/CT) and/or endoscopic ultrasound (EUS) with EUS-guided tissue sampling.
+1.1.3 Take a biliary brushing for cytology if:
+• endoscopic retrograde cholangiopancreatography (ERCP) is being used to relieve the biliary obstruction and
+• there is no tissue diagnosis.
+
+People without jaundice who have pancreatic abnormalities on imaging
+1.1.4 Offer a pancreatic protocol CT scan to people with pancreatic abnormalities but no jaundice.
+1.1.5 If the diagnosis is still unclear, offer FDG-PET/CT and/or EUS with EUS-guided tissue sampling.
+1.1.6 If cytological or histological samples are needed, offer EUS with EUS-guided tissue sampling.
+
+People with pancreatic cysts
+1.1.7 Offer a pancreatic protocol CT scan or magnetic resonance cholangiopancreatography (MRI/MRCP) to people with pancreatic cysts. If more information is needed after one of these tests, offer the other one.
+1.1.8 Refer people with any of these high-risk features for resection:
+• obstructive jaundice with cystic lesions in the head of the pancreas
+• enhancing solid component in the cyst
+• a main pancreatic duct that is 10 mm diameter or larger.
+1.1.9 Offer EUS after CT and MRI/MRCP if more information on the likelihood of malignancy is needed, or if it is not clear whether surgery is needed.
+1.1.10 Consider fine-needle aspiration during EUS if more information on the likelihood of malignancy is needed.
+1.1.11 When using fine-needle aspiration, perform carcinoembryonic antigen (CEA) assay in addition to cytology if there is sufficient sample.
+1.1.12 For people with cysts that are thought to be malignant, follow the recommendations on staging.
+
+People with inherited high risk of pancreatic cancer
+1.1.13 Ask people with pancreatic cancer if any of their first-degree relatives has had it.
+1.1.14 Offer surveillance for pancreatic cancer to people with:
+• hereditary pancreatitis and a PRSS1 mutation
+• BRCA1, BRCA2, PALB2 or CDKN2A (p16) mutations, and one or more first-degree relatives with pancreatic cancer
+• Peutz–Jeghers syndrome.
+1.1.15 Consider surveillance for pancreatic cancer for people with:
+• 2 or more first-degree relatives with pancreatic cancer, across 2 or more generations
+• Lynch syndrome (mismatch repair gene [MLH1, MSH2, MSH6 or PMS2] mutations) and any first-degree relatives with pancreatic cancer.
+1.1.16 Consider an MRI/MRCP or EUS for pancreatic cancer surveillance in people without hereditary pancreatitis.
+1.1.17 Consider a pancreatic protocol CT scan for pancreatic cancer surveillance in people with hereditary pancreatitis and a PRSS1 mutation.
+1.1.18 Do not offer EUS to detect pancreatic cancer in people with hereditary pancreatitis.
+
+1.3 Staging
+1.3.1 For people with newly diagnosed pancreatic cancer who have not had a pancreatic protocol CT scan, offer a pancreatic protocol CT scan that includes the chest, abdomen and pelvis.
+1.3.2 Offer fluorodeoxyglucose-positron emission tomography/CT (FDG-PET/CT) to people with localised disease on CT who will be having cancer treatment (surgery, radiotherapy or systemic therapy).
+1.3.3 If more information is needed to decide the person's clinical management, consider one or more of the following:
+• MRI, for suspected liver metastases
+• endoscopic ultrasound, if more information is needed for tumour and node staging
+• laparoscopy with laparoscopic ultrasound, for suspected small-volume peritoneal and/or liver metastases if resectional surgery is a possibility. 
+
+1.13 Non-site specific symptoms
+1.13.2
+For people with unexplained weight loss, which is a symptom of several cancers including colorectal, gastro-oesophageal, lung, prostate, pancreatic and urological cancer:
+•	carry out an assessment for additional symptoms, signs or findings that may help to clarify which cancer is most likely and
+•	offer urgent investigation or a suspected cancer pathway referral.
+1.13.3
+For people with unexplained appetite loss, which is a symptom of several cancers including lung, oesophageal, stomach, colorectal, pancreatic, bladder and renal cancer:
+•	carry out an assessment for additional symptoms, signs or findings that may help to clarify which cancer is most likely and
+•	offer urgent investigation or a suspected cancer pathway referral.
+
+Pancreatic cancer
+1.2.4
+•	Refer people using a suspected cancer pathway referral for pancreatic cancer if they are aged 40 and over and have jaundice.
+1.2.5
+Consider an urgent, direct access CT scan (to be done within 2 weeks), or an urgent ultrasound scan if CT is not available, to assess for pancreatic cancer in people aged 60 and over with weight loss and any of the following:
+•	diarrhoea
+•   back pain
+•   abdominal pain
+•   nausea
+•   vomiting
+•   constipation
+•   new-onset diabetes.

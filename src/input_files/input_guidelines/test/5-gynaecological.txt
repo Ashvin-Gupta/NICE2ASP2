@@ -1,0 +1,41 @@
+1.5 Gynaecological cancers
+
+Ovarian cancer
+The recommendations in this section have been incorporated from NICE's guideline on ovarian cancer and have not been updated. The recommendations for ovarian cancer apply to women aged 18 and over.
+1.5.1 Make a referral to a gynaecological cancer service using a suspected cancer pathway referral if physical examination identifies ascites and/or a pelvic or abdominal mass (which is not obviously uterine fibroids). [2011, amended 2020]
+1.5.2 Carry out tests in primary care (see recommendations 1.5.6 to 1.5.9) if a woman (especially if aged 50 or over) reports having any of the following symptoms on a persistent or frequent basis – particularly more than 12 times per month:
+• persistent abdominal distension (women often refer to this as 'bloating')
+• feeling full (early satiety) and/or loss of appetite
+• pelvic or abdominal pain
+• increased urinary urgency and/or frequency. [2011]
+1.5.3 Consider carrying out tests in primary care (see recommendations 1.5.6 to 1.5.9) if a woman reports unexplained weight loss, fatigue or changes in bowel habit.[2011]
+1.5.4 Advise any woman who is not suspected of having ovarian cancer to return to her GP if her symptoms become more frequent and/or persistent. [2011]
+1.5.5 Carry out appropriate tests for ovarian cancer (see recommendations 1.5.6 to 1.5.9) in any woman aged 50 or over who has experienced symptoms within the last 12 months that suggest irritable bowel syndrome (IBS), because IBS rarely presents for the first time in women of this age. 
+1.5.6 Measure serum CA125 in primary care in women with symptoms that suggest ovarian cancer (see recommendations 1.5.1 to 1.5.5). [2011]
+1.5.7 If serum CA125 is 35 IU/ml or greater, arrange an ultrasound scan of the abdomen and pelvis. [2011]
+1.5.8 If the ultrasound suggests ovarian cancer, make a referral to a gynaecological cancer service using a suspected cancer pathway referral. [2011, amended 2020]
+1.5.9 For any woman who has normal serum CA125 (less than 35 IU/ml), or CA125 of 35 IU/ml or greater but a normal ultrasound:
+• assess her carefully for other clinical causes of her symptoms and investigate if appropriate
+• if no other clinical cause is apparent, advise her to return to her GP if her symptoms become more frequent and/or persistent. [2011]
+
+Endometrial cancer
+1.5.10 Refer women using a suspected cancer pathway referral for endometrial cancer if they are aged 55 and over with post-menopausal bleeding (unexplained vaginal bleeding more than 12 months after menstruation has stopped because of the menopause). [2015]
+1.5.11 Consider a suspected cancer pathway referral for endometrial cancer in women aged under 55 with post-menopausal bleeding. [2015]
+1.5.12 Consider a direct access ultrasound scan to assess for endometrial cancer in women aged 55 and over with:
+• unexplained symptoms of vaginal discharge who:
+－ are presenting with these symptoms for the first time or 
+－ have thrombocytosis or
+－ report haematuria or
+• visible haematuria and:
+－ low haemoglobin levels or
+－ thrombocytosis or
+－ high blood glucose levels. [2015] 
+
+Cervical cancer
+1.5.13 Consider a suspected cancer pathway referral for women if, on examination, the appearance of their cervix is consistent with cervical cancer. [2015]
+
+Vulval cancer
+1.5.14 Consider a suspected cancer pathway referral for vulval cancer in women with an unexplained vulval lump, ulceration or bleeding. [2015]
+
+Vaginal cancer
+1.5.15 Consider a suspected cancer pathway referral for vaginal cancer in women with an unexplained palpable mass in or at the entrance to the vagina. [2015]

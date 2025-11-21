@@ -1,0 +1,173 @@
+Let me analyze the rules to identify all elements that appear in the body of the rules:
+
+**Elements from rule bodies:**
+- age(X) with conditions X>=40, X>=60
+- have() predicates with various conditions
+- offered() predicates
+- findings() predicates
+- relieve() predicates
+- offer() predicates (when used in body)
+- refer() predicates (when used in body)
+- ask() predicates
+
+Now I'll extract the relevant elements for each patient:
+
+**Patient 1:**
+age(63).
+have("abdominal pain").
+have("diabetes").
+have("pancreatic abnormalities").
+findings("pancreatic protocol CT", "unclear").
+have("pancreatic cancer").
+
+**Patient 2:**
+age(63).
+have("back pain").
+have("weight loss").
+have("pancreatic abnormalities").
+findings("pancreatic protocol CT", "unclear").
+findings("MRI", "liver metastases").
+have("pancreatic cancer").
+
+**Patient 3:**
+age(78).
+have("abdominal pain").
+have("weight loss").
+findings("MRI", "liver metastases").
+have("pancreatic abnormalities").
+have("pancreatic cysts").
+have("cystic lesions in the head of the pancreas").
+findings("pancreatic protocol CT", "unclear").
+have("pancreatic cancer").
+
+**Patient 4:**
+age(82).
+have("abdominal pain").
+have("jaundice").
+have("obstructive jaundice").
+have("pancreatic abnormalities").
+have("localised disease").
+findings("pancreatic protocol CT", "unclear").
+have("pancreatic cancer").
+
+**Patient 5:**
+age(84).
+have("pancreatic abnormalities").
+findings("pancreatic protocol CT", "unclear").
+have("pancreatic cancer").
+
+**Patient 6:**
+age(48).
+have("abdominal pain").
+have("pancreatic abnormalities").
+findings("pancreatic protocol CT", "unclear").
+have("pancreatic cancer").
+
+**Patient 7:**
+age(58).
+have("abdominal pain").
+have("jaundice").
+have("obstructive jaundice").
+have("weight loss").
+have("pancreatic abnormalities").
+findings("pancreatic protocol CT", "unclear").
+have("pancreatic cancer").
+
+**Patient 8:**
+age(56).
+have("pancreatic abnormalities").
+findings("pancreatic protocol CT", "unclear").
+
+**Patient 9:**
+age(60).
+have("abdominal pain").
+have("nausea").
+have("pancreatic abnormalities").
+findings("pancreatic protocol CT", "unclear").
+relieve("ERCP", "biliary obstruction").
+have("pancreatic cancer").
+
+**Patient 10:**
+age(62).
+have("abdominal pain").
+have("pancreatic abnormalities").
+findings("pancreatic protocol CT", "unclear").
+have("pancreatic cancer").
+
+**Patient 11:**
+age(54).
+have("abdominal pain").
+findings("MRI", "liver metastases").
+have("pancreatic abnormalities").
+findings("pancreatic protocol CT", "unclear").
+have("pancreatic cancer").
+
+**Patient 12:**
+age(74).
+have("pancreatic abnormalities").
+have("pancreatic cancer").
+
+**Patient 13:**
+age(41).
+have("abdominal pain").
+have("weight loss").
+have("pancreatic abnormalities").
+findings("pancreatic protocol CT", "unclear").
+have("pancreatic cancer").
+
+**Patient 14:**
+age(79).
+have("weight loss").
+have("new-onset diabetes").
+have("pancreatic abnormalities").
+findings("pancreatic protocol CT", "unclear").
+have("pancreatic cancer").
+
+**Patient 15:**
+age(76).
+have("weight loss").
+have("new-onset diabetes").
+relieve("ERCP", "biliary obstruction").
+findings("pancreatic protocol CT", "unclear").
+findings("MRI/MRCP", "more information needed").
+have("pancreatic cancer").
+
+**Patient 16:**
+age(77).
+have("obstructive jaundice").
+have("jaundice").
+relieve("ERCP", "biliary obstruction").
+findings("ERCP", "no tissue diagnosis").
+findings("pancreatic protocol CT", "unclear").
+have("pancreatic cancer").
+
+**Patient 17:**
+age(59).
+have("pancreatic cysts").
+have("enhancing solid component in the cyst").
+findings("EUS", "more information on likelihood of malignancy needed").
+have("pancreatic cancer").
+
+**Patient 18:**
+age(57).
+have("weight loss").
+have("abdominal pain").
+have("pancreatic abnormalities").
+findings("pancreatic protocol CT", "unclear").
+have("pancreatic cancer").
+
+**Patient 19:**
+age(68).
+have("abdominal pain").
+findings("MRI", "liver metastases").
+have("pancreatic abnormalities").
+findings("pancreatic protocol CT", "unclear").
+have("pancreatic cancer").
+
+**Patient 20:**
+age(67).
+have("pancreatic abnormalities").
+have("pancreatic cysts").
+have("cystic lesions in the head of the pancreas").
+findings("pancreatic protocol CT", "unclear").
+have("pancreatic cancer").

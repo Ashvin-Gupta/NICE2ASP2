@@ -1,0 +1,17 @@
+__pycache__/
+
+venv/
+
+.DS_Store
+
+.cache/
+
+.env
+
+.env.local
+
+.env.development.local
+
+.env.test.local
+
+.env.production.local

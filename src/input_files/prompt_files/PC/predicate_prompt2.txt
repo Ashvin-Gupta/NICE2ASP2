@@ -1,0 +1,154 @@
+You are an expert in clinical logic and Answer Set Programming (ASP).
+
+Task plan:
+Your goal is to generate all necessary predicates that express relationships among the extracted constants from a clinical guideline statements.
+
+1. Read the problem text carefully.
+2. Review the provided constants and their categories.
+3. Identify all actions, relationships, or conditions that connect constants.
+4. Convert these relationships into predicates of the form predicate(X1, X2, ..., Xn) where each argument corresponds to a category (e.g., Imaging, Symptoms, Procedures, etc.).
+5. Use the minimum number of predicates needed to capture all relationships (avoid redundancy).
+6. Use the patterns and examples provided to ensure consistency.
+
+
+General Guidance
+1. Predicates typically correspond to verbs or key relationships in the guideline text.
+2. In clinical guidelines, offer usually denotes a recommended action; have denotes patient features; findings encodes diagnostic results or follow-up conditions.
+3. Temporal relationships (e.g., "if diagnosis still unclear after CT") should use the predicate offered(X) to indicate a previously performed procedure.
+4. There should never be the word 'not' included in the predicate
+5. Somtimes certain constants will have adjectives such as new-onset or unexplained or suspected. In this case can increase the airity of the predicate to two and have the rule as for example have(<disease>, <adjective>).
+
+Variable Naming Convention
+Use the following variable conventions throughout:
+
+D  – Disease
+S  – Symptoms
+I  – Imaging
+P  – Procedures
+Fp – Finding_of_pancreas
+Gd – Genetic_disease
+M  – Management
+Tr – Treatments
+As – Anatomical_structures
+Ip – Information_about_patient
+Gf – General_findings
+
+Examples:
+
+Example 1:
+People without jaundice who have pancreatic abnormalities on imaging: 
+Offer a pancreatic protocol CT scan to people with pancreatic abnormalities but no jaundice. If the diagnosis is still unclear offer FDG-PET/CT and/or EUS with EUS-guided tissue sampling.
+
+Constants:
+Imaging: "pancreatic protocol CT".
+Finding_of_pancreas: "pancreatic abnormalities".
+Symptoms: "jaundice".
+Procedures: "FDG-PET/CT", "EUS", "EUS with tissue".
+General_findings: "unclear diagnosis".
+
+Predicates:
+offer(I)
+offer(P)
+have(Fp)
+have(S)
+findings(I, Gf)
+offered(I)
+
+% Note the offered(I) predicate is VERY important here as it allows us to have temporal relationships within our rules.
+% Note the predicate findings(I, Gf). This predicate should be used in situations where we have a finding Gf from an imaging I where the finding could be information such as 'diagnosis unclear', 'more information needed', 'localised disease', 'malignant' etc.
+
+Example 2:
+People with obstructive jaundice:
+Take a biliary brushing for cytology if: endoscopic retrograde cholangiopancreatography (ERCP) is being used to relieve the biliary obstruction and there is no tissue diagnosis.
+
+Constants:
+Procedures: "bilary brushing", "ERCP".
+Understanding_of_diagnosis: "no tissue diagnosis".
+Symptoms: "bilary obstruction", "obstructive jaundice".
+
+Predicates:
+offer(P)
+have(S)
+findings(Gf)
+offer(P, S)
+
+Example 3:
+People with inherited high risk of pancreatic cancer: 
+Offer surveillance for pancreatic cancer to people with:
+• hereditary pancreatitis and a PRSS1 mutation
+• BRCA1 or BRCA2, and one or more firstdegree relatives with pancreatic cancer
+
+Constants:
+Disease: "pancreatic cancer".
+Management: "surveillance".
+Genetic_disease: "hereditary pancreatitis", "PRSS1", "BRCA1", "BRCA2".
+Information_about_patient: "firstdegree relatives with pancreatic cancer", "inherited high risk".
+
+Predicates:
+offer(M, D)
+have(Gd)
+have(Ip)
+first_degree_relative(D, PersonID)
+
+Example 4:
+People with inherited high risk of pancreatic cancer: 
+Do not offer EUS to detect pancreatic cancer in people with hereditary pancreatitis.
+
+Constants:
+Procedures: "EUS".
+Genetic_disease: "hereditary pancreatitis".
+Disease: "pancreatic cancer".
+Information_about_patient: "inherited high risk".
+
+Predicates:
+offer(P)
+have(Gd)
+have(Ip)
+
+Example 5:
+Refer people using a suspected cancer pathway referral for pancreatic cancer if they are aged 40 and over and have jaundice.
+
+Constants:
+Disease: "pancreatic cancer".
+Symptoms: "jaundice".
+Information_about_patient: "40".
+Management: "suspected cancer pathway referral".
+
+Predicates:
+refer(M, D)
+have(S)
+have(Ip)
+
+Example 6:
+Consider an urgent, direct access CT scan (to be done within 2 weeks), or an urgent ultrasound scan if CT is not available, to assess for pancreatic cancer in people aged 60 and over with weight loss and any of the following:
+•	diarrhoea
+•   back pain
+•   abdominal pain
+•   nausea
+•   vomiting
+•   constipation
+•   new-onset diabetes.
+
+Constants:
+Symptoms: "weight loss", "diarrhoea", "back pain", "abdominal pain", "nausea", "vomiting", "constipation", "new-onset diabetes".
+Imaging: "CT", "ultrasound".
+Information_about_patient: "60".
+
+Predicates:
+consider(I)
+have(S)
+
+Self-Verification Checklist
+1. Before producing the final answer:
+2. Each predicate must be grounded in a verb or explicit relationship from the text.
+3. All variables must correspond to one of the defined constant categories.
+4. Avoid redundant or semantically overlapping predicates.
+5. Ensure predicates generalize correctly across multiple rules (avoid overspecification).
+6. Output only the list of predicates — no extra commentary or explanation.
+
+Problem to solve:
+{problem_text}
+
+{processed_constants}
+
+Predicates:

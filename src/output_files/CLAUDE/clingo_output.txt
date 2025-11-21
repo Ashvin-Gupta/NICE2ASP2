@@ -1,0 +1,326 @@
+=== Patient 1 ===
+clingo version 5.4.1
+Reading from /tmp/tmpx6pj1ory.lp
+Solving...
+Answer: 1
+fired("1.3.1") fired("1.1.13") fired("1.1.4")
+SATISFIABLE
+
+Models       : 1
+Calls        : 1
+Time         : 0.002s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.001s
+
+================================================================================
+
+=== Patient 2 ===
+clingo version 5.4.1
+Reading from /tmp/tmpb6l8ypa7.lp
+Solving...
+Answer: 1
+fired("1.2.5_B") fired("1.2.5") fired("1.13.2_B") fired("1.13.2") fired("1.3.3") fired("1.3.1") fired("1.1.13") fired("1.1.4")
+Answer: 2
+fired("1.2.5_B") fired("1.2.5") fired("1.13.2_B") fired("1.13.2") fired("1.3.3") fired("1.3.1") fired("1.1.13") fired("1.1.4")
+Answer: 3
+fired("1.2.5_B") fired("1.2.5") fired("1.13.2_B") fired("1.13.2") fired("1.3.3") fired("1.3.1") fired("1.1.13") fired("1.1.4")
+SATISFIABLE
+
+Models       : 3
+Calls        : 1
+Time         : 0.001s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.001s
+
+================================================================================
+
+=== Patient 3 ===
+clingo version 5.4.1
+Reading from /tmp/tmp4gsjv_be.lp
+Solving...
+Answer: 1
+fired("1.2.5_B") fired("1.2.5") fired("1.13.2_B") fired("1.13.2") fired("1.3.3") fired("1.3.1") fired("1.1.13") fired("1.1.7") fired("1.1.4")
+Answer: 2
+fired("1.2.5_B") fired("1.2.5") fired("1.13.2_B") fired("1.13.2") fired("1.3.3") fired("1.3.1") fired("1.1.13") fired("1.1.7") fired("1.1.4")
+Answer: 3
+fired("1.2.5_B") fired("1.2.5") fired("1.13.2_B") fired("1.13.2") fired("1.3.3") fired("1.3.1") fired("1.1.13") fired("1.1.7") fired("1.1.4")
+SATISFIABLE
+
+Models       : 3
+Calls        : 1
+Time         : 0.002s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.002s
+
+================================================================================
+
+=== Patient 4 ===
+clingo version 5.4.1
+Reading from /tmp/tmpu9fvtk8h.lp
+Solving...
+Answer: 1
+fired("1.2.4") fired("1.3.1") fired("1.1.13") fired("1.1.1")
+SATISFIABLE
+
+Models       : 1
+Calls        : 1
+Time         : 0.002s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.002s
+
+================================================================================
+
+=== Patient 5 ===
+clingo version 5.4.1
+Reading from /tmp/tmp2kxw993m.lp
+Solving...
+Answer: 1
+fired("1.3.1") fired("1.1.13") fired("1.1.4")
+SATISFIABLE
+
+Models       : 1
+Calls        : 1
+Time         : 0.002s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.002s
+
+================================================================================
+
+=== Patient 6 ===
+clingo version 5.4.1
+Reading from /tmp/tmp_bkg8gr1.lp
+Solving...
+Answer: 1
+fired("1.3.1") fired("1.1.13") fired("1.1.4")
+SATISFIABLE
+
+Models       : 1
+Calls        : 1
+Time         : 0.002s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.002s
+
+================================================================================
+
+=== Patient 7 ===
+clingo version 5.4.1
+Reading from /tmp/tmpjuolnhy2.lp
+Solving...
+Answer: 1
+fired("1.2.4") fired("1.13.2_B") fired("1.13.2") fired("1.3.1") fired("1.1.13") fired("1.1.1")
+Answer: 2
+fired("1.2.4") fired("1.13.2_B") fired("1.13.2") fired("1.3.1") fired("1.1.13") fired("1.1.1")
+SATISFIABLE
+
+Models       : 2
+Calls        : 1
+Time         : 0.001s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.001s
+
+================================================================================
+
+=== Patient 8 ===
+clingo version 5.4.1
+Reading from /tmp/tmpy2pk3prv.lp
+Solving...
+Answer: 1
+fired("1.1.4")
+SATISFIABLE
+
+Models       : 1
+Calls        : 1
+Time         : 0.002s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.002s
+
+================================================================================
+
+=== Patient 9 ===
+clingo version 5.4.1
+Reading from /tmp/tmpoaloz67n.lp
+Solving...
+Answer: 1
+fired("1.3.1") fired("1.1.13") fired("1.1.4")
+SATISFIABLE
+
+Models       : 1
+Calls        : 1
+Time         : 0.001s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.001s
+
+================================================================================
+
+=== Patient 10 ===
+clingo version 5.4.1
+Reading from /tmp/tmphqctmk8u.lp
+Solving...
+Answer: 1
+fired("1.3.1") fired("1.1.13") fired("1.1.4")
+SATISFIABLE
+
+Models       : 1
+Calls        : 1
+Time         : 0.001s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.001s
+
+================================================================================
+
+=== Patient 11 ===
+clingo version 5.4.1
+Reading from /tmp/tmpuj3o4l8d.lp
+Solving...
+Answer: 1
+fired("1.3.3") fired("1.3.1") fired("1.1.13") fired("1.1.4")
+SATISFIABLE
+
+Models       : 1
+Calls        : 1
+Time         : 0.002s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.002s
+
+================================================================================
+
+=== Patient 12 ===
+clingo version 5.4.1
+Reading from /tmp/tmpxyc83vkg.lp
+Solving...
+Answer: 1
+fired("1.3.1") fired("1.1.13") fired("1.1.4")
+SATISFIABLE
+
+Models       : 1
+Calls        : 1
+Time         : 0.001s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.001s
+
+================================================================================
+
+=== Patient 13 ===
+clingo version 5.4.1
+Reading from /tmp/tmploxgmr4y.lp
+Solving...
+Answer: 1
+fired("1.13.2_B") fired("1.13.2") fired("1.3.1") fired("1.1.13") fired("1.1.4")
+Answer: 2
+fired("1.13.2_B") fired("1.13.2") fired("1.3.1") fired("1.1.13") fired("1.1.4")
+Answer: 3
+fired("1.13.2_B") fired("1.13.2") fired("1.3.1") fired("1.1.13") fired("1.1.4")
+SATISFIABLE
+
+Models       : 3
+Calls        : 1
+Time         : 0.001s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.001s
+
+================================================================================
+
+=== Patient 14 ===
+clingo version 5.4.1
+Reading from /tmp/tmp7_703_g2.lp
+Solving...
+Answer: 1
+fired("1.2.5_B") fired("1.2.5") fired("1.13.2_B") fired("1.13.2") fired("1.3.1") fired("1.1.13") fired("1.1.4")
+Answer: 2
+fired("1.2.5_B") fired("1.2.5") fired("1.13.2_B") fired("1.13.2") fired("1.3.1") fired("1.1.13") fired("1.1.4")
+Answer: 3
+fired("1.2.5_B") fired("1.2.5") fired("1.13.2_B") fired("1.13.2") fired("1.3.1") fired("1.1.13") fired("1.1.4")
+SATISFIABLE
+
+Models       : 3
+Calls        : 1
+Time         : 0.002s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.002s
+
+================================================================================
+
+=== Patient 15 ===
+clingo version 5.4.1
+Reading from /tmp/tmph9t8f0hi.lp
+Solving...
+Answer: 1
+fired("1.2.5_B") fired("1.2.5") fired("1.13.2_B") fired("1.13.2") fired("1.3.1") fired("1.1.13")
+Answer: 2
+fired("1.2.5_B") fired("1.2.5") fired("1.13.2_B") fired("1.13.2") fired("1.3.1") fired("1.1.13")
+Answer: 3
+fired("1.2.5_B") fired("1.2.5") fired("1.13.2_B") fired("1.13.2") fired("1.3.1") fired("1.1.13")
+SATISFIABLE
+
+Models       : 3
+Calls        : 1
+Time         : 0.001s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.001s
+
+================================================================================
+
+=== Patient 16 ===
+clingo version 5.4.1
+Reading from /tmp/tmpxh1x98hb.lp
+Solving...
+Answer: 1
+fired("1.2.4") fired("1.3.1") fired("1.1.13") fired("1.1.3") fired("1.1.1")
+SATISFIABLE
+
+Models       : 1
+Calls        : 1
+Time         : 0.001s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.001s
+
+================================================================================
+
+=== Patient 17 ===
+clingo version 5.4.1
+Reading from /tmp/tmpsdkcbt4_.lp
+Solving...
+Answer: 1
+fired("1.3.1") fired("1.1.13") fired("1.1.8_B") fired("1.1.7")
+SATISFIABLE
+
+Models       : 1
+Calls        : 1
+Time         : 0.001s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.001s
+
+================================================================================
+
+=== Patient 18 ===
+clingo version 5.4.1
+Reading from /tmp/tmpi4jmws4m.lp
+Solving...
+Answer: 1
+fired("1.13.2_B") fired("1.13.2") fired("1.3.1") fired("1.1.13") fired("1.1.4")
+Answer: 2
+fired("1.13.2_B") fired("1.13.2") fired("1.3.1") fired("1.1.13") fired("1.1.4")
+Answer: 3
+fired("1.13.2_B") fired("1.13.2") fired("1.3.1") fired("1.1.13") fired("1.1.4")
+SATISFIABLE
+
+Models       : 3
+Calls        : 1
+Time         : 0.001s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.001s
+
+================================================================================
+
+=== Patient 19 ===
+clingo version 5.4.1
+Reading from /tmp/tmp8bkncy3e.lp
+Solving...
+Answer: 1
+fired("1.3.3") fired("1.3.1") fired("1.1.13") fired("1.1.4")
+SATISFIABLE
+
+Models       : 1
+Calls        : 1
+Time         : 0.001s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.001s
+
+================================================================================
+
+=== Patient 20 ===
+clingo version 5.4.1
+Reading from /tmp/tmpkg7gyyk7.lp
+Solving...
+Answer: 1
+fired("1.3.1") fired("1.1.13") fired("1.1.7") fired("1.1.4")
+SATISFIABLE
+
+Models       : 1
+Calls        : 1
+Time         : 0.001s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.001s
+
+================================================================================
+

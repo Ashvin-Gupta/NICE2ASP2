@@ -1,0 +1,98 @@
+You are an expert in extracting and classifying medical constants from text.
+
+Task plan:
+1. Read the problem text carefully and identify all distinct medical concepts.
+2. Classify each concept into one of the provided categories below.
+3. Use the minimum exact wording from the text (do not paraphrase and no verbose phrases).
+4. Output only the constants grouped by category in the specified format.
+
+Category definitions:
+1. Disease: Specific disease names (e.g., "pancreatic cancer").
+2. Symptoms: Observable signs or symptoms (e.g., "jaundice", "weight loss").
+3. Imaging: Diagnostic imaging modalities (e.g., "CT", "MRI").
+4. Procedures: Medical interventions or diagnostic techniques (e.g., "EUS", "biopsy").
+5. Finding_of_pancreas: Imaging or pathology findings specific to pancreas.
+6. Genetic_disease: Inherited or genetic syndromes or mutations.
+7. Management: Clinical management pathways or types of referral.
+8. Treatments: Interventions for treating disease (e.g., "chemotherapy").
+9. Anatomical_structures: Named body parts or regions.
+10. Information_about_patient: Demographic or risk-related details (e.g., "40", "first-degree relatives").
+11. General_findings: Concepts describing diagnostic uncertainty or test results (e.g., "unclear diagnosis").
+
+Examples:
+
+Example 1:
+People without jaundice who have pancreatic abnormalities on imaging: 
+Offer a pancreatic protocol CT scan to people with pancreatic abnormalities but no jaundice. If the diagnosis is still unclear offer FDG-PET/CT and/or EUS with EUS-guided tissue sampling.
+
+Constants:
+Imaging: "pancreatic protocol CT".
+Finding_of_pancreas: "pancreatic abnormalities".
+Symptoms: "jaundice".
+Procedures: "FDG-PET/CT", "EUS", "EUS with tissue".
+General_findings: "unclear diagnosis".
+
+(Reasoning: “jaundice” → Symptom; “pancreatic protocol CT” → Imaging; “FDG-PET/CT” → Procedure; “unclear diagnosis” → General finding)
+
+Example 2:
+People with obstructive jaundice:
+Take a biliary brushing for cytology if: endoscopic retrograde cholangiopancreatography (ERCP) is being used to relieve the biliary obstruction and there is no tissue diagnosis.
+
+Constants:
+Procedures: "bilary brushing", "ERCP".
+Understanding_of_diagnosis: "no tissue diagnosis".
+Symptoms: "bilary obstruction", "obstructive jaundice".
+
+Example 3:
+People with inherited high risk of pancreatic cancer: 
+Offer surveillance for pancreatic cancer to people with:
+• hereditary pancreatitis and a PRSS1 mutation
+• BRCA1 or BRCA2, and one or more firstdegree relatives with pancreatic cancer
+
+Constants:
+Disease: "pancreatic cancer".
+Management: "surveillance".
+Genetic_disease: "hereditary pancreatitis", "PRSS1", "BRCA1", "BRCA2".
+Information_about_patient: "firstdegree relatives with pancreatic cancer", "inherited high risk".
+
+Example 4:
+People with inherited high risk of pancreatic cancer: 
+Do not offer EUS to detect pancreatic cancer in people with hereditary pancreatitis.
+
+Constants:
+Procedures: "EUS".
+Genetic_disease: "hereditary pancreatitis".
+Disease: "pancreatic cancer".
+Information_about_patient: "inherited high risk".
+
+Example 5:
+Refer people using a suspected cancer pathway referral for pancreatic cancer if they are aged 40 and over and have jaundice.
+
+Constants:
+Disease: "pancreatic cancer".
+Symptoms: "jaundice".
+Information_about_patient: "40".
+Management: "suspected cancer pathway referral".
+
+Example 6:
+Consider an urgent, direct access CT scan (to be done within 2 weeks), or an urgent ultrasound scan if CT is not available, to assess for pancreatic cancer in people aged 60 and over with weight loss and any of the following:
+•	diarrhoea
+•   back pain
+•   abdominal pain
+•   nausea
+•   vomiting
+•   constipation
+•   new-onset diabetes.
+
+Constants:
+Symptoms: "weight loss", "diarrhoea", "back pain", "abdominal pain", "nausea", "vomiting", "constipation", "new-onset diabetes".
+Imaging: "CT", "ultrasound".
+Information_about_patient: "60".
+
+Output Format:
+Constants:
+Category1: "constant1", "constant2".
+Category2: "constant1", "constant2". 
+
+Problem to solve:
+{problem_text}

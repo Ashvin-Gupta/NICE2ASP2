@@ -1,0 +1,196 @@
+You are an expert in Answer Set Programming (ASP) logic and clinical guideline formalization.
+
+Task Plan
+1. Carefully read the clinical guideline text in the Problem text.
+2. Review the provided constants and predicates (already extracted).
+3. Identify each logical condition, exception, and action in the text.
+4. Express each as an ASP rule following the pattern used in the examples (Problems 1–6).
+5. For negated recommendations (“Do not offer...”), produce constraints (:- ...).
+6. Preserve temporal or conditional sequencing using offered(X) when a later action depends on a previous offer.
+7. Output all resulting rules grouped by their guideline reference number, using the format:
+    [rule_number]
+    rule1.
+    rule2.
+    ...
+
+Background knowledge:
+1. offered(X) :- offer(X).
+    This encodes temporal relationships between offered procedures or imaging steps.
+    Make sure rules are not in the form offer(X) :- offered(X) as this implies that we can only offer X if has already been offered which is impossible. 
+2. Age is represented as age(X), X>=number.
+3. The notation 1{{A;B}}2 means choose at least 1 and at most 2 options from the set. Can use this in both the head (before :-) or in the body (after :-) and can help with simplification. 
+4. The symbol :- at the start of the line denotes a constraint (e.g anything atoms in the body cannot be exist together).
+5. Use the constants and predicates provided — do not invent new ones.
+6. The rules must be ASP valid. One condition is that the rules must be grounded, meaning if a variable appears in the head, it must also appear in a postive, non-built-in predicate in the body. If it appears in quatation marks it is fine.
+    e.g offer(P) :- body1, procedure(P) is correct. The procedure(P) is needed otherwise it is not grounded.
+    offer("ct scan") :- have("pain") is also correct.
+
+Reasoning Pattern
+
+1. Identify who the rule applies to (conditions → body).
+2. Identify what is being offered, referred, or done (action → head).
+3. Identify exceptions or negations (not have(S) or :- ...).
+4. Identify temporal links between rules (offered(X), findings(I, Gf)).
+
+Examples:
+
+Example 1:
+People without jaundice who have pancreatic abnormalities on imaging: 
+Offer a pancreatic protocol CT scan to people with pancreatic abnormalities but no jaundice. If the diagnosis is still unclear offer FDG-PET/CT and/or EUS with EUS-guided tissue sampling.
+
+Constants:
+Imaging: "pancreatic protocol CT".
+Finding_of_pancreas: "pancreatic abnormalities".
+Symptoms: "jaundice".
+Procedures: "FDG-PET/CT", "EUS", "EUS with tissue".
+General_findings: "unclear diagnosis".
+
+Predicates:
+offer(I)
+offer(P)
+have(Fp)
+have(S)
+findings(I, Gf)
+offered(I)
+
+ASP:
+offer("pancreatic_protocol_ct") :- have("pancreatic_abnormalities"), not have("jaundice").
+1 {{offer("FDG-PET/CT"); offer("EUS_with_tissue")}} 2 :- have("pancreatic_abnormalities"), not have("jaundice"), offered("pancreatic_protocol_ct"), findings("pancreatic_protocol_ct", "diagnosis_unclear").
+
+Reasoning:
+Main action: offer CT → offer("pancreatic_protocol_ct") from first statement. offer FDG-PET/CT or EUR with tissue → offer("FDG-PET/CT"), offer("EUS_with_tissue") from second statement.
+Conditions: have abnormalities, not have jaundice from the first statement. findings of CT procedure means an unclear from the second statement.
+Temporal rule: if CT was offered and diagnosis still unclear → offer further procedures. Symptoms from first conditions carry on over as statements are linked.
+
+% These rules read as: 
+% If the patient has pancreatic abnormalities but no jaundice then offer a pancreatic protocol CT scan.
+% If the findings from the pancreatic protocol CT are unclear then choose at least 1 but no more than 2 of the options in the curly brackets
+% Note the offered(I) predicate is VERY important here as it allows us to have temporal relationships within our rules.
+
+Example 2:
+People with obstructive jaundice:
+Take a biliary brushing for cytology if: endoscopic retrograde cholangiopancreatography (ERCP) is being used to relieve the biliary obstruction and there is no tissue diagnosis.
+
+Constants:
+Procedures: "bilary brushing", "ERCP".
+Understanding_of_diagnosis: "no tissue diagnosis".
+Symptoms: "bilary obstruction", "obstructive jaundice".
+
+Predicates:
+offer(P)
+have(S)
+findings(Gf)
+offer(P, S)
+
+ASP:
+offer("biliary_brushing") :- have("obstructive_jaundice"), findings("no_tissue_diagnosis"), offer("ERCP", "bilary_obstruction").
+
+% This rule reads as: 
+% If the patient has obstructive jaundice and there is no tissue diagnosis and ERCP is being used to treat bilary obstruction then offer bilary brushin.
+
+Example 3:
+People with inherited high risk of pancreatic cancer: 
+Offer surveillance for pancreatic cancer to people with:
+• hereditary pancreatitis and a PRSS1 mutation
+• BRCA1 or BRCA2, and one or more firstdegree relatives with pancreatic cancer
+
+Constants:
+Disease: "pancreatic cancer".
+Management: "surveillance".
+Genetic_disease: "hereditary pancreatitis", "PRSS1", "BRCA1", "BRCA2".
+Information_about_patient: "firstdegree relatives with pancreatic cancer", "inherited high risk".
+
+Predicates:
+offer(M, D)
+have(Gd)
+have(Ip)
+first_degree_relative(D, PersonID)
+
+ASP:
+offer("surveillance", "pancreatic_cancer") :- have("inherited_high_risk"), have("hereditary_pancreatitis"), have("PRSS1").
+offer("surveillance", "pancreatic_cancer") :- have("inherited_high_risk"), 1{{have("BRCA1"); have("BRCA2"); have("PALB2"); have("CDKN2A")}}4, first_degree_relative("pancreatic_cancer",_).
+
+% These rules read as: 
+% If the patient has inherited high risk, hereditary pancreatitis and PRSS1 then offer surveillance for pancreatic cancer.
+% If the patient has inherited high risk, any first degree relaticve with pancreatic cancer and has any one of the genes BRCA1, BRCA2, PALB2, CDKN2A, then offer surveillance for pancreatic cancer.
+
+% Note that we represent how many first degree relatives have a disease in the format first_degree_relative(D,X), where D is the disease and X is person X. 
+% Both D and X can be left blank, _, if we do not know the disease or the person. If there are two people that have the same diesase we could exploit this syntax and write X!=Y to show that they are different people.
+
+Example 4:
+People with inherited high risk of pancreatic cancer: 
+Do not offer EUS to detect pancreatic cancer in people with hereditary pancreatitis.
+
+Constants:
+Procedures: "EUS".
+Genetic_disease: "hereditary pancreatitis".
+Disease: "pancreatic cancer".
+Information_about_patient: "inherited high risk".
+
+Predicates:
+offer(P)
+have(Gd)
+have(Ip)
+
+ASP:
+:- have("inherited_high_risk"), offer("EUS"), have("hereditary_pancreatitis").
+
+% This rule reads as: 
+% Do not offer EUS if the patient has inherited high risk and hereditary pancreatitis
+
+Example 5:
+Refer people using a suspected cancer pathway referral for pancreatic cancer if they are aged 40 and over and have jaundice.
+
+Constants:
+Disease: "pancreatic cancer".
+Symptoms: "jaundice".
+Information_about_patient: "40".
+Management: "suspected cancer pathway referral".
+
+Predicates:
+refer(M, D)
+have(S)
+have(Ip)
+
+ASP:
+refer("suspected_cancer_pathway", "pancreatic_cancer") :- age(X), have("jaundice"), X>=40.
+
+% These rules read as: 
+% If the patient is above the age of 40 and has jaundice then refer to the suspected cancer pathway
+% Note that we represent the age of the patient in the format age(X), where X is the age of the patient.
+
+Example 6:
+Consider an urgent, direct access CT scan (to be done within 2 weeks), or an urgent ultrasound scan if CT is not available, to assess for pancreatic cancer in people aged 60 and over with weight loss and any of the following:
+•	diarrhoea
+•   back pain
+•   abdominal pain
+•   nausea
+•   vomiting
+•   constipation
+•   new-onset diabetes.
+
+Constants:
+Symptoms: "weight loss", "diarrhoea", "back pain", "abdominal pain", "nausea", "vomiting", "constipation", "new-onset diabetes".
+Imaging: "CT", "ultrasound".
+Information_about_patient: "60".
+
+Predicates:
+consider(I)
+have(S)
+
+ASP:
+consider("CT_scan") :- age(X), have("unexplained_weight_loss"), 1{{have("diarrhoea"); have("back_pain"); have("abdominal_pain"); have("nausea"); have("vomiting"); have("constipation"); have("new_onset_diabetes")}}7, X>60.
+consider("ultrasound") :- age(X), have("unexplained_weight_loss"), 1{{have("diarrhoea"); have("back_pain"); have("abdominal_pain"); have("nausea"); have("vomiting"); have("constipation"); have("new_onset_diabetes")}}7, X>60, not available("CT_scan").
+
+% These rules are read as
+% If the patient is over the age of 60, has unexplained weight loss and any one of diarrhoea, back pain, abdominal pain, nausea, vomiting, constipation or new-onset diabetes then consider an urgent CT scan.
+% If the same conditions are present but the CT scan is not available then consider and ultrasound instead.
+
+Problem to solve:
+
+{problem_text}
+
+{constants}
+
+Predicates:
+{predicates}

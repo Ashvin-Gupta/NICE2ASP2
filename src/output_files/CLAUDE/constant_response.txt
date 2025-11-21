@@ -1,0 +1,12 @@
+Constants:
+Disease: "pancreatic cancer", "colorectal", "gastro-oesophageal", "lung", "prostate", "urological cancer", "oesophageal", "stomach", "bladder", "renal cancer".
+Symptoms: "obstructive jaundice", "jaundice", "weight loss", "appetite loss", "diarrhoea", "back pain", "abdominal pain", "nausea", "vomiting", "constipation", "new-onset diabetes".
+Imaging: "pancreatic protocol CT", "FDG-PET/CT", "MRI/MRCP", "CT", "ultrasound", "MRI", "laparoscopic ultrasound".
+Procedures: "EUS", "EUS-guided tissue sampling", "biliary brushing", "ERCP", "fine-needle aspiration", "CEA assay", "cytology", "endoscopic ultrasound", "laparoscopy".
+Finding_of_pancreas: "pancreatic abnormalities", "pancreatic cysts", "cystic lesions in the head of the pancreas", "enhancing solid component in the cyst", "main pancreatic duct that is 10 mm diameter or larger".
+Genetic_disease: "hereditary pancreatitis", "PRSS1", "BRCA1", "BRCA2", "PALB2", "CDKN2A (p16)", "Peutz–Jeghers syndrome", "Lynch syndrome", "MLH1", "MSH2", "MSH6", "PMS2".
+Management: "surveillance", "suspected cancer pathway referral".
+Treatments: "surgery", "radiotherapy", "systemic therapy".
+Anatomical_structures: "bile duct", "chest", "abdomen", "pelvis", "liver", "peritoneal".
+Information_about_patient: "18", "40", "60", "first-degree relatives", "first-degree relatives with pancreatic cancer", "2 or more first-degree relatives with pancreatic cancer", "inherited high risk".
+General_findings: "unclear", "no tissue diagnosis", "biliary obstruction", "localised disease", "liver metastases", "peritoneal and/or liver metastases".

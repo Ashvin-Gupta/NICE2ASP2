@@ -1,0 +1,56 @@
+1.10 Haematological cancers
+
+Leukaemia in adults
+1.10.1 Consider a very urgent full blood count (within 48 hours) to assess for leukaemia in adults with any of the following:
+• pallor
+• persistent fatigue
+• unexplained fever
+• unexplained persistent or recurrent infection
+• generalised lymphadenopathy
+• unexplained bruising
+• unexplained bleeding
+• unexplained petechiae
+• hepatosplenomegaly. [2015]
+
+Leukaemia in children and young people
+1.10.2 Refer children and young people for immediate specialist assessment for leukaemia if they have unexplained petechiae or hepatosplenomegaly. [2015]
+1.10.3 Offer a very urgent full blood count (within 48 hours) to assess for leukaemia in children and young people with any of the following:
+• pallor
+• persistent fatigue
+• unexplained fever
+• unexplained persistent infection 
+• generalised lymphadenopathy
+• persistent or unexplained bone pain
+• unexplained bruising
+• unexplained bleeding. [2015]
+
+Myeloma
+1.10.4 Offer the following to assess for myeloma in people aged 60 and over with persistent bone pain, particularly back pain, or unexplained fracture:
+• a full blood count and
+• blood tests for:
+－ calcium
+－ plasma viscosity or erythrocyte sedimentation rate
+－ paraprotein, using serum protein electrophoresis
+－ free light chains contained in serum.
+
+If serum free light chain testing is not available, use a Bence–Jones test to check for free light chains contained in urine. [2015, amended 2025]
+1.10.5 Consider the blood tests outlined in recommendation 1.10.4 for people aged under 60 with persistent bone pain, particularly back pain, or unexplained fracture. [2015, amended 2025]
+1.10.6 Refer people using a suspected cancer pathway referral if the results of the blood tests outlined in recommendation 1.10.4 suggest myeloma. [2015, amended 2025] 
+
+Non-Hodgkin's lymphoma
+Separate recommendations have been made for adults and for children and young people to reflect that there are different referral pathways. In practice young people (aged 16 to 24) may be referred using either pathway depending on their age and local arrangements.
+
+Adults
+1.10.7 Consider a suspected cancer pathway referral for non-Hodgkin's lymphoma in adults presenting with unexplained lymphadenopathy or splenomegaly. When considering referral, take into account any associated symptoms, particularly fever, night sweats, shortness of breath, pruritus or weight loss. [2015]
+
+Children and young people
+1.10.8 Consider a very urgent referral (for an appointment within 48 hours) for specialist assessment for non-Hodgkin's lymphoma in children and young people presenting with unexplained lymphadenopathy or splenomegaly. When considering referral, take into account any associated symptoms, particularly fever, night sweats, shortness of breath, pruritus or weight loss. [2015]
+
+Hodgkin's lymphoma
+Separate recommendations have been made for adults and for children and young people to reflect that there are different referral pathways. In practice young people (aged 16 to 24) may be referred using either pathway depending on their age and local arrangements.
+
+Adults
+1.10.9 Consider a suspected cancer pathway referral for Hodgkin's lymphoma in adults presenting with unexplained lymphadenopathy. When considering referral, take into account any associated symptoms, particularly fever, night sweats, shortness of breath, pruritus, weight loss or alcohol-induced lymph node pain. [2015] 
+
+Children and young people
+1.10.10 Consider a very urgent referral (for an appointment within 48 hours) for specialist assessment for Hodgkin's lymphoma in children and young people presenting with unexplained lymphadenopathy. When considering referral, take into account any associated symptoms, particularly fever, night sweats, shortness of breath, pruritus or weight loss. [2015]

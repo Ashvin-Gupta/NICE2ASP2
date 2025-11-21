@@ -1,0 +1,87 @@
+[1.1.1]
+offer("pancreatic protocol CT") :- have("obstructive jaundice"), have("pancreatic cancer").
+
+[1.1.2]
+1{offer("FDG-PET/CT"); offer("EUS-guided tissue sampling")}2 :- have("obstructive jaundice"), have("pancreatic cancer"), offered("pancreatic protocol CT"), findings("pancreatic protocol CT", "unclear").
+
+[1.1.3]
+offer("biliary brushing") :- relieve("ERCP", "biliary obstruction"), findings("ERCP", "no tissue diagnosis").
+
+[1.1.4]
+offer("pancreatic protocol CT") :- have("pancreatic abnormalities"), not have("jaundice").
+
+[1.1.5]
+1{offer("FDG-PET/CT"); offer("EUS-guided tissue sampling")}2 :- have("pancreatic abnormalities"), not have("jaundice"), offered("pancreatic protocol CT"), findings("pancreatic protocol CT", "unclear").
+
+[1.1.6]
+offer("EUS-guided tissue sampling") :- have("pancreatic abnormalities"), not have("jaundice"), findings("EUS-guided tissue sampling", "cytological or histological samples needed").
+
+[1.1.7]
+1{offer("pancreatic protocol CT"); offer("MRI/MRCP")}1 :- have("pancreatic cysts").
+offer("MRI/MRCP") :- have("pancreatic cysts"), offered("pancreatic protocol CT"), findings("pancreatic protocol CT", "more information needed").
+offer("pancreatic protocol CT") :- have("pancreatic cysts"), offered("MRI/MRCP"), findings("MRI/MRCP", "more information needed").
+
+[1.1.8]
+refer("surgery") :- have("obstructive jaundice"), have("cystic lesions in the head of the pancreas").
+refer("surgery") :- have("enhancing solid component in the cyst").
+refer("surgery") :- have("main pancreatic duct that is 10 mm diameter or larger").
+
+[1.1.9]
+offer("EUS") :- have("pancreatic cysts"), offered("pancreatic protocol CT"), offered("MRI/MRCP"), findings("EUS", "more information on likelihood of malignancy needed").
+offer("EUS") :- have("pancreatic cysts"), offered("pancreatic protocol CT"), offered("MRI/MRCP"), findings("EUS", "unclear whether surgery needed").
+
+[1.1.10]
+consider("fine-needle aspiration") :- offered("EUS"), findings("fine-needle aspiration", "more information on likelihood of malignancy needed").
+
+[1.1.11]
+offer("CEA assay") :- offered("fine-needle aspiration"), findings("fine-needle aspiration", "sufficient sample").
+offer("cytology") :- offered("fine-needle aspiration").
+
+[1.1.13]
+ask("first-degree relatives") :- have("pancreatic cancer").
+
+[1.1.14]
+offer("surveillance", "pancreatic cancer") :- have("hereditary pancreatitis"), have("PRSS1").
+offer("surveillance", "pancreatic cancer") :- 1{have("BRCA1"); have("BRCA2"); have("PALB2"); have("CDKN2A (p16)")}4, have("first-degree relatives with pancreatic cancer").
+offer("surveillance", "pancreatic cancer") :- have("Peutz–Jeghers syndrome").
+
+[1.1.15]
+consider("surveillance", "pancreatic cancer") :- have("2 or more first-degree relatives with pancreatic cancer").
+consider("surveillance", "pancreatic cancer") :- 1{have("Lynch syndrome"); have("MLH1"); have("MSH2"); have("MSH6"); have("PMS2")}5, have("first-degree relatives with pancreatic cancer").
+
+[1.1.16]
+consider("MRI/MRCP") :- offer("surveillance", "pancreatic cancer"), not have("hereditary pancreatitis").
+consider("EUS") :- offer("surveillance", "pancreatic cancer"), not have("hereditary pancreatitis").
+
+[1.1.17]
+consider("pancreatic protocol CT") :- offer("surveillance", "pancreatic cancer"), have("hereditary pancreatitis"), have("PRSS1").
+
+[1.1.18]
+:- offer("EUS"), have("hereditary pancreatitis"), have("pancreatic cancer").
+
+[1.3.1]
+offer("pancreatic protocol CT") :- have("pancreatic cancer"), not offered("pancreatic protocol CT").
+
+[1.3.2]
+offer("FDG-PET/CT") :- have("localised disease"), offered("pancreatic protocol CT"), 1{offer("surgery"); offer("radiotherapy"); offer("systemic therapy")}3.
+
+[1.3.3]
+consider("MRI") :- findings("MRI", "liver metastases").
+consider("endoscopic ultrasound") :- findings("endoscopic ultrasound", "more information needed for tumour and node staging").
+consider("laparoscopy") :- findings("laparoscopy", "peritoneal and/or liver metastases"), offer("surgery").
+consider("laparoscopic ultrasound") :- findings("laparoscopic ultrasound", "peritoneal and/or liver metastases"), offer("surgery").
+
+[1.13.2]
+carry_out_assessment("weight loss") :- have("weight loss").
+1{offer("urgent investigation"); refer("suspected cancer pathway referral", _)}2 :- have("weight loss").
+
+[1.13.3]
+carry_out_assessment("appetite loss") :- have("appetite loss").
+1{offer("urgent investigation"); refer("suspected cancer pathway referral", _)}2 :- have("appetite loss").
+
+[1.2.4]
+refer("suspected cancer pathway referral", "pancreatic cancer") :- age(X), X>=40, have("jaundice").
+
+[1.2.5]
+consider("CT") :- age(X), X>=60, have("weight loss"), 1{have("diarrhoea"); have("back pain"); have("abdominal pain"); have("nausea"); have("vomiting"); have("constipation"); have("new-onset diabetes")}7.
+consider("ultrasound") :- age(X), X>=60, have("weight loss"), 1{have("diarrhoea"); have("back pain"); have("abdominal pain"); have("nausea"); have("vomiting"); have("constipation"); have("new-onset diabetes")}7, not offered("CT").

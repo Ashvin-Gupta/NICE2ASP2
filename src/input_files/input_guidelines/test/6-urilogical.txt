@@ -1,0 +1,40 @@
+1.6 Urological cancers
+
+Prostate cancer
+1.6.1 Refer people using a suspected cancer pathway referral for prostate cancer if their prostate feels malignant on digital rectal examination. [2015] 
+1.6.2 Consider a prostate-specific antigen (PSA) test and digital rectal examination toassess for prostate cancer in people with:
+• any lower urinary tract symptoms, such as nocturia, urinary frequency, hesitancy, urgency or retention or
+• erectile dysfunction or
+• visible haematuria. [2015]
+1.6.3 Consider referring people with possible symptoms of prostate cancer, as specified in recommendation 1.6.2, using a suspected cancer pathway referral for prostate cancer if their PSA levels are above the threshold for their age in table 1. Take into account the person's preferences and any comorbidities when making the decision. [2021] 
+Table 1:
+Age (years), Prostate-specific antigen threshold (micrograms/litre)
+Below 40, Use clinical judgement
+40 to 49, More than 2.5
+50 to 59, More than 3.5
+60 to 69, More than 4.5
+70 to 79, More than 6.5
+Above 79, Use clinical judgement
+
+Bladder cancer
+1.6.4 Refer people using a suspected cancer pathway referral for bladder cancer if they are:
+• aged 45 and over and have:
+－ unexplained visible haematuria without urinary tract infection or
+－ visible haematuria that persists or recurs after successful treatment of urinary tract infection or
+• aged 60 and over and have unexplained non-visible haematuria and either dysuria or a raised white cell count on a blood test. [2015]
+1.6.5 Consider non-urgent referral for bladder cancer in people aged 60 and over with recurrent or persistent unexplained urinary tract infection. [2015]
+
+Renal cancer
+1.6.6 Refer people using a suspected cancer pathway referral for renal cancer if they are aged 45 and over and have:
+• unexplained visible haematuria without urinary tract infection or
+• visible haematuria that persists or recurs after successful treatment of urinary tract infection. [2015]
+
+Testicular cancer
+1.6.7 Consider a suspected cancer pathway referral for testicular cancer in men if they have a non-painful enlargement or change in shape or texture of the testis. [2015]
+1.6.8 Consider a direct access ultrasound scan for testicular cancer in men with unexplained or persistent testicular symptoms. [2015]
+
+Penile cancer
+1.6.9 Consider a suspected cancer pathway referral for penile cancer in men if they have:
+• a penile mass or ulcerated lesion, when a sexually transmitted infection has been excluded as a cause or
+• a persistent penile lesion after treatment for a sexually transmitted infection has been completed. [2015]
+1.6.10 Consider a suspected cancer pathway referral for penile cancer in men with unexplained or persistent symptoms affecting the foreskin or glans. [2015] 

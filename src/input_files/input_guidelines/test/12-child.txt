@@ -1,0 +1,13 @@
+1.12 Childhood cancers
+NICE has published a guideline on babies, children and young people's experience of healthcare.
+Neuroblastoma
+1.12.1 Consider very urgent referral (for an appointment within 48 hours) for specialist assessment for neuroblastoma in children with a palpable abdominal mass or unexplained enlarged abdominal organ. [2015]
+
+Retinoblastoma
+1.12.2 Consider referral for ophthalmological assessment using a suspected cancer pathway referral for retinoblastoma in children with an absent fundal ('red') reflex. If there is new-onset squint that occurs together with an absent fundal ('red') reflex, see the recommendation on new-onset squint with loss of fundal 'red' reflex in NICE's guideline on suspected neurological conditions. [2015]
+
+Wilms' tumour
+1.12.3 Consider very urgent referral (for an appointment within 48 hours) for specialist assessment for Wilms' tumour in children with any of the following:
+• a palpable abdominal mass
+• an unexplained enlarged abdominal organ
+• unexplained visible haematuria. [2015]

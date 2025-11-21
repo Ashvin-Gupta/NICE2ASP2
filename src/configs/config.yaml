@@ -1,0 +1,26 @@
+experiment:
+  name: "pancreatic_cancer_guidelines"
+  output_dir: "src/output_files/CLAUDE"
+  model: "claude-opus-4-1-20250805"
+  family: "claude"
+  temperature: 0.0
+
+input_files:
+  problem_text: "src/input_files/input_guidelines/pancreatic_cancer_guidelines.txt"
+  constant_prompt: "src/input_files/prompt_files/PC/constant_prompt2.txt"
+  predicate_prompt: "src/input_files/prompt_files/PC/predicate_prompt2.txt"
+  rule_generation_prompt: "src/input_files/prompt_files/PC/rule_generation_prompt2.txt"
+  ground_truth: "src/input_files/ground_truths/GT_PC.lp"
+  extract_atoms: "src/input_files/K2P/setupProgram.txt"
+  patient_vignettes: "src/input_files/K2P/PC_descriptions.txt"
+  
+# llm_params:
+  # constant_inference_iterations: 1
+  # predicate_inference_iterations: 1
+  # rule_generation_iterations: 1
+  # model: "llama-3.3-70b-versatile"
+  # temperature: 0.25
+
+# Models
+  # model: "gpt-5.1-2025-11-13"
+  # model: "claude-opus-4-1-20250805"

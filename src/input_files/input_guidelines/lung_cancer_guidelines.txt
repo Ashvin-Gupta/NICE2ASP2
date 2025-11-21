@@ -1,0 +1,76 @@
+
+Effectiveness of diagnostic and staging investigations
+1.3.1 Only use sputum cytology for investigation in people with suspected lung cancer who have centrally placed nodules or masses and who decline or cannot tolerate bronchoscopy or other invasive tests.
+1.3.2 Offer people with known or suspected lung cancer a contrast-enhanced chest CT scan to further the diagnosis and stage the disease. Include the liver, adrenals and lower neck in the scan. The guideline committee also recognised that contrast medium should only be given with caution to people with known renal impairment.
+1.3.3 When assessing mediastinal and chest wall invasion:
+• be aware that CT alone may not be reliable
+• consider other techniques such as ultrasound if there is doubt
+• be aware that surgical assessment may be necessary if there are no contraindications to resection.
+1.3.4 Ensure that all people with lung cancer who could potentially have treatment with curative intent are offered positron-emission tomography CT (PET-CT) before treatment.
+1.3.5 Every cancer alliance should have a system of rapid access to PET-CT scanning for eligible people. 
+1.3.6 Do not routinely use MRI to assess the stage of the primary tumour (T-stage) in non-small-cell lung cancer (NSCLC).
+1.3.7 Use MRI when necessary to assess the extent of disease, for people with superior sulcus tumours. 
+1.3.8 Offer endobronchial ultrasound-guided transbronchial needle aspiration (EBUSTBNA) for biopsy of paratracheal and peri-bronchial intra-parenchymal lung lesions.
+1.3.9 Every cancer alliance should have at least 1 centre with EBUS and/or endoscopic ultrasound (EUS) to ensure timely access.
+1.3.10 Audit the local test performance of EBUS-TBNA and endoscopic ultrasoundguided fine-needle aspiration (EUS-FNA).
+1.3.11 When taking samples, ensure they are adequate (without unacceptable risk to the person) to permit pathological diagnosis, including tumour subtyping and assessment of predictive markers.
+1.3.12 For guidance on EGFR-TK mutation testing, see the NICE diagnostics guidance on EGFR-TK mutation testing in adults with locally advanced or metastatic non-small-cell lung cancer. 
+
+Sequence of investigations
+1.3.13 Choose investigations that give the most information about diagnosis and staging with the least risk to the person. Think carefully before performing a test that gives only diagnostic pathology when information on staging is also needed to guide treatment.
+1.3.14 Perform contrast-enhanced CT of the chest, liver, adrenals and lower neck before any biopsy procedure.
+
+Peripheral primary tumour
+1.3.15 Offer image-guided biopsy to people with peripheral lung lesions when treatment can be planned on the basis of this test.
+1.3.16 Biopsy any enlarged intrathoracic nodes (10 mm or larger maximum short axis on CT) or other lesions in preference to the primary lesion if determination of nodal stage affects treatment. Some people with lung cancer will not be well enough for treatment with curative intent. This needs to be taken into account when choosing diagnostic and staging investigations.
+
+Central primary tumour
+1.3.17 Offer flexible bronchoscopy to people with central lesions on CT if nodal staging does not influence treatment. 
+
+Intrathoracic lymph node assessment
+1.3.18 Offer PET-CT as the preferred first test after CT with a low probability of nodal malignancy (lymph nodes below 10 mm maximum short axis on CT), for people with lung cancer who could potentially have treatment with curative intent. 
+1.3.19 Offer PET-CT (if not already done), followed by EBUS-TBNA and/or EUS-FNA, to people with suspected lung cancer who have enlarged intrathoracic lymph nodes (lymph nodes greater than or equal to 10 mm short axis on CT) and who could potentially have treatment with curative intent.
+1.3.20 Evaluate PET-CT-positive or enlarged intrathoracic nodes using a systematic approach (sampling any suspicious node on CT, PET or USS) with EBUS-TBNA and/or EUS-FNA if nodal status would affect the treatment plan.
+1.3.21 Consider surgical mediastinal staging for people with a negative EBUS-TBNA or EUS-FNA if clinical suspicion of nodal malignancy is high and nodal status would affect their treatment plan. 
+
+Further staging
+1.3.22 Confirm the presence of isolated distant metastases/synchronous tumours by biopsy or further imaging (for example, MRI or PET-CT) in people being considered for treatment with curative intent.
+1.3.23 Do not offer dedicated brain imaging to people with clinical stage I NSCLC who have no neurological symptoms and are having treatment with curative intent.
+1.3.24 Offer contrast-enhanced brain CT to people with clinical stage II NSCLC who are having treatment with curative intent. If CT shows suspected brain metastases, offer contrast-enhanced brain MRI.
+1.3.25 Offer contrast-enhanced brain MRI for people with stage III NSCLC who are having treatment with curative intent. 
+1.3.26 Offer people with clinical features suggestive of intracranial pathology CT of the head followed by MRI if normal, or MRI as an initial test. 
+1.3.27 Perform an X-ray as the first test for people with localised signs or symptoms of bone metastasis. If the results are negative or inconclusive, offer bone scintigraphy or an MRI scan. 
+1.3.28 Avoid bone scintigraphy when PET-CT has not shown bone metastases. 
+1.3.29 Provide treatment without undue delay for people who have lung cancer that is suitable for radical treatment or chemotherapy, or who need radiotherapy or ablative treatment for relief of symptoms. 
+
+Multidisciplinary teams
+1.3.30 Refer all people with a suspected diagnosis of lung cancer to a member of a lung cancer multidisciplinary team (usually a chest physician).
+1.3.31 The care of all people with a working diagnosis of lung cancer should be discussed at a lung cancer multidisciplinary team meeting. 
+
+Fast track lung clinics
+1.3.32 Provide fast-track lung cancer clinics (previously known as early diagnosis clinics and rapid access clinics) for investigating suspected lung cancer, because they are associated with faster diagnosis and less anxiety. 
+
+Cancer clinical nurse specialists
+1.3.33 All cancer units/centres should have one or more trained lung cancer clinical nurse specialists to:
+• see people before, at the time of and after diagnosis
+• provide continuing support
+• facilitate communication between the secondary care team (including the multidisciplinary team), the person's GP, the community team and the person with lung cancer
+• help people access advice and support whenever they need it.
+
+Lung and pleural cancers
+1.1.1 Refer people using a suspected cancer pathway referral for lung cancer if they:
+• have chest X-ray findings that suggest lung cancer or
+• are aged 40 and over with unexplained haemoptysis.
+1.1.2 Offer an urgent chest X-ray (to be done within 2 weeks) to assess for lung cancer in people aged 40 and over if they have 2 or more of the following unexplained symptoms, or if they have ever smoked and have 1 or more of the following unexplained symptoms:
+• cough
+• fatigue
+• shortness of breath
+• chest pain
+• weight loss
+• appetite loss. 
+1.1.3 Consider an urgent chest X-ray (to be done within 2 weeks) to assess for lung cancer in people aged 40 and over with any of the following:
+• persistent or recurrent chest infection
+• finger clubbing
+• supraclavicular lymphadenopathy or persistent cervical lymphadenopathy
+• chest signs consistent with lung cancer
+• thrombocytosis
