@@ -1,0 +1,40 @@
+Looking at this lung cancer diagnostic guideline text, I'll identify the predicates needed to capture all the relationships between the constants.
+
+Based on the text analysis, here are the predicates:
+
+```
+offer(I)
+offer(P)
+offer(M)
+consider(I)
+consider(P)
+have(S)
+have(D)
+have(Gf)
+have(Ip)
+findings(I, Gf)
+refer(M, D)
+use(P)
+decline(P)
+tolerate(P)
+assess(As)
+assess(D)
+perform(I)
+perform(P)
+biopsy(As)
+biopsy(Gf)
+evaluate(As)
+provide(Tr)
+need(Tr)
+suitable(Tr)
+```
+
+These predicates capture:
+- Clinical actions (offer, consider, refer, use, perform)
+- Patient conditions (have for symptoms/diseases/findings)
+- Patient responses (decline, tolerate)
+- Diagnostic assessments (assess, biopsy, evaluate)
+- Treatment provisions (provide, need, suitable)
+- Diagnostic findings (findings linking imaging to general findings)
+
+The predicates follow the established patterns where offer/consider indicate recommended actions, have denotes patient features, and findings encodes diagnostic results. The variable naming convention is maintained throughout.

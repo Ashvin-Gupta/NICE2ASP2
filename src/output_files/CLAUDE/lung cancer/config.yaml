@@ -22,10 +22,3 @@ input_files:
 # llm_params:
   # constant_inference_iterations: 1
   # predicate_inference_iterations: 1
-  # rule_generation_iterations: 1
-  # model: "llama-3.3-70b-versatile"
-  # temperature: 0.25
-
-# Models
-  # model: "gpt-5.1-2025-11-13"
-  # model: "claude-opus-4-1-20250805"

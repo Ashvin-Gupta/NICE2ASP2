@@ -15,7 +15,9 @@ def load_config(config_path):
 
 def setup_experiment_dir(config):
     # Create experiment output directory
-    exp_dir = Path(config['experiment']['output_dir'])
+    base_output_dir = Path(config['experiment']['output_dir'])
+    cancer_type = config['experiment']['cancer_type']
+    exp_dir = base_output_dir / cancer_type
     exp_dir.mkdir(parents=True, exist_ok=True)
     
     config_copy_path = exp_dir / 'config.yaml'
@@ -59,49 +61,49 @@ def main():
 
 
     if config['experiment']['version'] == 'D2K-Pipeline':
-        # # Constant extraction
-        # llmExtractor.run_constant_inference(
-        #     config['input_files']['constant_prompt'],
-        #     config['input_files']['problem_text'],
-        #     str(output_files['constant_response']),
-        # )
+        # Constant extraction
+        llmExtractor.run_constant_inference(
+            config['input_files']['constant_prompt'],
+            config['input_files']['problem_text'],
+            str(output_files['constant_response']),
+        )
 
-        # # Extracting the predicates
-        # llmExtractor.run_predicate_inference(
-        #     config['input_files']['predicate_prompt'],
-        #     config['input_files']['problem_text'],
-        #     str(output_files['constant_response']),
-        #     str(output_files['predicate_response']),
-        # )
+        # Extracting the predicates
+        llmExtractor.run_predicate_inference(
+            config['input_files']['predicate_prompt'],
+            config['input_files']['problem_text'],
+            str(output_files['constant_response']),
+            str(output_files['predicate_response']),
+        )
 
-        # # Rule generation
-        # llmExtractor.run_rulegen_inference(
-        #     config['input_files']['rule_generation_prompt'],
-        #     config['input_files']['problem_text'],
-        #     str(output_files['constant_response']),
-        #     str(output_files['predicate_response']),
-        #     str(output_files['rulegen_response']),
-        # )
+        # Rule generation
+        llmExtractor.run_rulegen_inference(
+            config['input_files']['rule_generation_prompt'],
+            config['input_files']['problem_text'],
+            str(output_files['constant_response']),
+            str(output_files['predicate_response']),
+            str(output_files['rulegen_response']),
+        )
 
-        # graph_generated = ASPGraphCreator.create_program_graph(str(output_files['rulegen_response']))
+        graph_generated = ASPGraphCreator.create_program_graph(str(output_files['rulegen_response']))
         pass
     elif config['experiment']['version'] == 'In-Context':
-        # print("Running in context inference")
-        # llmExtractor.run_constant_inference(
-        #     config['input_files']['in_context_prompt'],
-        #     config['input_files']['problem_text'],
-        #     str(output_files['in_context_response'])
-        # )
-        # graph_generated = ASPGraphCreator.create_program_graph(str(output_files['in_context_response']))
+        print("Running in context inference")
+        llmExtractor.run_constant_inference(
+            config['input_files']['in_context_prompt'],
+            config['input_files']['problem_text'],
+            str(output_files['in_context_response'])
+        )
+        graph_generated = ASPGraphCreator.create_program_graph(str(output_files['in_context_response']))
         pass
     elif config['experiment']['version'] == 'No-Pipeline':
-        # print("Running zero shot inference")
-        # llmExtractor.run_constant_inference(
-        #     config['input_files']['zero_shot_prompt'],
-        #     config['input_files']['problem_text'],
-        #     str(output_files['zero_shot_response'])
-        # )
-        # graph_generated = ASPGraphCreator.create_program_graph(str(output_files['zero_shot_response']))
+        print("Running zero shot inference")
+        llmExtractor.run_constant_inference(
+            config['input_files']['zero_shot_prompt'],
+            config['input_files']['problem_text'],
+            str(output_files['zero_shot_response'])
+        )
+        graph_generated = ASPGraphCreator.create_program_graph(str(output_files['zero_shot_response']))
         pass
     else:
         print("Invalid experiment version")

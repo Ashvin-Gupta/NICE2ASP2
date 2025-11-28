@@ -1,0 +1,97 @@
+Looking at these clinical guidelines for lung cancer diagnosis and staging, I'll translate them into ASP rules. I'll need to define appropriate predicates first:
+
+```
+% Predicates:
+% patient(P) - P is a patient
+% suspected_lung_cancer(P) - P has suspected lung cancer
+% known_lung_cancer(P) - P has known lung cancer
+% has_central_nodule(P) - P has centrally placed nodules/masses
+% declines_bronchoscopy(P) - P declines bronchoscopy
+% cannot_tolerate_invasive_test(P) - P cannot tolerate invasive tests
+% offer_sputum_cytology(P) - offer sputum cytology to P
+% offer_contrast_ct(P) - offer contrast-enhanced chest CT to P
+% has_renal_impairment(P) - P has known renal impairment
+% caution_contrast(P) - use contrast with caution for P
+% curative_intent_candidate(P) - P could have treatment with curative intent
+% offer_pet_ct(P) - offer PET-CT to P
+% has_nsclc(P) - P has non-small-cell lung cancer
+% has_superior_sulcus_tumor(P) - P has superior sulcus tumor
+% offer_mri(P) - offer MRI to P
+% has_peripheral_lesion(P) - P has peripheral lung lesion
+% offer_image_guided_biopsy(P) - offer image-guided biopsy to P
+% has_central_lesion(P) - P has central lesion on CT
+% offer_flexible_bronchoscopy(P) - offer flexible bronchoscopy to P
+% has_enlarged_nodes(P) - P has enlarged intrathoracic nodes (≥10mm)
+% low_prob_nodal_malignancy(P) - P has low probability of nodal malignancy
+% offer_ebus_tbna(P) - offer EBUS-TBNA to P
+% offer_eus_fna(P) - offer EUS-FNA to P
+% stage_i_nsclc(P) - P has clinical stage I NSCLC
+% stage_ii_nsclc(P) - P has clinical stage II NSCLC
+% stage_iii_nsclc(P) - P has clinical stage III NSCLC
+% has_neurological_symptoms(P) - P has neurological symptoms
+% offer_brain_ct(P) - offer brain CT to P
+% offer_brain_mri(P) - offer brain MRI to P
+% age_40_plus(P) - P is aged 40 or over
+% has_hemoptysis(P) - P has unexplained hemoptysis
+% chest_xray_suggests_cancer(P) - P's chest X-ray suggests lung cancer
+% refer_suspected_pathway(P) - refer P using suspected cancer pathway
+% offer_urgent_xray(P) - offer urgent chest X-ray to P
+% has_cough(P) - P has unexplained cough
+% has_fatigue(P) - P has unexplained fatigue
+% has_shortness_breath(P) - P has unexplained shortness of breath
+% has_chest_pain(P) - P has unexplained chest pain
+% has_weight_loss(P) - P has unexplained weight loss
+% has_appetite_loss(P) - P has unexplained appetite loss
+% ever_smoked(P) - P has ever smoked
+% symptom_count(P,N) - P has N symptoms from the list
+```
+
+[1.3.1]
+offer_sputum_cytology(P) :- patient(P), suspected_lung_cancer(P), has_central_nodule(P), declines_bronchoscopy(P).
+offer_sputum_cytology(P) :- patient(P), suspected_lung_cancer(P), has_central_nodule(P), cannot_tolerate_invasive_test(P).
+
+[1.3.2]
+offer_contrast_ct(P) :- patient(P), known_lung_cancer(P).
+offer_contrast_ct(P) :- patient(P), suspected_lung_cancer(P).
+caution_contrast(P) :- patient(P), has_renal_impairment(P).
+
+[1.3.4]
+offer_pet_ct(P) :- patient(P), known_lung_cancer(P), curative_intent_candidate(P).
+
+[1.3.7]
+offer_mri(P) :- patient(P), has_superior_sulcus_tumor(P).
+
+[1.3.15]
+offer_image_guided_biopsy(P) :- patient(P), has_peripheral_lesion(P).
+
+[1.3.17]
+offer_flexible_bronchoscopy(P) :- patient(P), has_central_lesion(P).
+
+[1.3.18]
+offer_pet_ct(P) :- patient(P), known_lung_cancer(P), curative_intent_candidate(P), low_prob_nodal_malignancy(P).
+
+[1.3.19]
+offer_pet_ct(P) :- patient(P), suspected_lung_cancer(P), has_enlarged_nodes(P), curative_intent_candidate(P).
+offer_ebus_tbna(P) :- patient(P), suspected_lung_cancer(P), has_enlarged_nodes(P), curative_intent_candidate(P).
+offer_eus_fna(P) :- patient(P), suspected_lung_cancer(P), has_enlarged_nodes(P), curative_intent_candidate(P).
+
+[1.3.24]
+offer_brain_ct(P) :- patient(P), stage_ii_nsclc(P), curative_intent_candidate(P).
+
+[1.3.25]
+offer_brain_mri(P) :- patient(P), stage_iii_nsclc(P), curative_intent_candidate(P).
+
+[1.1.1]
+refer_suspected_pathway(P) :- patient(P), chest_xray_suggests_cancer(P).
+refer_suspected_pathway(P) :- patient(P), age_40_plus(P), has_hemoptysis(P).
+
+[1.1.2]
+symptom_count(P,N) :- patient(P), N = #count{S : has_symptom(P,S)}.
+has_symptom(P,cough) :- has_cough(P).
+has_symptom(P,fatigue) :- has_fatigue(P).
+has_symptom(P,breath) :- has_shortness_breath(P).
+has_symptom(P,pain) :- has_chest_pain(P).
+has_symptom(P,weight) :- has_weight_loss(P).
+has_symptom(P,appetite) :- has_appetite_loss(P).
+offer_urgent_xray(P) :- patient(P), age_40_plus(P), symptom_count(P,N), N >= 2.
+offer_urgent_xray(P) :- patient(P), age_40_plus(P), ever_smoked(P), symptom_count(P,N), N >= 1.

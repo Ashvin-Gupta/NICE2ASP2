@@ -1,0 +1,14 @@
+Looking at this lung cancer diagnostic text, I'll identify and classify the medical constants:
+
+Constants:
+Disease: "lung cancer", "NSCLC", "superior sulcus tumours".
+Symptoms: "haemoptysis", "cough", "fatigue", "shortness of breath", "chest pain", "weight loss", "appetite loss", "chest infection", "finger clubbing", "supraclavicular lymphadenopathy", "cervical lymphadenopathy", "thrombocytosis", "neurological symptoms", "bone metastasis".
+Imaging: "chest X-ray", "contrast-enhanced chest CT", "ultrasound", "PET-CT", "MRI", "contrast-enhanced brain CT", "contrast-enhanced brain MRI", "CT of the head", "X-ray", "bone scintigraphy".
+Procedures: "sputum cytology", "bronchoscopy", "EBUS-TBNA", "EUS-FNA", "image-guided biopsy", "flexible bronchoscopy", "biopsy", "surgical mediastinal staging".
+Finding_of_pancreas: None.
+Genetic_disease: "EGFR-TK mutation".
+Management: "suspected cancer pathway referral", "lung cancer multidisciplinary team", "fast-track lung cancer clinics".
+Treatments: "curative intent", "chemotherapy", "radiotherapy", "ablative treatment".
+Anatomical_structures: "liver", "adrenals", "lower neck", "mediastinal", "chest wall", "paratracheal", "peri-bronchial", "intrathoracic nodes", "intrathoracic lymph nodes", "brain", "bone".
+Information_about_patient: "40", "smoked".
+General_findings: "centrally placed nodules", "peripheral lung lesions", "central lesions", "enlarged intrathoracic nodes", "10 mm", "distant metastases", "synchronous tumours", "brain metastases", "intracranial pathology", "chest X-ray findings that suggest lung cancer", "chest signs consistent with lung cancer".
