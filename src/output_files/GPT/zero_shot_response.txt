@@ -1,0 +1,87 @@
+[1.1.1]  
+offer(pancreatic_protocol_ct) :- person(P), obstructive_jaundice(P), suspected_pancreatic_cancer(P).
+
+[1.1.2]  
+offer(fdg_pet_ct) v offer(eus_with_guided_sampling) :- person(P), obstructive_jaundice(P), suspected_pancreatic_cancer(P), diagnosis_unclear(P).
+
+[1.1.3]  
+take(biliary_brushing_for_cytology) :- person(P), ercp_for_biliary_obstruction(P), no_tissue_diagnosis(P).
+
+[1.1.4]  
+offer(pancreatic_protocol_ct) :- person(P), pancreatic_abnormality_on_imaging(P), not obstructive_jaundice(P).
+
+[1.1.5]  
+offer(fdg_pet_ct) v offer(eus_with_guided_sampling) :- person(P), pancreatic_abnormality_on_imaging(P), not obstructive_jaundice(P), diagnosis_unclear(P).
+
+[1.1.6]  
+offer(eus_with_guided_sampling) :- person(P), pancreatic_abnormality_on_imaging(P), cytology_or_histology_needed(P).
+
+[1.1.7]  
+offer(pancreatic_protocol_ct) v offer(mri_mrcp) :- person(P), pancreatic_cyst(P).  
+offer(mri_mrcp) :- person(P), pancreatic_cyst(P), pancreatic_protocol_ct_done(P), more_information_needed(P).  
+offer(pancreatic_protocol_ct) :- person(P), pancreatic_cyst(P), mri_mrcp_done(P), more_information_needed(P).
+
+[1.1.8]  
+refer_for_resection :- person(P), obstructive_jaundice(P), cystic_lesion_head_pancreas(P).  
+refer_for_resection :- person(P), enhancing_solid_component_in_cyst(P).  
+refer_for_resection :- person(P), main_pancreatic_duct_diameter(P,D), D >= 10.
+
+[1.1.9]  
+offer(eus) :- person(P), pancreatic_cyst(P), ct_done(P), mri_mrcp_done(P), more_information_on_malignancy_needed(P).  
+offer(eus) :- person(P), pancreatic_cyst(P), ct_done(P), mri_mrcp_done(P), surgery_need_unclear(P).
+
+[1.1.10]  
+consider(fna_during_eus) :- person(P), pancreatic_cyst(P), eus_done(P), more_information_on_malignancy_needed(P).
+
+[1.1.11]  
+perform(cea_assay) :- person(P), fna_done(P), sufficient_sample_for_cea(P).  
+perform(cytology) :- person(P), fna_done(P).
+
+[1.1.12]  
+follow_staging_recommendations :- person(P), pancreatic_cyst(P), cyst_thought_malignant(P).
+
+[1.1.13]  
+ask_about_family_history(pancreatic_cancer) :- person(P), pancreatic_cancer(P).
+
+[1.1.14]  
+offer_surveillance(pancreatic_cancer) :- person(P), hereditary_pancreatitis(P), prss1_mutation(P).  
+offer_surveillance(pancreatic_cancer) :- person(P), (brca1_mutation(P); brca2_mutation(P); palb2_mutation(P); cdkn2a_p16_mutation(P)), first_degree_relative_with_pancreatic_cancer(P).  
+offer_surveillance(pancreatic_cancer) :- person(P), peutz_jeghers_syndrome(P).
+
+[1.1.15]  
+consider_surveillance(pancreatic_cancer) :- person(P), two_or_more_fdr_pancreatic_cancer_across_two_generations(P).  
+consider_surveillance(pancreatic_cancer) :- person(P), lynch_syndrome(P), first_degree_relative_with_pancreatic_cancer(P).
+
+[1.1.16]  
+consider(mri_mrcp_for_surveillance) v consider(eus_for_surveillance) :- person(P), surveillance_indicated(P), not hereditary_pancreatitis(P).
+
+[1.1.17]  
+consider(pancreatic_protocol_ct_for_surveillance) :- person(P), hereditary_pancreatitis(P), prss1_mutation(P), surveillance_indicated(P).
+
+[1.1.18]  
+not_offer(eus_for_detection) :- person(P), hereditary_pancreatitis(P).
+
+[1.3.1]  
+offer(pancreatic_protocol_ct_chest_abdomen_pelvis) :- person(P), newly_diagnosed_pancreatic_cancer(P), not pancreatic_protocol_ct_done(P).
+
+[1.3.2]  
+offer(fdg_pet_ct) :- person(P), pancreatic_cancer(P), localised_disease_on_ct(P), planned_cancer_treatment(P).
+
+[1.3.3]  
+consider(mri_for_liver_metastases) :- person(P), pancreatic_cancer(P), suspected_liver_metastases(P), more_information_for_management_needed(P).  
+consider(eus_for_tn_staging) :- person(P), pancreatic_cancer(P), more_information_for_tn_staging_needed(P).  
+consider(laparoscopy_with_laparoscopic_ultrasound) :- person(P), pancreatic_cancer(P), suspected_small_volume_peritoneal_or_liver_metastases(P), resectional_surgery_possible(P).
+
+[1.13.2]  
+perform_assessment_for_additional_symptoms :- person(P), unexplained_weight_loss(P).  
+offer(urgent_investigation) v offer(suspected_cancer_pathway_referral) :- person(P), unexplained_weight_loss(P).
+
+[1.13.3]  
+perform_assessment_for_additional_symptoms :- person(P), unexplained_appetite_loss(P).  
+offer(urgent_investigation) v offer(suspected_cancer_pathway_referral) :- person(P), unexplained_appetite_loss(P).
+
+[1.2.4]  
+refer_suspected_pancreatic_cancer_pathway :- person(P), age(P,A), A >= 40, jaundice(P).
+
+[1.2.5]  
+consider(urgent_direct_access_ct_within_2_weeks) v consider(urgent_ultrasound_if_ct_unavailable) :- person(P), age(P,A), A >= 60, weight_loss(P), (diarrhoea(P); back_pain(P); abdominal_pain(P); nausea(P); vomiting(P); constipation(P); new_onset_diabetes(P)).

@@ -76,6 +76,14 @@ class LLMInferencer:
         prompt = prompt_template.format(rules=rules, descriptions=descriptions)
 
         self._callAPI(prompt, output_file)
+    
+    def run_llm_only(self, prompt_template:str, guidelines:str, vignettes:str, output_file:str) -> None:
+        # Run the prompt and return the actions suggested by the guidelines
+        prompt_template = self._load_file(prompt_template)
+        guidelines = self._load_file(guidelines)
+        vignettes = self._load_file(vignettes)
+        prompt = prompt_template.format(guidelines=guidelines, vignettes=vignettes)
+        self._callAPI(prompt, output_file)
 
 
 

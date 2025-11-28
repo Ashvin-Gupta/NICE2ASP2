@@ -1,0 +1,1035 @@
+================================================================================
+FIRED RULES EXPLANATIONS BY PATIENT
+================================================================================
+
+================================================================================
+PATIENT 1
+================================================================================
+
+Answer Set 1: (2 rules fired)
+--------------------------------------------------------------------------------
+
+NICE2ASP:
+Rule 1.1.18
+Constraint satisfied:
+Not offer("endoscopic ultrasound (EUS)") if have("hereditary pancreatitis").
+
+Guideline 1.1.18 Natural Language:
+People with inherited high risk of pancreatic cancer
+Do not offer EUS to detect pancreatic cancer in people with hereditary pancreatitis
+
+................................................................................
+NICE2ASP:
+Rule 1.1.4: 
+Current Patient Features: 
+have("pancreatic abnormalities") and not have("jaundice"),
+Action: 
+offer("pancreatic protocol CT scan").
+
+Guideline 1.1.4 Natural Language: 
+People without jaundice who have pancreatic abnormalities on imaging
+Offer a pancreatic protocol CT scan to people with pancreatic abnormalities but no jaundice
+
+
+
+================================================================================
+PATIENT 2
+================================================================================
+
+Answer Set 1: (5 rules fired)
+--------------------------------------------------------------------------------
+
+NICE2ASP:
+Rule 1.1.18
+Constraint satisfied:
+Not offer("endoscopic ultrasound (EUS)") if have("hereditary pancreatitis").
+
+Guideline 1.1.18 Natural Language:
+People with inherited high risk of pancreatic cancer
+Do not offer EUS to detect pancreatic cancer in people with hereditary pancreatitis
+
+................................................................................
+NICE2ASP:
+Rule 1.13.2_C: 
+Current Patient Features: 
+have("unexplained weight loss"),
+Action: 
+offer("suspected cancer pathway referral").
+
+Guideline 1.13.2 Natural Language: 
+For people with unexplained weight loss, which is a symptom of several cancers including colorectal, gastro-oesophageal, lung, prostate, pancreatic and urological cancer:
+•	carry out an assessment for additional symptoms, signs or findings that may help to clarify which cancer is most likely and
+•	offer urgent investigation or a suspected cancer pathway referral.
+
+................................................................................
+NICE2ASP:
+Rule 1.13.2_B: 
+Current Patient Features: 
+have("unexplained weight loss"),
+Action: 
+offer("urgent investigation").
+
+Guideline 1.13.2 Natural Language: 
+For people with unexplained weight loss, which is a symptom of several cancers including colorectal, gastro-oesophageal, lung, prostate, pancreatic and urological cancer:
+•	carry out an assessment for additional symptoms, signs or findings that may help to clarify which cancer is most likely and
+•	offer urgent investigation or a suspected cancer pathway referral.
+
+................................................................................
+NICE2ASP:
+Rule 1.13.2: 
+Current Patient Features: 
+have("unexplained weight loss"),
+Action: 
+assessment_for("urgent investigation","additional symptoms, signs or findings that may help to clarify which cancer is most likely").
+
+Guideline 1.13.2 Natural Language: 
+For people with unexplained weight loss, which is a symptom of several cancers including colorectal, gastro-oesophageal, lung, prostate, pancreatic and urological cancer:
+•	carry out an assessment for additional symptoms, signs or findings that may help to clarify which cancer is most likely and
+•	offer urgent investigation or a suspected cancer pathway referral.
+
+................................................................................
+NICE2ASP:
+Rule 1.1.4: 
+Current Patient Features: 
+have("pancreatic abnormalities") and not have("jaundice"),
+Action: 
+offer("pancreatic protocol CT scan").
+
+Guideline 1.1.4 Natural Language: 
+People without jaundice who have pancreatic abnormalities on imaging
+Offer a pancreatic protocol CT scan to people with pancreatic abnormalities but no jaundice
+
+
+
+================================================================================
+PATIENT 3
+================================================================================
+
+Answer Set 1: (5 rules fired)
+--------------------------------------------------------------------------------
+
+NICE2ASP:
+Rule 1.1.18
+Constraint satisfied:
+Not offer("endoscopic ultrasound (EUS)") if have("hereditary pancreatitis").
+
+Guideline 1.1.18 Natural Language:
+People with inherited high risk of pancreatic cancer
+Do not offer EUS to detect pancreatic cancer in people with hereditary pancreatitis
+
+................................................................................
+NICE2ASP:
+Rule 1.2.5_B: 
+Current Patient Features: 
+age(X) and have("weight loss") and at least 1 and at most 7 of: have("diarrhoea"), have("back pain"), have("abdominal pain"), have("nausea"), have("vomiting"), have("constipation"), have("new-onset diabetes") and X>=60 and not available("CT"),
+Action: 
+consider("ultrasound").
+
+Guideline 1.2.5 Natural Language: 
+Pancreatic cancer
+Consider an urgent, direct access CT scan (to be done within 2 weeks), or an urgent ultrasound scan if CT is not available, to assess for pancreatic cancer in people aged 60 and over with weight loss and any of the following:
+•	diarrhoea
+•   back pain
+•   abdominal pain
+•   nausea
+•   vomiting
+•   constipation
+•   new-onset diabetes.
+
+................................................................................
+NICE2ASP:
+Rule 1.2.5: 
+Current Patient Features: 
+age(X) and have("weight loss") and at least 1 and at most 7 of: have("diarrhoea"), have("back pain"), have("abdominal pain"), have("nausea"), have("vomiting"), have("constipation"), have("new-onset diabetes") and X>=60,
+Action: 
+consider("CT").
+
+Guideline 1.2.5 Natural Language: 
+Pancreatic cancer
+Consider an urgent, direct access CT scan (to be done within 2 weeks), or an urgent ultrasound scan if CT is not available, to assess for pancreatic cancer in people aged 60 and over with weight loss and any of the following:
+•	diarrhoea
+•   back pain
+•   abdominal pain
+•   nausea
+•   vomiting
+•   constipation
+•   new-onset diabetes.
+
+................................................................................
+NICE2ASP:
+Rule 1.1.7: 
+Current Patient Features: 
+have("pancreatic cysts"),
+Action: 
+choose at least 1 and at most 2 of: offer("pancreatic protocol CT scan"), offer("MRI/MRCP").
+
+Guideline 1.1.7 Natural Language: 
+People with pancreatic cysts
+Offer a pancreatic protocol CT scan or magnetic resonance cholangiopancreatography (MRI/MRCP) to people with pancreatic cysts. If more information is needed after one of these tests, offer the other one
+
+................................................................................
+NICE2ASP:
+Rule 1.1.4: 
+Current Patient Features: 
+have("pancreatic abnormalities") and not have("jaundice"),
+Action: 
+offer("pancreatic protocol CT scan").
+
+Guideline 1.1.4 Natural Language: 
+People without jaundice who have pancreatic abnormalities on imaging
+Offer a pancreatic protocol CT scan to people with pancreatic abnormalities but no jaundice
+
+
+Answer Set 2: (5 rules fired)
+--------------------------------------------------------------------------------
+
+NICE2ASP:
+Rule 1.1.18
+Constraint satisfied:
+Not offer("endoscopic ultrasound (EUS)") if have("hereditary pancreatitis").
+
+Guideline 1.1.18 Natural Language:
+People with inherited high risk of pancreatic cancer
+Do not offer EUS to detect pancreatic cancer in people with hereditary pancreatitis
+
+................................................................................
+NICE2ASP:
+Rule 1.2.5_B: 
+Current Patient Features: 
+age(X) and have("weight loss") and at least 1 and at most 7 of: have("diarrhoea"), have("back pain"), have("abdominal pain"), have("nausea"), have("vomiting"), have("constipation"), have("new-onset diabetes") and X>=60 and not available("CT"),
+Action: 
+consider("ultrasound").
+
+Guideline 1.2.5 Natural Language: 
+Pancreatic cancer
+Consider an urgent, direct access CT scan (to be done within 2 weeks), or an urgent ultrasound scan if CT is not available, to assess for pancreatic cancer in people aged 60 and over with weight loss and any of the following:
+•	diarrhoea
+•   back pain
+•   abdominal pain
+•   nausea
+•   vomiting
+•   constipation
+•   new-onset diabetes.
+
+................................................................................
+NICE2ASP:
+Rule 1.2.5: 
+Current Patient Features: 
+age(X) and have("weight loss") and at least 1 and at most 7 of: have("diarrhoea"), have("back pain"), have("abdominal pain"), have("nausea"), have("vomiting"), have("constipation"), have("new-onset diabetes") and X>=60,
+Action: 
+consider("CT").
+
+Guideline 1.2.5 Natural Language: 
+Pancreatic cancer
+Consider an urgent, direct access CT scan (to be done within 2 weeks), or an urgent ultrasound scan if CT is not available, to assess for pancreatic cancer in people aged 60 and over with weight loss and any of the following:
+•	diarrhoea
+•   back pain
+•   abdominal pain
+•   nausea
+•   vomiting
+•   constipation
+•   new-onset diabetes.
+
+................................................................................
+NICE2ASP:
+Rule 1.1.7: 
+Current Patient Features: 
+have("pancreatic cysts"),
+Action: 
+choose at least 1 and at most 2 of: offer("pancreatic protocol CT scan"), offer("MRI/MRCP").
+
+Guideline 1.1.7 Natural Language: 
+People with pancreatic cysts
+Offer a pancreatic protocol CT scan or magnetic resonance cholangiopancreatography (MRI/MRCP) to people with pancreatic cysts. If more information is needed after one of these tests, offer the other one
+
+................................................................................
+NICE2ASP:
+Rule 1.1.4: 
+Current Patient Features: 
+have("pancreatic abnormalities") and not have("jaundice"),
+Action: 
+offer("pancreatic protocol CT scan").
+
+Guideline 1.1.4 Natural Language: 
+People without jaundice who have pancreatic abnormalities on imaging
+Offer a pancreatic protocol CT scan to people with pancreatic abnormalities but no jaundice
+
+
+
+================================================================================
+PATIENT 4
+================================================================================
+
+Answer Set 1: (2 rules fired)
+--------------------------------------------------------------------------------
+
+NICE2ASP:
+Rule 1.1.18
+Constraint satisfied:
+Not offer("endoscopic ultrasound (EUS)") if have("hereditary pancreatitis").
+
+Guideline 1.1.18 Natural Language:
+People with inherited high risk of pancreatic cancer
+Do not offer EUS to detect pancreatic cancer in people with hereditary pancreatitis
+
+................................................................................
+NICE2ASP:
+Rule 1.2.4: 
+Current Patient Features: 
+age(X) and have("jaundice") and X>=40,
+Action: 
+refer("suspected cancer pathway referral","pancreatic cancer").
+
+Guideline 1.2.4 Natural Language: 
+Pancreatic cancer
+Refer people using a suspected cancer pathway referral for pancreatic cancer if they are aged 40 and over and have jaundice
+
+
+
+================================================================================
+PATIENT 5
+================================================================================
+
+Answer Set 1: (2 rules fired)
+--------------------------------------------------------------------------------
+
+NICE2ASP:
+Rule 1.1.18
+Constraint satisfied:
+Not offer("endoscopic ultrasound (EUS)") if have("hereditary pancreatitis").
+
+Guideline 1.1.18 Natural Language:
+People with inherited high risk of pancreatic cancer
+Do not offer EUS to detect pancreatic cancer in people with hereditary pancreatitis
+
+................................................................................
+NICE2ASP:
+Rule 1.1.4: 
+Current Patient Features: 
+have("pancreatic abnormalities") and not have("jaundice"),
+Action: 
+offer("pancreatic protocol CT scan").
+
+Guideline 1.1.4 Natural Language: 
+People without jaundice who have pancreatic abnormalities on imaging
+Offer a pancreatic protocol CT scan to people with pancreatic abnormalities but no jaundice
+
+
+
+================================================================================
+PATIENT 6
+================================================================================
+
+Answer Set 1: (2 rules fired)
+--------------------------------------------------------------------------------
+
+NICE2ASP:
+Rule 1.1.18
+Constraint satisfied:
+Not offer("endoscopic ultrasound (EUS)") if have("hereditary pancreatitis").
+
+Guideline 1.1.18 Natural Language:
+People with inherited high risk of pancreatic cancer
+Do not offer EUS to detect pancreatic cancer in people with hereditary pancreatitis
+
+................................................................................
+NICE2ASP:
+Rule 1.1.4: 
+Current Patient Features: 
+have("pancreatic abnormalities") and not have("jaundice"),
+Action: 
+offer("pancreatic protocol CT scan").
+
+Guideline 1.1.4 Natural Language: 
+People without jaundice who have pancreatic abnormalities on imaging
+Offer a pancreatic protocol CT scan to people with pancreatic abnormalities but no jaundice
+
+
+
+================================================================================
+PATIENT 7
+================================================================================
+
+Answer Set 1: (2 rules fired)
+--------------------------------------------------------------------------------
+
+NICE2ASP:
+Rule 1.1.18
+Constraint satisfied:
+Not offer("endoscopic ultrasound (EUS)") if have("hereditary pancreatitis").
+
+Guideline 1.1.18 Natural Language:
+People with inherited high risk of pancreatic cancer
+Do not offer EUS to detect pancreatic cancer in people with hereditary pancreatitis
+
+................................................................................
+NICE2ASP:
+Rule 1.2.4: 
+Current Patient Features: 
+age(X) and have("jaundice") and X>=40,
+Action: 
+refer("suspected cancer pathway referral","pancreatic cancer").
+
+Guideline 1.2.4 Natural Language: 
+Pancreatic cancer
+Refer people using a suspected cancer pathway referral for pancreatic cancer if they are aged 40 and over and have jaundice
+
+
+
+================================================================================
+PATIENT 8
+================================================================================
+
+Answer Set 1: (2 rules fired)
+--------------------------------------------------------------------------------
+
+NICE2ASP:
+Rule 1.1.18
+Constraint satisfied:
+Not offer("endoscopic ultrasound (EUS)") if have("hereditary pancreatitis").
+
+Guideline 1.1.18 Natural Language:
+People with inherited high risk of pancreatic cancer
+Do not offer EUS to detect pancreatic cancer in people with hereditary pancreatitis
+
+................................................................................
+NICE2ASP:
+Rule 1.1.4: 
+Current Patient Features: 
+have("pancreatic abnormalities") and not have("jaundice"),
+Action: 
+offer("pancreatic protocol CT scan").
+
+Guideline 1.1.4 Natural Language: 
+People without jaundice who have pancreatic abnormalities on imaging
+Offer a pancreatic protocol CT scan to people with pancreatic abnormalities but no jaundice
+
+
+
+================================================================================
+PATIENT 9
+================================================================================
+
+Answer Set 1: (2 rules fired)
+--------------------------------------------------------------------------------
+
+NICE2ASP:
+Rule 1.1.18
+Constraint satisfied:
+Not offer("endoscopic ultrasound (EUS)") if have("hereditary pancreatitis").
+
+Guideline 1.1.18 Natural Language:
+People with inherited high risk of pancreatic cancer
+Do not offer EUS to detect pancreatic cancer in people with hereditary pancreatitis
+
+................................................................................
+NICE2ASP:
+Rule 1.1.4: 
+Current Patient Features: 
+have("pancreatic abnormalities") and not have("jaundice"),
+Action: 
+offer("pancreatic protocol CT scan").
+
+Guideline 1.1.4 Natural Language: 
+People without jaundice who have pancreatic abnormalities on imaging
+Offer a pancreatic protocol CT scan to people with pancreatic abnormalities but no jaundice
+
+
+
+================================================================================
+PATIENT 10
+================================================================================
+
+Answer Set 1: (2 rules fired)
+--------------------------------------------------------------------------------
+
+NICE2ASP:
+Rule 1.1.18
+Constraint satisfied:
+Not offer("endoscopic ultrasound (EUS)") if have("hereditary pancreatitis").
+
+Guideline 1.1.18 Natural Language:
+People with inherited high risk of pancreatic cancer
+Do not offer EUS to detect pancreatic cancer in people with hereditary pancreatitis
+
+................................................................................
+NICE2ASP:
+Rule 1.1.4: 
+Current Patient Features: 
+have("pancreatic abnormalities") and not have("jaundice"),
+Action: 
+offer("pancreatic protocol CT scan").
+
+Guideline 1.1.4 Natural Language: 
+People without jaundice who have pancreatic abnormalities on imaging
+Offer a pancreatic protocol CT scan to people with pancreatic abnormalities but no jaundice
+
+
+
+================================================================================
+PATIENT 11
+================================================================================
+
+Answer Set 1: (2 rules fired)
+--------------------------------------------------------------------------------
+
+NICE2ASP:
+Rule 1.1.18
+Constraint satisfied:
+Not offer("endoscopic ultrasound (EUS)") if have("hereditary pancreatitis").
+
+Guideline 1.1.18 Natural Language:
+People with inherited high risk of pancreatic cancer
+Do not offer EUS to detect pancreatic cancer in people with hereditary pancreatitis
+
+................................................................................
+NICE2ASP:
+Rule 1.1.4: 
+Current Patient Features: 
+have("pancreatic abnormalities") and not have("jaundice"),
+Action: 
+offer("pancreatic protocol CT scan").
+
+Guideline 1.1.4 Natural Language: 
+People without jaundice who have pancreatic abnormalities on imaging
+Offer a pancreatic protocol CT scan to people with pancreatic abnormalities but no jaundice
+
+
+
+================================================================================
+PATIENT 12
+================================================================================
+
+Answer Set 1: (2 rules fired)
+--------------------------------------------------------------------------------
+
+NICE2ASP:
+Rule 1.1.18
+Constraint satisfied:
+Not offer("endoscopic ultrasound (EUS)") if have("hereditary pancreatitis").
+
+Guideline 1.1.18 Natural Language:
+People with inherited high risk of pancreatic cancer
+Do not offer EUS to detect pancreatic cancer in people with hereditary pancreatitis
+
+................................................................................
+NICE2ASP:
+Rule 1.1.4: 
+Current Patient Features: 
+have("pancreatic abnormalities") and not have("jaundice"),
+Action: 
+offer("pancreatic protocol CT scan").
+
+Guideline 1.1.4 Natural Language: 
+People without jaundice who have pancreatic abnormalities on imaging
+Offer a pancreatic protocol CT scan to people with pancreatic abnormalities but no jaundice
+
+
+
+================================================================================
+PATIENT 13
+================================================================================
+
+Answer Set 1: (2 rules fired)
+--------------------------------------------------------------------------------
+
+NICE2ASP:
+Rule 1.1.18
+Constraint satisfied:
+Not offer("endoscopic ultrasound (EUS)") if have("hereditary pancreatitis").
+
+Guideline 1.1.18 Natural Language:
+People with inherited high risk of pancreatic cancer
+Do not offer EUS to detect pancreatic cancer in people with hereditary pancreatitis
+
+................................................................................
+NICE2ASP:
+Rule 1.1.4: 
+Current Patient Features: 
+have("pancreatic abnormalities") and not have("jaundice"),
+Action: 
+offer("pancreatic protocol CT scan").
+
+Guideline 1.1.4 Natural Language: 
+People without jaundice who have pancreatic abnormalities on imaging
+Offer a pancreatic protocol CT scan to people with pancreatic abnormalities but no jaundice
+
+
+
+================================================================================
+PATIENT 14
+================================================================================
+
+Answer Set 1: (4 rules fired)
+--------------------------------------------------------------------------------
+
+NICE2ASP:
+Rule 1.1.18
+Constraint satisfied:
+Not offer("endoscopic ultrasound (EUS)") if have("hereditary pancreatitis").
+
+Guideline 1.1.18 Natural Language:
+People with inherited high risk of pancreatic cancer
+Do not offer EUS to detect pancreatic cancer in people with hereditary pancreatitis
+
+................................................................................
+NICE2ASP:
+Rule 1.2.5_B: 
+Current Patient Features: 
+age(X) and have("weight loss") and at least 1 and at most 7 of: have("diarrhoea"), have("back pain"), have("abdominal pain"), have("nausea"), have("vomiting"), have("constipation"), have("new-onset diabetes") and X>=60 and not available("CT"),
+Action: 
+consider("ultrasound").
+
+Guideline 1.2.5 Natural Language: 
+Pancreatic cancer
+Consider an urgent, direct access CT scan (to be done within 2 weeks), or an urgent ultrasound scan if CT is not available, to assess for pancreatic cancer in people aged 60 and over with weight loss and any of the following:
+•	diarrhoea
+•   back pain
+•   abdominal pain
+•   nausea
+•   vomiting
+•   constipation
+•   new-onset diabetes.
+
+................................................................................
+NICE2ASP:
+Rule 1.2.5: 
+Current Patient Features: 
+age(X) and have("weight loss") and at least 1 and at most 7 of: have("diarrhoea"), have("back pain"), have("abdominal pain"), have("nausea"), have("vomiting"), have("constipation"), have("new-onset diabetes") and X>=60,
+Action: 
+consider("CT").
+
+Guideline 1.2.5 Natural Language: 
+Pancreatic cancer
+Consider an urgent, direct access CT scan (to be done within 2 weeks), or an urgent ultrasound scan if CT is not available, to assess for pancreatic cancer in people aged 60 and over with weight loss and any of the following:
+•	diarrhoea
+•   back pain
+•   abdominal pain
+•   nausea
+•   vomiting
+•   constipation
+•   new-onset diabetes.
+
+................................................................................
+NICE2ASP:
+Rule 1.1.4: 
+Current Patient Features: 
+have("pancreatic abnormalities") and not have("jaundice"),
+Action: 
+offer("pancreatic protocol CT scan").
+
+Guideline 1.1.4 Natural Language: 
+People without jaundice who have pancreatic abnormalities on imaging
+Offer a pancreatic protocol CT scan to people with pancreatic abnormalities but no jaundice
+
+
+
+================================================================================
+PATIENT 15
+================================================================================
+
+Answer Set 1: (4 rules fired)
+--------------------------------------------------------------------------------
+
+NICE2ASP:
+Rule 1.1.18
+Constraint satisfied:
+Not offer("endoscopic ultrasound (EUS)") if have("hereditary pancreatitis").
+
+Guideline 1.1.18 Natural Language:
+People with inherited high risk of pancreatic cancer
+Do not offer EUS to detect pancreatic cancer in people with hereditary pancreatitis
+
+................................................................................
+NICE2ASP:
+Rule 1.2.5_B: 
+Current Patient Features: 
+age(X) and have("weight loss") and at least 1 and at most 7 of: have("diarrhoea"), have("back pain"), have("abdominal pain"), have("nausea"), have("vomiting"), have("constipation"), have("new-onset diabetes") and X>=60 and not available("CT"),
+Action: 
+consider("ultrasound").
+
+Guideline 1.2.5 Natural Language: 
+Pancreatic cancer
+Consider an urgent, direct access CT scan (to be done within 2 weeks), or an urgent ultrasound scan if CT is not available, to assess for pancreatic cancer in people aged 60 and over with weight loss and any of the following:
+•	diarrhoea
+•   back pain
+•   abdominal pain
+•   nausea
+•   vomiting
+•   constipation
+•   new-onset diabetes.
+
+................................................................................
+NICE2ASP:
+Rule 1.2.5: 
+Current Patient Features: 
+age(X) and have("weight loss") and at least 1 and at most 7 of: have("diarrhoea"), have("back pain"), have("abdominal pain"), have("nausea"), have("vomiting"), have("constipation"), have("new-onset diabetes") and X>=60,
+Action: 
+consider("CT").
+
+Guideline 1.2.5 Natural Language: 
+Pancreatic cancer
+Consider an urgent, direct access CT scan (to be done within 2 weeks), or an urgent ultrasound scan if CT is not available, to assess for pancreatic cancer in people aged 60 and over with weight loss and any of the following:
+•	diarrhoea
+•   back pain
+•   abdominal pain
+•   nausea
+•   vomiting
+•   constipation
+•   new-onset diabetes.
+
+................................................................................
+NICE2ASP:
+Rule 1.2.4: 
+Current Patient Features: 
+age(X) and have("jaundice") and X>=40,
+Action: 
+refer("suspected cancer pathway referral","pancreatic cancer").
+
+Guideline 1.2.4 Natural Language: 
+Pancreatic cancer
+Refer people using a suspected cancer pathway referral for pancreatic cancer if they are aged 40 and over and have jaundice
+
+
+
+================================================================================
+PATIENT 16
+================================================================================
+
+Answer Set 1: (2 rules fired)
+--------------------------------------------------------------------------------
+
+NICE2ASP:
+Rule 1.1.18
+Constraint satisfied:
+Not offer("endoscopic ultrasound (EUS)") if have("hereditary pancreatitis").
+
+Guideline 1.1.18 Natural Language:
+People with inherited high risk of pancreatic cancer
+Do not offer EUS to detect pancreatic cancer in people with hereditary pancreatitis
+
+................................................................................
+NICE2ASP:
+Rule 1.1.3: 
+Current Patient Features: 
+have("obstructive jaundice") and used_for("endoscopic retrograde cholangiopancreatography (ERCP)","biliary obstruction") and findings("biliary brushing","no tissue diagnosis"),
+Action: 
+offer("biliary brushing").
+
+Guideline 1.1.3 Natural Language: 
+People with obstructive jaundice
+Take a biliary brushing for cytology if:
+• endoscopic retrograde cholangiopancreatography (ERCP) is being used to relieve the biliary obstruction and
+• there is no tissue diagnosis.
+
+
+
+================================================================================
+PATIENT 17
+================================================================================
+
+Answer Set 1: (4 rules fired)
+--------------------------------------------------------------------------------
+
+NICE2ASP:
+Rule 1.1.18
+Constraint satisfied:
+Not offer("endoscopic ultrasound (EUS)") if have("hereditary pancreatitis").
+
+Guideline 1.1.18 Natural Language:
+People with inherited high risk of pancreatic cancer
+Do not offer EUS to detect pancreatic cancer in people with hereditary pancreatitis
+
+................................................................................
+NICE2ASP:
+Rule 1.1.8_E: 
+Current Patient Features: 
+have("pancreatic cysts") and high_risk_feature("high-risk features","enhancing solid component in the cyst"),
+Action: 
+refer("resection","pancreatic cancer").
+
+Guideline 1.1.8 Natural Language: 
+People with pancreatic cysts
+Refer people with any of these high-risk features for resection:
+• obstructive jaundice with cystic lesions in the head of the pancreas
+• enhancing solid component in the cyst
+• a main pancreatic duct that is 10 mm diameter or larger.
+
+................................................................................
+NICE2ASP:
+Rule 1.1.8_B: 
+Current Patient Features: 
+have("pancreatic cysts") and have("enhancing solid component in the cyst"),
+Action: 
+high_risk_feature("high-risk features","enhancing solid component in the cyst").
+
+Guideline 1.1.8 Natural Language: 
+People with pancreatic cysts
+Refer people with any of these high-risk features for resection:
+• obstructive jaundice with cystic lesions in the head of the pancreas
+• enhancing solid component in the cyst
+• a main pancreatic duct that is 10 mm diameter or larger.
+
+................................................................................
+NICE2ASP:
+Rule 1.1.7: 
+Current Patient Features: 
+have("pancreatic cysts"),
+Action: 
+choose at least 1 and at most 2 of: offer("pancreatic protocol CT scan"), offer("MRI/MRCP").
+
+Guideline 1.1.7 Natural Language: 
+People with pancreatic cysts
+Offer a pancreatic protocol CT scan or magnetic resonance cholangiopancreatography (MRI/MRCP) to people with pancreatic cysts. If more information is needed after one of these tests, offer the other one
+
+
+Answer Set 2: (4 rules fired)
+--------------------------------------------------------------------------------
+
+NICE2ASP:
+Rule 1.1.18
+Constraint satisfied:
+Not offer("endoscopic ultrasound (EUS)") if have("hereditary pancreatitis").
+
+Guideline 1.1.18 Natural Language:
+People with inherited high risk of pancreatic cancer
+Do not offer EUS to detect pancreatic cancer in people with hereditary pancreatitis
+
+................................................................................
+NICE2ASP:
+Rule 1.1.8_E: 
+Current Patient Features: 
+have("pancreatic cysts") and high_risk_feature("high-risk features","enhancing solid component in the cyst"),
+Action: 
+refer("resection","pancreatic cancer").
+
+Guideline 1.1.8 Natural Language: 
+People with pancreatic cysts
+Refer people with any of these high-risk features for resection:
+• obstructive jaundice with cystic lesions in the head of the pancreas
+• enhancing solid component in the cyst
+• a main pancreatic duct that is 10 mm diameter or larger.
+
+................................................................................
+NICE2ASP:
+Rule 1.1.8_B: 
+Current Patient Features: 
+have("pancreatic cysts") and have("enhancing solid component in the cyst"),
+Action: 
+high_risk_feature("high-risk features","enhancing solid component in the cyst").
+
+Guideline 1.1.8 Natural Language: 
+People with pancreatic cysts
+Refer people with any of these high-risk features for resection:
+• obstructive jaundice with cystic lesions in the head of the pancreas
+• enhancing solid component in the cyst
+• a main pancreatic duct that is 10 mm diameter or larger.
+
+................................................................................
+NICE2ASP:
+Rule 1.1.7: 
+Current Patient Features: 
+have("pancreatic cysts"),
+Action: 
+choose at least 1 and at most 2 of: offer("pancreatic protocol CT scan"), offer("MRI/MRCP").
+
+Guideline 1.1.7 Natural Language: 
+People with pancreatic cysts
+Offer a pancreatic protocol CT scan or magnetic resonance cholangiopancreatography (MRI/MRCP) to people with pancreatic cysts. If more information is needed after one of these tests, offer the other one
+
+
+Answer Set 3: (4 rules fired)
+--------------------------------------------------------------------------------
+
+NICE2ASP:
+Rule 1.1.18
+Constraint satisfied:
+Not offer("endoscopic ultrasound (EUS)") if have("hereditary pancreatitis").
+
+Guideline 1.1.18 Natural Language:
+People with inherited high risk of pancreatic cancer
+Do not offer EUS to detect pancreatic cancer in people with hereditary pancreatitis
+
+................................................................................
+NICE2ASP:
+Rule 1.1.8_E: 
+Current Patient Features: 
+have("pancreatic cysts") and high_risk_feature("high-risk features","enhancing solid component in the cyst"),
+Action: 
+refer("resection","pancreatic cancer").
+
+Guideline 1.1.8 Natural Language: 
+People with pancreatic cysts
+Refer people with any of these high-risk features for resection:
+• obstructive jaundice with cystic lesions in the head of the pancreas
+• enhancing solid component in the cyst
+• a main pancreatic duct that is 10 mm diameter or larger.
+
+................................................................................
+NICE2ASP:
+Rule 1.1.8_B: 
+Current Patient Features: 
+have("pancreatic cysts") and have("enhancing solid component in the cyst"),
+Action: 
+high_risk_feature("high-risk features","enhancing solid component in the cyst").
+
+Guideline 1.1.8 Natural Language: 
+People with pancreatic cysts
+Refer people with any of these high-risk features for resection:
+• obstructive jaundice with cystic lesions in the head of the pancreas
+• enhancing solid component in the cyst
+• a main pancreatic duct that is 10 mm diameter or larger.
+
+................................................................................
+NICE2ASP:
+Rule 1.1.7: 
+Current Patient Features: 
+have("pancreatic cysts"),
+Action: 
+choose at least 1 and at most 2 of: offer("pancreatic protocol CT scan"), offer("MRI/MRCP").
+
+Guideline 1.1.7 Natural Language: 
+People with pancreatic cysts
+Offer a pancreatic protocol CT scan or magnetic resonance cholangiopancreatography (MRI/MRCP) to people with pancreatic cysts. If more information is needed after one of these tests, offer the other one
+
+
+
+================================================================================
+PATIENT 18
+================================================================================
+
+Answer Set 1: (2 rules fired)
+--------------------------------------------------------------------------------
+
+NICE2ASP:
+Rule 1.1.18
+Constraint satisfied:
+Not offer("endoscopic ultrasound (EUS)") if have("hereditary pancreatitis").
+
+Guideline 1.1.18 Natural Language:
+People with inherited high risk of pancreatic cancer
+Do not offer EUS to detect pancreatic cancer in people with hereditary pancreatitis
+
+................................................................................
+NICE2ASP:
+Rule 1.1.4: 
+Current Patient Features: 
+have("pancreatic abnormalities") and not have("jaundice"),
+Action: 
+offer("pancreatic protocol CT scan").
+
+Guideline 1.1.4 Natural Language: 
+People without jaundice who have pancreatic abnormalities on imaging
+Offer a pancreatic protocol CT scan to people with pancreatic abnormalities but no jaundice
+
+
+
+================================================================================
+PATIENT 19
+================================================================================
+
+Answer Set 1: (2 rules fired)
+--------------------------------------------------------------------------------
+
+NICE2ASP:
+Rule 1.1.18
+Constraint satisfied:
+Not offer("endoscopic ultrasound (EUS)") if have("hereditary pancreatitis").
+
+Guideline 1.1.18 Natural Language:
+People with inherited high risk of pancreatic cancer
+Do not offer EUS to detect pancreatic cancer in people with hereditary pancreatitis
+
+................................................................................
+NICE2ASP:
+Rule 1.1.4: 
+Current Patient Features: 
+have("pancreatic abnormalities") and not have("jaundice"),
+Action: 
+offer("pancreatic protocol CT scan").
+
+Guideline 1.1.4 Natural Language: 
+People without jaundice who have pancreatic abnormalities on imaging
+Offer a pancreatic protocol CT scan to people with pancreatic abnormalities but no jaundice
+
+
+
+================================================================================
+PATIENT 20
+================================================================================
+
+Answer Set 1: (3 rules fired)
+--------------------------------------------------------------------------------
+
+NICE2ASP:
+Rule 1.1.18
+Constraint satisfied:
+Not offer("endoscopic ultrasound (EUS)") if have("hereditary pancreatitis").
+
+Guideline 1.1.18 Natural Language:
+People with inherited high risk of pancreatic cancer
+Do not offer EUS to detect pancreatic cancer in people with hereditary pancreatitis
+
+................................................................................
+NICE2ASP:
+Rule 1.1.7: 
+Current Patient Features: 
+have("pancreatic cysts"),
+Action: 
+choose at least 1 and at most 2 of: offer("pancreatic protocol CT scan"), offer("MRI/MRCP").
+
+Guideline 1.1.7 Natural Language: 
+People with pancreatic cysts
+Offer a pancreatic protocol CT scan or magnetic resonance cholangiopancreatography (MRI/MRCP) to people with pancreatic cysts. If more information is needed after one of these tests, offer the other one
+
+................................................................................
+NICE2ASP:
+Rule 1.1.4: 
+Current Patient Features: 
+have("pancreatic abnormalities") and not have("jaundice"),
+Action: 
+offer("pancreatic protocol CT scan").
+
+Guideline 1.1.4 Natural Language: 
+People without jaundice who have pancreatic abnormalities on imaging
+Offer a pancreatic protocol CT scan to people with pancreatic abnormalities but no jaundice
+
+
+Answer Set 2: (3 rules fired)
+--------------------------------------------------------------------------------
+
+NICE2ASP:
+Rule 1.1.18
+Constraint satisfied:
+Not offer("endoscopic ultrasound (EUS)") if have("hereditary pancreatitis").
+
+Guideline 1.1.18 Natural Language:
+People with inherited high risk of pancreatic cancer
+Do not offer EUS to detect pancreatic cancer in people with hereditary pancreatitis
+
+................................................................................
+NICE2ASP:
+Rule 1.1.7: 
+Current Patient Features: 
+have("pancreatic cysts"),
+Action: 
+choose at least 1 and at most 2 of: offer("pancreatic protocol CT scan"), offer("MRI/MRCP").
+
+Guideline 1.1.7 Natural Language: 
+People with pancreatic cysts
+Offer a pancreatic protocol CT scan or magnetic resonance cholangiopancreatography (MRI/MRCP) to people with pancreatic cysts. If more information is needed after one of these tests, offer the other one
+
+................................................................................
+NICE2ASP:
+Rule 1.1.4: 
+Current Patient Features: 
+have("pancreatic abnormalities") and not have("jaundice"),
+Action: 
+offer("pancreatic protocol CT scan").
+
+Guideline 1.1.4 Natural Language: 
+People without jaundice who have pancreatic abnormalities on imaging
+Offer a pancreatic protocol CT scan to people with pancreatic abnormalities but no jaundice
+
+
+

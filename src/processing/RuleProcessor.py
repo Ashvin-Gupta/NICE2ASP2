@@ -16,30 +16,120 @@ class RuleProcessor:
         self.parser = ASPRuleParser()
         self.rule_registry: Dict[str, str] = {}  # Maps rule_id to rule text
         self.guideline_text = self._build_guideline_lookup(guideline_path) if guideline_path else {}
+        self.constraint_rules = {}  # Maps constraint rule_id to body
     
     def _build_guideline_lookup(self, guideline_path: str) -> dict[str, str]:
+
         text = self.file_manager.load_file(guideline_path)
-        lookup, current_id, buffer = {}, None, []
+        lookup: Dict[str, str] = {}
+        current_rule_id = None
+        current_rule_lines: List[str] = []
+        section_context: List[str] = []  # active context block for the section
+        context_active = False  # whether we're currently collecting a context block
 
-        def flush():
-            if current_id and buffer:
-                lookup[current_id] = " ".join(buffer).strip()
+        def flush_rule():
+            nonlocal current_rule_id, current_rule_lines, lookup
+            if current_rule_id and current_rule_lines:
+                ctx_len = 0
+                # match prefix of rule lines with section_context
+                for i in range(min(len(section_context), len(current_rule_lines))):
+                    if current_rule_lines[i] == section_context[i]:
+                        ctx_len += 1
+                    else:
+                        break
 
-        for line in text.splitlines():
+                context_block = current_rule_lines[:ctx_len]
+                rule_block = current_rule_lines[ctx_len:]
+
+                # Format output: context on its own lines, blank line, then rule text.
+                formatted = ""
+                if context_block:
+                    formatted += "\n".join(context_block)
+
+                formatted += "\n".join(rule_block)
+
+                lookup[current_rule_id] = formatted.strip()
+
+            current_rule_id = None
+            current_rule_lines = []
+
+        lines = text.splitlines()
+        for raw in lines:
+            line = raw.rstrip()
             stripped = line.strip()
-            match = re.match(r'^(\d+(?:\.\d+)*)\b', stripped)
-            if match:
-                flush()
-                current_id = match.group(1)
-                content = stripped[len(current_id):].strip(" .-")
-                buffer = [content] if content else []
-            elif current_id:
-                if stripped.startswith("•"):
-                    buffer.append(stripped)
-                elif stripped:
-                    buffer.append(stripped)
-        flush()
+
+            # detect numbered token at start
+            m = re.match(r'^(\d+(?:\.\d+)*)\b', stripped)
+            if m:
+                num = m.group(1)
+                dot_count = num.count(".")
+                # treat as a rule only if dot_count >= 2 (e.g., 1.1.1)
+                if dot_count >= 2:
+                    # start a new rule: flush previous
+                    flush_rule()
+                    current_rule_id = num
+                    # build content: start with a COPY of active context if any
+                    current_rule_lines = section_context.copy() if section_context else []
+                    # attach the rest of the line after the number
+                    rest = stripped[len(num):].strip(" .-")
+                    if rest:
+                        current_rule_lines.append(rest)
+                    # now collect rule continuation lines or bullets until next rule/blank/header
+                    continue
+                else:
+                    # section header like "1.1 Diagnosis" -> reset context
+                    flush_rule()
+                    section_context = []
+                    context_active = False
+                    continue
+
+            # bullet lines - attach to current rule if exists, otherwise treat as context line
+            if stripped.startswith("•") or stripped.startswith("-"):
+                if current_rule_id:
+                    current_rule_lines.append(stripped)
+                else:
+                    if not context_active:
+                        section_context = [stripped]
+                        context_active = True
+                    else:
+                        section_context.append(stripped)
+                continue
+
+            # blank line -> end current rule and mark context inactive so next text starts a new context
+            if stripped == "":
+                flush_rule()
+                context_active = False
+                continue
+
+            # continuation of a rule
+            if current_rule_id:
+                current_rule_lines.append(stripped)
+                continue
+
+            # otherwise it's context text before rules in the section
+            if not context_active:
+                # start a new context block (replace previous)
+                section_context = [stripped]
+                context_active = True
+            else:
+                # append to existing context block
+                section_context.append(stripped)
+
+        # final flush
+        flush_rule()
         return lookup
+    
+    def _constraint_to_rule(self, body: str) -> str:
+        literals = [lit.strip() for lit in body.split(',') if lit.strip()]
+        if not literals:
+            return "Not (condition)."
+        head = literals[0]
+        tail = ', '.join(literals[1:]) if len(literals) > 1 else ""
+        neg_head = head[4:].strip() if head.startswith('not ') else f'Not {head}'
+        if tail:
+            return f"{neg_head} if {tail}."
+        return f"{neg_head}."
+    
     
     def append_fired_rules(self, input_path: str, output_path: str) -> None:
         """
@@ -101,14 +191,19 @@ class RuleProcessor:
                 
                 # Extract body for fired() rule
                 body = self._extract_body(line)
-                
-                # Add fired() rule
-                if body:
-                    fired_rule = f'fired("{rule_id}") :- {body}.'
+
+                if line.startswith(':-'):
+                    output_lines.append(f'fired("{rule_id}").') 
+                    support_atom = f'constraint_ok("{rule_id}")'
+                    output_lines.append(f'{support_atom}.')
+                    
+                    self.constraint_rules[rule_id] = body   
                 else:
-                    # Fact rule (no body)
-                    fired_rule = f'fired("{rule_id}").'
-                output_lines.append(fired_rule)
+                    if body:
+                        output_lines.append(f'fired("{rule_id}") :- {body}.')
+                    else:
+                        output_lines.append(f'fired("{rule_id}").')
+                
                 
                 i += 1
             else:
@@ -123,6 +218,7 @@ class RuleProcessor:
         # Add #show directive at the end
         output_lines.append("")
         output_lines.append("#show fired/1.")
+        output_lines.append("#show constraint_ok/1.")
         
         # Write output
         output_content = '\n'.join(output_lines)
@@ -215,6 +311,20 @@ class RuleProcessor:
                 for rule_id in fired_ids:
                     if rule_id in rule_map:
                         rule_text = rule_map[rule_id]
+
+                        constraint_body = self.constraint_rules.get(rule_id)
+                        print(f"Constraint body: {constraint_body}")
+                        if constraint_body:
+                            explanations.append("NICE2ASP:\n")
+                            explanations.append(f"Rule {rule_id}\n")
+                            explanations.append("Constraint satisfied:\n")
+                            explanations.append(f"{self._constraint_to_rule(constraint_body)}\n\n")
+
+                            base_rule_id = rule_id.split('_')[0]
+                            original_text = self.guideline_text.get(base_rule_id)
+                            if original_text:
+                                explanations.append(f"Guideline {base_rule_id} Natural Language:\n{original_text}\n\n")
+                            continue  
                         explanation = self.parser.explain_rule(rule_text, rule_id)
 
                         explanations.append(f"{explanation}\n")
@@ -290,7 +400,7 @@ class RuleProcessor:
         results = {}
         
         # Split the content into patient sections using **Patient N:**
-        patient_sections = re.split(r'\*\*Patient (\d+):\*\*', atoms_content)[1:]  # Skip the first section (header)
+        patient_sections = re.split(r'(?:\*\*)?Patient\s+(\d+):?(?:\*\*)?', atoms_content)[1:]
         
         # Group patient IDs with their sections (they alternate in the split result)
         patient_data = [(patient_sections[i], patient_sections[i+1]) for i in range(0, len(patient_sections), 2)]

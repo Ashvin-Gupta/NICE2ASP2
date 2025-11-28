@@ -27,7 +27,7 @@ On EUS there was desmoplastic ductal adenocarcinoma and on biopsy there was MMR 
 Return:
 age(63).
 have("abdominal_pain").
-have("diabetes").
+have("new_onset_diabetes").
 have("pancreatic_abnormalities").
 have("MMR_wild_type").
 findings_from_procedure("pancreatic_protocol_ct", "unclear_diagnosis").

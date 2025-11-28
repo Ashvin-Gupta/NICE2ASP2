@@ -1,0 +1,102 @@
+I'll translate these clinical guidelines into ASP rules. Let me define the predicates and constants first, then provide the rules.
+
+**Predicates and Constants:**
+- `patient(P)` - P is a patient
+- `has_condition(P, C)` - Patient P has condition C
+- `age_gte(P, N)` - Patient P is aged N or over
+- `offer(P, T)` - Offer test/treatment T to patient P
+- `consider(P, T)` - Consider test/treatment T for patient P
+- `refer(P, R)` - Refer patient P using referral type R
+- `has_relative_with(P, R, C)` - Patient P has relative R with condition C
+- `test_result(P, T, R)` - Patient P has test T with result R
+
+**Rules:**
+
+[1.1.1]
+offer(P, pancreatic_protocol_ct) :- patient(P), has_condition(P, obstructive_jaundice), has_condition(P, suspected_pancreatic_cancer).
+
+[1.1.2]
+offer(P, fdg_pet_ct) :- patient(P), has_condition(P, obstructive_jaundice), has_condition(P, suspected_pancreatic_cancer), test_result(P, pancreatic_protocol_ct, unclear).
+offer(P, eus_with_sampling) :- patient(P), has_condition(P, obstructive_jaundice), has_condition(P, suspected_pancreatic_cancer), test_result(P, pancreatic_protocol_ct, unclear).
+
+[1.1.3]
+offer(P, biliary_brushing_cytology) :- patient(P), has_condition(P, ercp_for_obstruction), not has_condition(P, tissue_diagnosis).
+
+[1.1.4]
+offer(P, pancreatic_protocol_ct) :- patient(P), has_condition(P, pancreatic_abnormalities), not has_condition(P, jaundice).
+
+[1.1.5]
+offer(P, fdg_pet_ct) :- patient(P), has_condition(P, pancreatic_abnormalities), not has_condition(P, jaundice), test_result(P, pancreatic_protocol_ct, unclear).
+offer(P, eus_with_sampling) :- patient(P), has_condition(P, pancreatic_abnormalities), not has_condition(P, jaundice), test_result(P, pancreatic_protocol_ct, unclear).
+
+[1.1.6]
+offer(P, eus_with_sampling) :- patient(P), has_condition(P, needs_cytological_samples).
+offer(P, eus_with_sampling) :- patient(P), has_condition(P, needs_histological_samples).
+
+[1.1.7]
+offer(P, pancreatic_protocol_ct) :- patient(P), has_condition(P, pancreatic_cysts).
+offer(P, mri_mrcp) :- patient(P), has_condition(P, pancreatic_cysts).
+
+[1.1.8]
+refer(P, resection) :- patient(P), has_condition(P, obstructive_jaundice), has_condition(P, cystic_lesions_head_pancreas).
+refer(P, resection) :- patient(P), has_condition(P, enhancing_solid_component_cyst).
+refer(P, resection) :- patient(P), has_condition(P, main_duct_gte_10mm).
+
+[1.1.9]
+offer(P, eus) :- patient(P), has_condition(P, pancreatic_cysts), test_result(P, ct, completed), test_result(P, mri_mrcp, completed), has_condition(P, needs_malignancy_info).
+
+[1.1.10]
+consider(P, fine_needle_aspiration) :- patient(P), has_condition(P, eus_scheduled), has_condition(P, needs_malignancy_info).
+
+[1.1.11]
+offer(P, cea_assay) :- patient(P), has_condition(P, fine_needle_aspiration), has_condition(P, sufficient_sample).
+
+[1.1.14]
+offer(P, surveillance) :- patient(P), has_condition(P, hereditary_pancreatitis), has_condition(P, prss1_mutation).
+offer(P, surveillance) :- patient(P), has_condition(P, brca1_mutation), has_relative_with(P, first_degree, pancreatic_cancer).
+offer(P, surveillance) :- patient(P), has_condition(P, brca2_mutation), has_relative_with(P, first_degree, pancreatic_cancer).
+offer(P, surveillance) :- patient(P), has_condition(P, palb2_mutation), has_relative_with(P, first_degree, pancreatic_cancer).
+offer(P, surveillance) :- patient(P), has_condition(P, cdkn2a_mutation), has_relative_with(P, first_degree, pancreatic_cancer).
+offer(P, surveillance) :- patient(P), has_condition(P, peutz_jeghers_syndrome).
+
+[1.1.15]
+consider(P, surveillance) :- patient(P), has_condition(P, two_plus_first_degree_relatives_pancreatic_cancer).
+consider(P, surveillance) :- patient(P), has_condition(P, lynch_syndrome), has_relative_with(P, first_degree, pancreatic_cancer).
+
+[1.1.16]
+consider(P, mri_mrcp) :- patient(P), has_condition(P, surveillance_needed), not has_condition(P, hereditary_pancreatitis).
+consider(P, eus) :- patient(P), has_condition(P, surveillance_needed), not has_condition(P, hereditary_pancreatitis).
+
+[1.1.17]
+consider(P, pancreatic_protocol_ct) :- patient(P), has_condition(P, hereditary_pancreatitis), has_condition(P, prss1_mutation), has_condition(P, surveillance_needed).
+
+[1.3.1]
+offer(P, pancreatic_protocol_ct_full) :- patient(P), has_condition(P, newly_diagnosed_pancreatic_cancer), not test_result(P, pancreatic_protocol_ct, completed).
+
+[1.3.2]
+offer(P, fdg_pet_ct) :- patient(P), has_condition(P, localised_disease_on_ct), has_condition(P, will_have_cancer_treatment).
+
+[1.3.3]
+consider(P, mri) :- patient(P), has_condition(P, suspected_liver_metastases), has_condition(P, needs_management_info).
+consider(P, eus) :- patient(P), has_condition(P, needs_tn_staging_info).
+consider(P, laparoscopy_with_ultrasound) :- patient(P), has_condition(P, suspected_small_volume_metastases), has_condition(P, resection_possible).
+
+[1.13.2]
+offer(P, assessment) :- patient(P), has_condition(P, unexplained_weight_loss).
+offer(P, urgent_investigation) :- patient(P), has_condition(P, unexplained_weight_loss), has_condition(P, assessment_completed).
+
+[1.13.3]
+offer(P, assessment) :- patient(P), has_condition(P, unexplained_appetite_loss).
+offer(P, urgent_investigation) :- patient(P), has_condition(P, unexplained_appetite_loss), has_condition(P, assessment_completed).
+
+[1.2.4]
+refer(P, suspected_cancer_pathway) :- patient(P), age_gte(P, 40), has_condition(P, jaundice).
+
+[1.2.5]
+consider(P, urgent_ct_scan) :- patient(P), age_gte(P, 60), has_condition(P, weight_loss), has_condition(P, diarrhoea).
+consider(P, urgent_ct_scan) :- patient(P), age_gte(P, 60), has_condition(P, weight_loss), has_condition(P, back_pain).
+consider(P, urgent_ct_scan) :- patient(P), age_gte(P, 60), has_condition(P, weight_loss), has_condition(P, abdominal_pain).
+consider(P, urgent_ct_scan) :- patient(P), age_gte(P, 60), has_condition(P, weight_loss), has_condition(P, nausea).
+consider(P, urgent_ct_scan) :- patient(P), age_gte(P, 60), has_condition(P, weight_loss), has_condition(P, vomiting).
+consider(P, urgent_ct_scan) :- patient(P), age_gte(P, 60), has_condition(P, weight_loss), has_condition(P, constipation).
+consider(P, urgent_ct_scan) :- patient(P), age_gte(P, 60), has_condition(P, weight_loss), has_condition(P, new_onset_diabetes).

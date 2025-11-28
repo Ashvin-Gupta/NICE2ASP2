@@ -1,0 +1,32 @@
+MRI and biopsy
+1.2.1 Do not routinely offer multiparametric MRI to people with prostate cancer who are not going to be able to have radical treatment. [2019]
+1.2.2 Offer multiparametric MRI as the first-line investigation for people with suspected clinically localised prostate cancer. Report the results using a 5-point Likert scale. [2019]
+1.2.3 Offer multiparametric MRI-influenced prostate biopsy to people whose Likert score is 3 or more. [2019]
+1.2.4 Consider omitting a prostate biopsy for people whose multiparametric MRI Likert score is 1 or 2, but only after discussing the risks and benefits with the person and reaching a shared decision (see box 1). If a person opts to have a biopsy, offer systematic prostate biopsy. [2019]
+1.2.5 Do not offer mapping transperineal template biopsy as part of an initial
+assessment, unless as part of a clinical trial. [2019] 
+1.2.6 Help people decide whether to have an MRI or prostate biopsy by discussing:
+• their prostate-specific antigen (PSA) level
+• their digital rectal examination (DRE) findings (including an estimate of prostate size)
+• any comorbidities, together with their risk factors (including increasing age and black African–Caribbean family background) 
+• any history of a previous negative prostate biopsy.
+Do not automatically offer a prostate biopsy on the basis of serum PSA level
+alone. [2008] 
+1.2.7 Give people and their partners or carers information, support and adequate time to decide whether or not they wish to have an MRI or prostate biopsy. Explain the risks (including the increased chance of having to live with the diagnosis of clinically insignificant prostate cancer) and benefits. [2008]
+1.2.8 If the clinical suspicion of prostate cancer is high, because of a high PSA value and evidence of bone metastases (identified by a positive isotope bone scan or sclerotic metastases on plain radiographs), do not offer prostate biopsy for histological confirmation unless this is needed as part of a clinical trial. [2008]
+1.2.9 Have a core member of the urological cancer MDT review the risk factors of all people who have had a negative first prostate biopsy. Discuss with the person that:
+• there is still a risk that prostate cancer is present and
+• the risk is slightly higher if any of the following risk factors are present:
+    － the biopsy showed high-grade prostatic intra-epithelial neoplasia (HGPIN) 
+    － the biopsy showed atypical small acinar proliferation (ASAP)
+    － abnormal DRE. [2014] 
+
+If the MRI or biopsy is negative
+1.2.10 For people with a negative biopsy who have an MRI Likert score of 3 or more, discuss the possibility of significant disease in an MDT meeting with a view to repeating the prostate biopsy. [2019]
+1.2.11 For people who have a raised PSA and MRI Likert score of 1 or 2, and who have  not had a prostate biopsy, repeat PSA test at 3 to 6 months and:
+• offer prostate biopsy if there is a strong suspicion of prostate cancer (for example, PSA density greater than 0.15 nanogram/ml/ml or PSA velocity greater than 0.75 nanogram/ml/year, or strong family history), taking into account their life expectancy and comorbidities
+• discharge the person to primary care if the level of suspicion is low; advise PSA follow up at 6 months and then every year, and set a PSA level for primary care at which to re-refer based on PSA density (0.15 nanogram/ml/ml) or velocity (0.75 nanogram/ml/year). [2019]
+1.2.12 For people who have a raised PSA, an MRI Likert score of 1 or 2 (or a contraindication to MRI), and negative biopsy, repeat PSA at 3 to 6 months and:
+• offer prostate biopsy if there is a strong suspicion of prostate cancer (for example, PSA density greater than 0.15 nanogram/ml/ml or PSA velocity greater than 0.75 nanogram/ml/year, or strong family history), taking into account their life expectancy and comorbidities
+• discharge the person to primary care if the level of suspicion is low; advise PSA follow up every 2 years, and set a PSA level for primary care at which to re-refer, based on PSA density (0.15 nanogram/ml/ml) or velocity (0.75 nanogram/ml/year). [2019]
+1.2.13 The PROGENSA PCA3 assay and the Prostate Health Index is not recommended in people having investigations for suspected prostate cancer who have had a negative or inconclusive prostate biopsy. [2019] 

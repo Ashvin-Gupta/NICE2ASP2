@@ -1,0 +1,132 @@
+Patient 1:  
+age(63).  
+have("abdominal pain").  
+have("pancreatic abnormalities").  
+findings("pancreatic protocol CT scan","diagnosis is still unclear").  
+
+Patient 2:  
+age(63).  
+have("back pain").  
+have("unexplained weight loss").  
+have("pancreatic abnormalities").  
+findings("pancreatic protocol CT scan","diagnosis is still unclear").  
+findings("pancreatic protocol CT scan","suspected liver metastases").  
+
+Patient 3:  
+age(78).  
+have("abdominal pain").  
+have("weight loss").  
+have("pancreatic abnormalities").  
+have("pancreatic cysts").  
+have("cystic lesions in the head of the pancreas").  
+findings("pancreatic protocol CT scan","diagnosis is still unclear").  
+findings("pancreatic protocol CT scan","suspected liver metastases").  
+
+Patient 4:  
+age(82).  
+have("abdominal pain").  
+have("jaundice").  
+have("pancreatic abnormalities").  
+findings("pancreatic protocol CT scan","diagnosis is still unclear").  
+
+Patient 5:  
+age(84).  
+have("pancreatic abnormalities").  
+findings("pancreatic protocol CT scan","diagnosis is still unclear").  
+
+Patient 6:  
+age(48).  
+have("abdominal pain").  
+have("pancreatic abnormalities").  
+findings("pancreatic protocol CT scan","diagnosis is still unclear").  
+
+Patient 7:  
+age(58).  
+have("abdominal pain").  
+have("jaundice").  
+have("weight loss").  
+have("pancreatic abnormalities").  
+findings("pancreatic protocol CT scan","diagnosis is still unclear").  
+
+Patient 8:  
+age(56).  
+have("pancreatic abnormalities").  
+findings("pancreatic protocol CT scan","diagnosis is still unclear").  
+
+Patient 9:  
+age(60).  
+have("abdominal pain").  
+have("nausea").  
+have("pancreatic abnormalities").  
+findings("pancreatic protocol CT scan","diagnosis is still unclear").  
+
+Patient 10:  
+age(62).  
+have("abdominal pain").  
+have("pancreatic abnormalities").  
+findings("pancreatic protocol CT scan","diagnosis is still unclear").  
+
+Patient 11:  
+age(54).  
+have("abdominal pain").  
+have("pancreatic abnormalities").  
+findings("pancreatic protocol CT scan","diagnosis is still unclear").  
+findings("pancreatic protocol CT scan","suspected liver metastases").  
+
+Patient 12:  
+age(74).  
+have("pancreatic abnormalities").  
+
+Patient 13:  
+age(41).  
+have("abdominal pain").  
+have("weight loss").  
+have("pancreatic abnormalities").  
+findings("pancreatic protocol CT scan","diagnosis is still unclear").  
+
+Patient 14:  
+age(79).  
+have("weight loss").  
+have("new-onset diabetes").  
+have("pancreatic abnormalities").  
+findings("pancreatic protocol CT scan","diagnosis is still unclear").  
+
+Patient 15:  
+age(76).  
+have("weight loss").  
+have("new-onset diabetes").  
+have("jaundice").  
+findings("pancreatic protocol CT scan","diagnosis is still unclear").  
+
+Patient 16:  
+age(77).  
+have("obstructive jaundice").  
+findings("pancreatic protocol CT scan","diagnosis is still unclear").  
+used_for("endoscopic retrograde cholangiopancreatography (ERCP)","biliary obstruction").  
+findings("biliary brushing","no tissue diagnosis").  
+
+Patient 17:  
+age(59).  
+have("pancreatic cysts").  
+have("enhancing solid component in the cyst").  
+findings("pancreatic protocol CT scan","more information is needed on the likelihood of malignancy").  
+
+Patient 18:  
+age(57).  
+have("weight loss").  
+have("abdominal pain").  
+have("pancreatic abnormalities").  
+findings("pancreatic protocol CT scan","diagnosis is still unclear").  
+
+Patient 19:  
+age(68).  
+have("abdominal pain").  
+have("pancreatic abnormalities").  
+findings("pancreatic protocol CT scan","diagnosis is still unclear").  
+
+Patient 20:  
+age(67).  
+have("pancreatic abnormalities").  
+have("pancreatic cysts").  
+have("cystic lesions in the head of the pancreas").  
+findings("pancreatic protocol CT scan","diagnosis is still unclear").

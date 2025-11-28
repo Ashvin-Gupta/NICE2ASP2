@@ -1,0 +1,172 @@
+Patient 1: 63M, abdominal pain, diabetes, pancreatic mass in neck, diagnosis unclear on CT, EUS: desmoplastic ductal adenocarcinoma, MMR wild-type  
+Action 1: (Already done) Offer a pancreatic protocol CT scan for pancreatic abnormalities without jaundice (1.1.4).  
+Action 2: (Already done) Because diagnosis was unclear on CT, offer FDG‑PET/CT and/or EUS with EUS‑guided tissue sampling (1.1.5, 1.1.6).  
+Action 3: For staging (newly diagnosed pancreatic cancer), ensure pancreatic protocol CT includes chest, abdomen and pelvis (if not already done) (1.3.1).  
+Action 4: Because disease appears localised on CT and he will be considered for cancer treatment, offer FDG‑PET/CT (1.3.2).  
+Action 5: If more information is needed for tumour and node staging, consider endoscopic ultrasound (already done) (1.3.3).  
+
+---
+
+Patient 2: 63M, indigestion, back pain, weight loss, pancreatic head mass with liver metastases on CT, diagnosis unclear, failed liver biopsy, EUS: moderately differentiated adenocarcinoma  
+Action 1: (Already done) Offer a pancreatic protocol CT scan for pancreatic abnormalities without jaundice (1.1.4).  
+Action 2: (Already done) Because diagnosis was unclear on CT, offer FDG‑PET/CT and/or EUS with EUS‑guided tissue sampling (1.1.5, 1.1.6).  
+Action 3: For staging, ensure pancreatic protocol CT includes chest, abdomen and pelvis (if not already done) (1.3.1).  
+Action 4: If more information is needed for clinical management (e.g. extent of liver disease), consider MRI for suspected liver metastases (1.3.3).  
+
+---
+
+Patient 3: 78M, abdominal pain, weight loss, liver metastases and solid pancreatic mass with cystic lesions in head, diagnosis unclear, EUS: desmoplastic ductal adenocarcinoma  
+Action 1: (Already done) Offer a pancreatic protocol CT scan for pancreatic abnormalities without jaundice (1.1.4).  
+Action 2: Because there are pancreatic cysts, offer pancreatic protocol CT or MRI/MRCP (already had CT; if more information needed, offer MRI/MRCP) (1.1.7).  
+Action 3: Because cysts are thought to be malignant (adenocarcinoma present), follow recommendations on staging (1.1.12).  
+Action 4: For staging, ensure pancreatic protocol CT includes chest, abdomen and pelvis (if not already done) (1.3.1).  
+Action 5: If more information is needed for clinical management (e.g. small-volume peritoneal/liver disease and resection considered), consider laparoscopy with laparoscopic ultrasound (1.3.3).  
+
+---
+
+Patient 4: 82M, abdominal pain, jaundice, 5.5 cm localised head mass, diagnosis unclear on CT, EUS: poorly differentiated adenocarcinoma  
+Action 1: Because aged ≥40 with jaundice, refer using a suspected cancer pathway referral for pancreatic cancer (1.2.4).  
+Action 2: For obstructive jaundice and suspected pancreatic cancer, offer a pancreatic protocol CT scan before draining the bile duct (already done) (1.1.1).  
+Action 3: If diagnosis had remained unclear, offer FDG‑PET/CT and/or EUS with EUS‑guided tissue sampling (already done) (1.1.2).  
+Action 4: For staging, ensure pancreatic protocol CT includes chest, abdomen and pelvis (if not already done) (1.3.1).  
+Action 5: Because disease appears localised and he will be considered for cancer treatment, offer FDG‑PET/CT (1.3.2).  
+
+---
+
+Patient 5: 84F, surveillance CT: lung metastases, 2.5 cm pancreatic body mass, diagnosis unclear, EUS: moderately differentiated adenocarcinoma  
+Action 1: (Already done) Offer a pancreatic protocol CT scan for pancreatic abnormalities without jaundice (1.1.4).  
+Action 2: Because diagnosis was unclear, offer FDG‑PET/CT and/or EUS with EUS‑guided tissue sampling (already done) (1.1.5, 1.1.6).  
+Action 3: For staging, ensure pancreatic protocol CT includes chest, abdomen and pelvis (already done as part of surveillance if not, then do so) (1.3.1).  
+Action 4: If more information is needed for clinical management (e.g. liver vs lung disease), consider MRI for suspected liver metastases (1.3.3).  
+
+---
+
+Patient 6: 48M, abdominal pain, 2.6 cm pancreatic body mass, diagnosis unclear on CT, EUS: poorly differentiated adenocarcinoma  
+Action 1: (Already done) Offer a pancreatic protocol CT scan for pancreatic abnormalities without jaundice (1.1.4).  
+Action 2: Because diagnosis was unclear, offer FDG‑PET/CT and/or EUS with EUS‑guided tissue sampling (already done) (1.1.5, 1.1.6).  
+Action 3: For staging, ensure pancreatic protocol CT includes chest, abdomen and pelvis (if not already done) (1.3.1).  
+Action 4: Because disease appears localised and he will be considered for cancer treatment, offer FDG‑PET/CT (1.3.2).  
+
+---
+
+Patient 7: 58M, abdominal pain, jaundice, weight loss, 3.5 cm head mass, diagnosis unclear on CT, EUS: poorly differentiated adenocarcinoma  
+Action 1: Because aged ≥40 with jaundice, refer using a suspected cancer pathway referral for pancreatic cancer (1.2.4).  
+Action 2: For obstructive jaundice and suspected pancreatic cancer, offer a pancreatic protocol CT scan before draining the bile duct (already done) (1.1.1).  
+Action 3: If diagnosis had remained unclear, offer FDG‑PET/CT and/or EUS with EUS‑guided tissue sampling (already done) (1.1.2).  
+Action 4: For staging, ensure pancreatic protocol CT includes chest, abdomen and pelvis (if not already done) (1.3.1).  
+Action 5: Because disease appears localised and he will be considered for cancer treatment, offer FDG‑PET/CT (1.3.2).  
+
+---
+
+Patient 8: 56F, dark urine (possible jaundice), suspected UTI, 70×40 mm tail mass, diagnosis unclear on CT, EUS: well‑differentiated neuroendocrine tumour  
+Action 1: (Already done) Offer a pancreatic protocol CT scan for pancreatic abnormalities without confirmed obstructive jaundice (1.1.4).  
+Action 2: Because diagnosis was unclear, offer FDG‑PET/CT and/or EUS with EUS‑guided tissue sampling (already done) (1.1.5, 1.1.6).  
+Action 3: For staging of pancreatic cancer (if managed under this pathway), ensure pancreatic protocol CT includes chest, abdomen and pelvis (1.3.1).  
+Action 4: If more information is needed for clinical management (e.g. small-volume peritoneal/liver metastases and resection considered), consider laparoscopy with laparoscopic ultrasound (1.3.3).  
+
+---
+
+Patient 9: 60F, abdominal pain, nausea, 4 cm head mass, ERCP with stent, EUS: moderately differentiated adenocarcinoma  
+Action 1: Because aged ≥40 with jaundice is likely (ERCP and stent suggest obstructive jaundice), refer using a suspected cancer pathway referral for pancreatic cancer (1.2.4).  
+Action 2: For obstructive jaundice and suspected pancreatic cancer, offer a pancreatic protocol CT scan before draining the bile duct (should be done before ERCP/stent) (1.1.1).  
+Action 3: If diagnosis was unclear, offer FDG‑PET/CT and/or EUS with EUS‑guided tissue sampling (already done) (1.1.2).  
+Action 4: Because ERCP is being used to relieve biliary obstruction and there was initially no tissue diagnosis, take a biliary brushing for cytology (1.1.3).  
+Action 5: For staging, ensure pancreatic protocol CT includes chest, abdomen and pelvis (if not already done) (1.3.1).  
+Action 6: Because disease appears localised and she will be considered for cancer treatment, offer FDG‑PET/CT (1.3.2).  
+
+---
+
+Patient 10: 62M, abdominal pain, 35 mm body mass, diagnosis unclear on CT, EUS: poorly differentiated adenocarcinoma  
+Action 1: (Already done) Offer a pancreatic protocol CT scan for pancreatic abnormalities without jaundice (1.1.4).  
+Action 2: Because diagnosis was unclear, offer FDG‑PET/CT and/or EUS with EUS‑guided tissue sampling (already done) (1.1.5, 1.1.6).  
+Action 3: For staging, ensure pancreatic protocol CT includes chest, abdomen and pelvis (if not already done) (1.3.1).  
+Action 4: Because disease appears localised and he will be considered for cancer treatment, offer FDG‑PET/CT (1.3.2).  
+
+---
+
+Patient 11: 54F, abdominal pain, liver metastases and pancreatic tail mass, diagnosis unclear on CT, EUS: poorly differentiated adenocarcinoma  
+Action 1: (Already done) Offer a pancreatic protocol CT scan for pancreatic abnormalities without jaundice (1.1.4).  
+Action 2: Because diagnosis was unclear, offer FDG‑PET/CT and/or EUS with EUS‑guided tissue sampling (already done) (1.1.5, 1.1.6).  
+Action 3: For staging, ensure pancreatic protocol CT includes chest, abdomen and pelvis (if not already done) (1.3.1).  
+Action 4: If more information is needed for clinical management (e.g. liver disease extent), consider MRI for suspected liver metastases (1.3.3).  
+
+---
+
+Patient 12: 74M, shortness of breath, CT chest/abdomen/pelvis: 4 cm pancreatic body mass, EUS: poorly differentiated adenocarcinoma  
+Action 1: (Already done) Offer a pancreatic protocol CT scan for pancreatic abnormalities without jaundice (1.1.4).  
+Action 2: Because diagnosis was unclear, offer FDG‑PET/CT and/or EUS with EUS‑guided tissue sampling (already done) (1.1.5, 1.1.6).  
+Action 3: For staging, pancreatic protocol CT including chest, abdomen and pelvis is already done (1.3.1).  
+Action 4: Because disease appears localised and he will be considered for cancer treatment, offer FDG‑PET/CT (1.3.2).  
+
+---
+
+Patient 13: 41M, abdominal pain, weight loss, 3.3 cm body tumour, diagnosis unclear on CT, EUS: poorly differentiated adenocarcinoma  
+Action 1: Because of unexplained weight loss, assess for additional symptoms/signs and offer urgent investigation or suspected cancer pathway referral (1.13.2).  
+Action 2: (Already done) Offer a pancreatic protocol CT scan for pancreatic abnormalities without jaundice (1.1.4).  
+Action 3: Because diagnosis was unclear, offer FDG‑PET/CT and/or EUS with EUS‑guided tissue sampling (already done) (1.1.5, 1.1.6).  
+Action 4: For staging, ensure pancreatic protocol CT includes chest, abdomen and pelvis (if not already done) (1.3.1).  
+Action 5: Because disease appears localised and he will be considered for cancer treatment, offer FDG‑PET/CT (1.3.2).  
+
+---
+
+Patient 14: 79M, weight loss, new-onset diabetes, COPD, pancreatic abnormalities on CT, diagnosis unclear, EUS: 30 mm neck lesion, poorly differentiated adenocarcinoma  
+Action 1: Because aged ≥60 with weight loss and new-onset diabetes, consider an urgent, direct access CT scan within 2 weeks (already done) (1.2.5).  
+Action 2: (Already done) Offer a pancreatic protocol CT scan for pancreatic abnormalities without jaundice (1.1.4).  
+Action 3: Because diagnosis was unclear, offer FDG‑PET/CT and/or EUS with EUS‑guided tissue sampling (already done) (1.1.5, 1.1.6).  
+Action 4: For staging, ensure pancreatic protocol CT includes chest, abdomen and pelvis (if not already done) (1.3.1).  
+Action 5: Because disease appears localised and he will be considered for cancer treatment, offer FDG‑PET/CT (1.3.2).  
+
+---
+
+Patient 15: 76F, weight loss, new-onset diabetes, CT: biliary obstruction, diagnosis unclear, MRI and EUS: 30 mm head lesion, ductal adenocarcinoma  
+Action 1: Because aged ≥60 with weight loss and new-onset diabetes, consider an urgent, direct access CT scan within 2 weeks (already done) (1.2.5).  
+Action 2: For obstructive jaundice and suspected pancreatic cancer, offer a pancreatic protocol CT scan before draining the bile duct (1.1.1).  
+Action 3: If diagnosis had remained unclear, offer FDG‑PET/CT and/or EUS with EUS‑guided tissue sampling (already done) (1.1.2).  
+Action 4: For staging, ensure pancreatic protocol CT includes chest, abdomen and pelvis (if not already done) (1.3.1).  
+Action 5: Because disease appears localised and she will be considered for cancer treatment, offer FDG‑PET/CT (1.3.2).  
+
+---
+
+Patient 16: 77M, obstructive jaundice, CT: biliary obstruction, ERCP being offered, diagnosis unclear, EUS: 40 mm mass, poorly differentiated adenocarcinoma  
+Action 1: Because aged ≥40 with jaundice, refer using a suspected cancer pathway referral for pancreatic cancer (1.2.4).  
+Action 2: For obstructive jaundice and suspected pancreatic cancer, offer a pancreatic protocol CT scan before draining the bile duct (already done) (1.1.1).  
+Action 3: If diagnosis was still unclear, offer FDG‑PET/CT and/or EUS with EUS‑guided tissue sampling (already done) (1.1.2).  
+Action 4: Because ERCP is being used to relieve biliary obstruction and there was no tissue diagnosis at that point, take a biliary brushing for cytology (1.1.3).  
+Action 5: For staging, ensure pancreatic protocol CT includes chest, abdomen and pelvis (if not already done) (1.3.1).  
+Action 6: Because disease appears localised and he will be considered for cancer treatment, offer FDG‑PET/CT (1.3.2).  
+
+---
+
+Patient 17: 59F, pancreatic cysts with enhancing solid component, more information needed on malignancy, EUS: 35 mm mass, adenocarcinoma  
+Action 1: For pancreatic cysts, offer pancreatic protocol CT or MRI/MRCP (1.1.7). If one has been done and more information is needed, offer the other (1.1.7).  
+Action 2: Because there is an enhancing solid component in the cyst, refer for resection (high‑risk feature) (1.1.8).  
+Action 3: Offer EUS after CT and MRI/MRCP if more information on likelihood of malignancy or need for surgery is required (already done) (1.1.9).  
+Action 4: Consider fine‑needle aspiration during EUS if more information on malignancy likelihood is needed (1.1.10), and perform CEA assay in addition to cytology if sufficient sample (1.1.11).  
+Action 5: Because cysts are thought to be malignant (adenocarcinoma), follow recommendations on staging (1.1.12), including pancreatic protocol CT chest/abdomen/pelvis (1.3.1) and FDG‑PET/CT if localised and for treatment planning (1.3.2).  
+
+---
+
+Patient 18: 57M, weight loss, abdominal pain, 5 cm body mass on CT, diagnosis unclear, EUS: 36 mm body mass, moderately differentiated adenocarcinoma  
+Action 1: Because of unexplained weight loss, assess for additional symptoms/signs and offer urgent investigation or suspected cancer pathway referral (1.13.2).  
+Action 2: (Already done) Offer a pancreatic protocol CT scan for pancreatic abnormalities without jaundice (1.1.4).  
+Action 3: Because diagnosis was unclear, offer FDG‑PET/CT and/or EUS with EUS‑guided tissue sampling (already done) (1.1.5, 1.1.6).  
+Action 4: For staging, ensure pancreatic protocol CT includes chest, abdomen and pelvis (if not already done) (1.3.1).  
+Action 5: Because disease appears localised and he will be considered for cancer treatment, offer FDG‑PET/CT (1.3.2).  
+
+---
+
+Patient 19: 68M, abdominal pain, kidney stones, liver metastases, 27 mm tail mass, diagnosis unclear, more information needed for clinical management, EUS: mucinous adenocarcinoma  
+Action 1: (Already done) Offer a pancreatic protocol CT scan for pancreatic abnormalities without jaundice (1.1.4).  
+Action 2: Because diagnosis was unclear, offer FDG‑PET/CT and/or EUS with EUS‑guided tissue sampling (already done) (1.1.5, 1.1.6).  
+Action 3: For staging, ensure pancreatic protocol CT includes chest, abdomen and pelvis (if not already done) (1.3.1).  
+Action 4: Because more information is needed to decide clinical management and there are liver metastases, consider MRI for suspected liver metastases (1.3.3).  
+Action 5: If resectional surgery were a possibility and small-volume peritoneal/liver metastases were suspected, consider laparoscopy with laparoscopic ultrasound (1.3.3).  
+
+---
+
+Patient 20: 67F, multiple TIAs, CT chest/abdomen/pelvis: pancreatic abnormalities and pancreatic cysts with cystic lesions in head, diagnosis unclear, EUS: 40 mm head lesion, adenocarcinoma  
+Action 1: For pancreatic cysts, offer pancreatic protocol CT or MRI/MRCP (CT already done; if more information needed, offer MRI/MRCP) (1.1.7).  
+Action 2: Because there are cystic lesions in the head of the pancreas, assess for obstructive jaundice; if present, this is a high‑risk feature and refer for resection (1.1.8).  
+Action 3: Offer EUS after CT and MRI/MRCP if more information on malignancy likelihood or need for surgery is required (already done) (1.1.9).  
+Action 4: Consider fine‑needle aspiration during EUS if more information on malignancy likelihood is needed, and perform CEA assay if sufficient sample (1.1.10, 1.1.11).  
+Action 5: Because cysts are thought to be malignant (adenocarcinoma), follow recommendations on staging (1.1.12), including pancreatic protocol CT chest/abdomen/pelvis (already done) (1.3.1) and FDG‑PET/CT if disease appears localised and she will be having cancer treatment (1.3.2).

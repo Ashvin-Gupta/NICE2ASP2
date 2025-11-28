@@ -1,0 +1,308 @@
+=== Patient 1 ===
+clingo version 5.4.1
+Reading from /tmp/tmpdr0s8arf.lp
+Solving...
+Answer: 1
+constraint_ok("1.1.18") fired("1.1.18") fired("1.1.4")
+SATISFIABLE
+
+Models       : 1
+Calls        : 1
+Time         : 0.001s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.001s
+
+================================================================================
+
+=== Patient 2 ===
+clingo version 5.4.1
+Reading from /tmp/tmp6f9l5vq7.lp
+Solving...
+Answer: 1
+constraint_ok("1.1.18") fired("1.1.18") fired("1.13.2_C") fired("1.13.2_B") fired("1.13.2") fired("1.1.4")
+SATISFIABLE
+
+Models       : 1
+Calls        : 1
+Time         : 0.001s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.001s
+
+================================================================================
+
+=== Patient 3 ===
+clingo version 5.4.1
+Reading from /tmp/tmp5voatka3.lp
+Solving...
+Answer: 1
+constraint_ok("1.1.18") fired("1.1.18") fired("1.2.5_B") fired("1.2.5") fired("1.1.7") fired("1.1.4")
+Answer: 2
+constraint_ok("1.1.18") fired("1.1.18") fired("1.2.5_B") fired("1.2.5") fired("1.1.7") fired("1.1.4")
+SATISFIABLE
+
+Models       : 2
+Calls        : 1
+Time         : 0.002s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.002s
+
+================================================================================
+
+=== Patient 4 ===
+clingo version 5.4.1
+Reading from /tmp/tmp6d304dnr.lp
+Solving...
+Answer: 1
+constraint_ok("1.1.18") fired("1.1.18") fired("1.2.4")
+SATISFIABLE
+
+Models       : 1
+Calls        : 1
+Time         : 0.002s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.002s
+
+================================================================================
+
+=== Patient 5 ===
+clingo version 5.4.1
+Reading from /tmp/tmpxxv93kc0.lp
+Solving...
+Answer: 1
+constraint_ok("1.1.18") fired("1.1.18") fired("1.1.4")
+SATISFIABLE
+
+Models       : 1
+Calls        : 1
+Time         : 0.001s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.001s
+
+================================================================================
+
+=== Patient 6 ===
+clingo version 5.4.1
+Reading from /tmp/tmpvdqrq4fs.lp
+Solving...
+Answer: 1
+constraint_ok("1.1.18") fired("1.1.18") fired("1.1.4")
+SATISFIABLE
+
+Models       : 1
+Calls        : 1
+Time         : 0.001s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.001s
+
+================================================================================
+
+=== Patient 7 ===
+clingo version 5.4.1
+Reading from /tmp/tmp05mi0ku4.lp
+Solving...
+Answer: 1
+constraint_ok("1.1.18") fired("1.1.18") fired("1.2.4")
+SATISFIABLE
+
+Models       : 1
+Calls        : 1
+Time         : 0.001s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.001s
+
+================================================================================
+
+=== Patient 8 ===
+clingo version 5.4.1
+Reading from /tmp/tmpy8dg2mze.lp
+Solving...
+Answer: 1
+constraint_ok("1.1.18") fired("1.1.18") fired("1.1.4")
+SATISFIABLE
+
+Models       : 1
+Calls        : 1
+Time         : 0.001s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.001s
+
+================================================================================
+
+=== Patient 9 ===
+clingo version 5.4.1
+Reading from /tmp/tmpcsyedzzu.lp
+Solving...
+Answer: 1
+constraint_ok("1.1.18") fired("1.1.18") fired("1.1.4")
+SATISFIABLE
+
+Models       : 1
+Calls        : 1
+Time         : 0.002s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.002s
+
+================================================================================
+
+=== Patient 10 ===
+clingo version 5.4.1
+Reading from /tmp/tmp1cc2p84e.lp
+Solving...
+Answer: 1
+constraint_ok("1.1.18") fired("1.1.18") fired("1.1.4")
+SATISFIABLE
+
+Models       : 1
+Calls        : 1
+Time         : 0.001s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.001s
+
+================================================================================
+
+=== Patient 11 ===
+clingo version 5.4.1
+Reading from /tmp/tmpt6qmrizl.lp
+Solving...
+Answer: 1
+constraint_ok("1.1.18") fired("1.1.18") fired("1.1.4")
+SATISFIABLE
+
+Models       : 1
+Calls        : 1
+Time         : 0.001s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.001s
+
+================================================================================
+
+=== Patient 12 ===
+clingo version 5.4.1
+Reading from /tmp/tmph0tqk9ii.lp
+Solving...
+Answer: 1
+constraint_ok("1.1.18") fired("1.1.18") fired("1.1.4")
+SATISFIABLE
+
+Models       : 1
+Calls        : 1
+Time         : 0.002s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.002s
+
+================================================================================
+
+=== Patient 13 ===
+clingo version 5.4.1
+Reading from /tmp/tmpxzvqg3y8.lp
+Solving...
+Answer: 1
+constraint_ok("1.1.18") fired("1.1.18") fired("1.1.4")
+SATISFIABLE
+
+Models       : 1
+Calls        : 1
+Time         : 0.001s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.001s
+
+================================================================================
+
+=== Patient 14 ===
+clingo version 5.4.1
+Reading from /tmp/tmpr5j2lhdv.lp
+Solving...
+Answer: 1
+constraint_ok("1.1.18") fired("1.1.18") fired("1.2.5_B") fired("1.2.5") fired("1.1.4")
+SATISFIABLE
+
+Models       : 1
+Calls        : 1
+Time         : 0.001s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.001s
+
+================================================================================
+
+=== Patient 15 ===
+clingo version 5.4.1
+Reading from /tmp/tmp1y2eq7_o.lp
+Solving...
+Answer: 1
+constraint_ok("1.1.18") fired("1.1.18") fired("1.2.5_B") fired("1.2.5") fired("1.2.4")
+SATISFIABLE
+
+Models       : 1
+Calls        : 1
+Time         : 0.001s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.001s
+
+================================================================================
+
+=== Patient 16 ===
+clingo version 5.4.1
+Reading from /tmp/tmp5ll4d6yf.lp
+Solving...
+Answer: 1
+constraint_ok("1.1.18") fired("1.1.18") fired("1.1.3")
+SATISFIABLE
+
+Models       : 1
+Calls        : 1
+Time         : 0.001s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.001s
+
+================================================================================
+
+=== Patient 17 ===
+clingo version 5.4.1
+Reading from /tmp/tmpqs5izaes.lp
+Solving...
+Answer: 1
+constraint_ok("1.1.18") fired("1.1.18") fired("1.1.8_E") fired("1.1.8_B") fired("1.1.7")
+Answer: 2
+constraint_ok("1.1.18") fired("1.1.18") fired("1.1.8_E") fired("1.1.8_B") fired("1.1.7")
+Answer: 3
+constraint_ok("1.1.18") fired("1.1.18") fired("1.1.8_E") fired("1.1.8_B") fired("1.1.7")
+SATISFIABLE
+
+Models       : 3
+Calls        : 1
+Time         : 0.002s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.002s
+
+================================================================================
+
+=== Patient 18 ===
+clingo version 5.4.1
+Reading from /tmp/tmpel2v71py.lp
+Solving...
+Answer: 1
+constraint_ok("1.1.18") fired("1.1.18") fired("1.1.4")
+SATISFIABLE
+
+Models       : 1
+Calls        : 1
+Time         : 0.002s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.002s
+
+================================================================================
+
+=== Patient 19 ===
+clingo version 5.4.1
+Reading from /tmp/tmpwxwb9atl.lp
+Solving...
+Answer: 1
+constraint_ok("1.1.18") fired("1.1.18") fired("1.1.4")
+SATISFIABLE
+
+Models       : 1
+Calls        : 1
+Time         : 0.001s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.001s
+
+================================================================================
+
+=== Patient 20 ===
+clingo version 5.4.1
+Reading from /tmp/tmpehcb67hc.lp
+Solving...
+Answer: 1
+constraint_ok("1.1.18") fired("1.1.18") fired("1.1.7") fired("1.1.4")
+Answer: 2
+constraint_ok("1.1.18") fired("1.1.18") fired("1.1.7") fired("1.1.4")
+SATISFIABLE
+
+Models       : 2
+Calls        : 1
+Time         : 0.002s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.002s
+
+================================================================================
+

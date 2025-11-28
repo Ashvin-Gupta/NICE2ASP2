@@ -4,6 +4,8 @@ experiment:
   model: "claude-opus-4-1-20250805"
   family: "claude"
   temperature: 0.0
+  version: No-Pipeline
+  cancer_type: "pancreatic cancer"
 
 input_files:
   problem_text: "src/input_files/input_guidelines/pancreatic_cancer_guidelines.txt"
@@ -13,6 +15,9 @@ input_files:
   ground_truth: "src/input_files/ground_truths/GT_PC.lp"
   extract_atoms: "src/input_files/K2P/setupProgram.txt"
   patient_vignettes: "src/input_files/K2P/PC_descriptions.txt"
+  llm_only_prompt: "src/input_files/prompt_files/Baselines/llm_only.txt"
+  zero_shot_prompt: "src/input_files/prompt_files/PC/zero_shot.txt"
+  in_context_prompt: "src/input_files/prompt_files/PC/in_context_PC.txt"
   
 # llm_params:
   # constant_inference_iterations: 1

@@ -2,9 +2,9 @@
 1.4.1 Refer people using a suspected cancer pathway referral for breast cancer if they are:
 • aged 30 and over and have an unexplained breast lump with or without pain or
 • aged 50 and over with any of the following symptoms in one nipple only:
-－ discharge
-－ retraction
-－ other changes of concern. [2015]
+    － discharge
+    － retraction
+    － other changes of concern. [2015]
 1.4.2 Consider a suspected cancer pathway referral for breast cancer in people:
 • with skin changes that suggest breast cancer or
 • aged 30 and over with an unexplained lump in the axilla. [2015]

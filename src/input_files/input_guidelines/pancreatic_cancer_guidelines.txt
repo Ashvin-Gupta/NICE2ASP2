@@ -47,20 +47,16 @@ People with inherited high risk of pancreatic cancer
 • laparoscopy with laparoscopic ultrasound, for suspected small-volume peritoneal and/or liver metastases if resectional surgery is a possibility. 
 
 1.13 Non-site specific symptoms
-1.13.2
-For people with unexplained weight loss, which is a symptom of several cancers including colorectal, gastro-oesophageal, lung, prostate, pancreatic and urological cancer:
+1.13.2 For people with unexplained weight loss, which is a symptom of several cancers including colorectal, gastro-oesophageal, lung, prostate, pancreatic and urological cancer:
 •	carry out an assessment for additional symptoms, signs or findings that may help to clarify which cancer is most likely and
 •	offer urgent investigation or a suspected cancer pathway referral.
-1.13.3
-For people with unexplained appetite loss, which is a symptom of several cancers including lung, oesophageal, stomach, colorectal, pancreatic, bladder and renal cancer:
+1.13.3 For people with unexplained appetite loss, which is a symptom of several cancers including lung, oesophageal, stomach, colorectal, pancreatic, bladder and renal cancer:
 •	carry out an assessment for additional symptoms, signs or findings that may help to clarify which cancer is most likely and
 •	offer urgent investigation or a suspected cancer pathway referral.
 
 Pancreatic cancer
-1.2.4
-•	Refer people using a suspected cancer pathway referral for pancreatic cancer if they are aged 40 and over and have jaundice.
-1.2.5
-Consider an urgent, direct access CT scan (to be done within 2 weeks), or an urgent ultrasound scan if CT is not available, to assess for pancreatic cancer in people aged 60 and over with weight loss and any of the following:
+1.2.4 Refer people using a suspected cancer pathway referral for pancreatic cancer if they are aged 40 and over and have jaundice.
+1.2.5 Consider an urgent, direct access CT scan (to be done within 2 weeks), or an urgent ultrasound scan if CT is not available, to assess for pancreatic cancer in people aged 60 and over with weight loss and any of the following:
 •	diarrhoea
 •   back pain
 •   abdominal pain

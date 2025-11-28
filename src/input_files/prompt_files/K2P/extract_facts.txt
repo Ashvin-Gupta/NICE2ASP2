@@ -26,16 +26,17 @@ suspected("pancreatic cancer").
 
 For this task you should first analyse the rules and look at all of the elements that are present in the body of the rules. 
 Then for each patient description you should recognise if any of the constants appear in the body of the rules you have just analysed.
+The patient descriptions may not directly match any of the constants in the body but heavily imply it so use your background on medical knowledge to the best of your ability.
 From there you should write the predicate and constants that appear in the program.
 
 Return your answers in the format:
-Patient 1:
+**Patient 1**:
 element 1 for patient 1.
 element 2 for patient 1.
 ...
 element n for patient 1.
 
-Patient 2:
+**Patient 2**:
 element 1 for patient 2.
 element 2 for patient 2.
 ...

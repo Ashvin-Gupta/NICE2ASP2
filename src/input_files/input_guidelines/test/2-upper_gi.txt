@@ -48,17 +48,17 @@ Stomach cancer
 • treatment-resistant dyspepsia or
 • upper abdominal pain with low haemoglobin levels or
 • raised platelet count with any of the following:
-－ nausea
-－ vomiting
-－ weight loss
-－ reflux
-－ dyspepsia
-－ upper abdominal pain or 
-• nausea or vomiting with any of the following:
-－ weight loss
-－ reflux
-－ dyspepsia
-－ upper abdominal pain. [2015]
+    － nausea
+    － vomiting
+    － weight loss
+    － reflux
+    － dyspepsia
+    － upper abdominal pain or 
+    • nausea or vomiting with any of the following:
+    － weight loss
+    － reflux
+    － dyspepsia
+    － upper abdominal pain. [2015]
 
 Gall bladder cancer
 1.2.10 Consider an urgent, direct access ultrasound scan (to be done within 2 weeks) to assess for gall bladder cancer in people with an upper abdominal mass consistent with an enlarged gall bladder. [2015]

@@ -1,0 +1,20 @@
+You are an expert in medicine. 
+
+Given the following patient vignettes and the NICE guidelins for pancreatic cancer, return a list of actions the guidelines suggest. 
+
+The format should be:
+
+Patient 1:
+Action 1
+Action 2
+...
+Action n
+
+Patient 2: 
+...
+
+Guidelines:
+{guidelines}
+
+Patient vignettes:
+{vignettes}

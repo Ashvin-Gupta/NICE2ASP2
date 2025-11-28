@@ -6,8 +6,8 @@ from pathlib import Path
 from src.processing.LLM_Inferencer import LLMInferencer
 from src.processing.FileManager import FileManager
 from src.processing.RuleProcessor import RuleProcessor
-# from graph_analysis import GraphAnalyzer
-# from graph_utils import ASPGraphCreator
+from src.processing.graph_analysis import GraphAnalyzer
+from src.processing.graph_utils import ASPGraphCreator
 
 def load_config(config_path):
     with open(config_path, 'r') as f:
@@ -45,8 +45,12 @@ def main():
         'clingo_output': exp_dir / 'clingo_output.txt',
         'explanation': exp_dir / 'explanation.txt',
 
+        # Baseline responses
+        'llm_only_response': exp_dir / 'llm_only_response.txt',
+        'in_context_response': exp_dir / 'in_context_response.txt',
+        'zero_shot_response': exp_dir / 'zero_shot_response.txt',
+
         'graph_metrics': exp_dir / 'graph_metrics.csv',
-        'zero_shot_response': exp_dir / 'zero_shot_response.txt'
     }
 
     llmExtractor = LLMInferencer(config['experiment']['model'], config['experiment']['temperature'], config['experiment']['family'])
@@ -54,41 +58,92 @@ def main():
 
 
 
+    if config['experiment']['version'] == 'D2K-Pipeline':
+        # # Constant extraction
+        # llmExtractor.run_constant_inference(
+        #     config['input_files']['constant_prompt'],
+        #     config['input_files']['problem_text'],
+        #     str(output_files['constant_response']),
+        # )
+
+        # # Extracting the predicates
+        # llmExtractor.run_predicate_inference(
+        #     config['input_files']['predicate_prompt'],
+        #     config['input_files']['problem_text'],
+        #     str(output_files['constant_response']),
+        #     str(output_files['predicate_response']),
+        # )
+
+        # # Rule generation
+        # llmExtractor.run_rulegen_inference(
+        #     config['input_files']['rule_generation_prompt'],
+        #     config['input_files']['problem_text'],
+        #     str(output_files['constant_response']),
+        #     str(output_files['predicate_response']),
+        #     str(output_files['rulegen_response']),
+        # )
+
+        # graph_generated = ASPGraphCreator.create_program_graph(str(output_files['rulegen_response']))
+        pass
+    elif config['experiment']['version'] == 'In-Context':
+        # print("Running in context inference")
+        # llmExtractor.run_constant_inference(
+        #     config['input_files']['in_context_prompt'],
+        #     config['input_files']['problem_text'],
+        #     str(output_files['in_context_response'])
+        # )
+        # graph_generated = ASPGraphCreator.create_program_graph(str(output_files['in_context_response']))
+        pass
+    elif config['experiment']['version'] == 'No-Pipeline':
+        # print("Running zero shot inference")
+        # llmExtractor.run_constant_inference(
+        #     config['input_files']['zero_shot_prompt'],
+        #     config['input_files']['problem_text'],
+        #     str(output_files['zero_shot_response'])
+        # )
+        # graph_generated = ASPGraphCreator.create_program_graph(str(output_files['zero_shot_response']))
+        pass
+    else:
+        print("Invalid experiment version")
+        return
+
+    # Graphical Analysis:
+    graph_gt = ASPGraphCreator.create_program_graph(config['input_files']['ground_truth'])
+
+    if config['experiment']['version'] == 'D2K-Pipeline':
+        graph_file = str(output_files['rulegen_response'])
+        graph_name = 'rulegen_response'
+    elif config['experiment']['version'] == 'No-Pipeline':
+        graph_file = str(output_files['zero_shot_response'])
+        graph_name = 'zero_shot_response'
+    elif config['experiment']['version'] == 'In-Context':
+        graph_file = str(output_files['in_context_response'])
+        graph_name = 'in_context_response'
+    else:
+        print(f"Unknown experiment version: {config['experiment']['version']}")
+        return
+
+    graph_generated = ASPGraphCreator.create_program_graph(graph_file)
+
+
+
+    graph_analyzer = GraphAnalyzer()
     
-    # # Constant extraction
-    # llmExtractor.run_constant_inference(
-    #     config['input_files']['constant_prompt'],
-    #     config['input_files']['problem_text'],
-    #     str(output_files['constant_response']),
-    # )
+    graph_analyzer.calculate_graph_similarity(
+        graph_gt, 
+        [graph_generated], 
+        str(output_files['graph_metrics']), 
+        [graph_name],
+        config=config
+    )
 
-    # # Extracting the predicates
-    # llmExtractor.run_predicate_inference(
-    #     config['input_files']['predicate_prompt'],
-    #     config['input_files']['problem_text'],
-    #     str(output_files['constant_response']),
-    #     str(output_files['predicate_response']),
-    # )
 
-    # # Rule generation
-    # llmExtractor.run_rulegen_inference(
-    #     config['input_files']['rule_generation_prompt'],
-    #     config['input_files']['problem_text'],
-    #     str(output_files['constant_response']),
-    #     str(output_files['predicate_response']),
-    #     str(output_files['rulegen_response']),
-    # )
 
-    # else:
-    #     print("Running zero shot inference")
-    #     llmExtractor.run_constant_inference(
-    #         config['input_files']['zero_shot'],
-    #         config['input_files']['problem_text'],
-    #         str(output_files['zero_shot_response']),
-    #         1
-    #     )
-    print("Starting K2P Analysis")
-    ruleProcessor = RuleProcessor(config['input_files']['problem_text'])
+    # Run the LLM only prompt BASELINE
+    # llmExtractor.run_llm_only(config['input_files']['llm_only_prompt'], config['input_files']['problem_text'], config['input_files']['patient_vignettes'], str(output_files['llm_only_response']))
+    
+    # print("Starting K2P Analysis")
+    # ruleProcessor = RuleProcessor(config['input_files']['problem_text'])
 
     # Add fired({rule number}) to the rules
     # ruleProcessor.append_fired_rules(str(output_files['rulegen_response']), str(output_files['rulegen_response_fired']))
@@ -101,11 +156,11 @@ def main():
     #     output_file=str(output_files['atoms'])
     #     )
 
-    # Run clingo for each patient vignette
-    # ruleProcessor.run_clingo_for_patients(str(output_files['rulegen_response_fired']), str(output_files['atoms']), str(output_files['clingo_output']))
+    # # Run clingo for each patient vignette
+    # ruleProcessor.run_clingo_for_patients(str(output_files['rulegen_response_fired']), str(output_files['atoms']), str(output_files['clingo_output']), debug_id=1)
 
     # Explain the clingo output
-    ruleProcessor.explain_fired_rules(str(output_files['rulegen_response_fired']), str(output_files['clingo_output']), str(output_files['explanation']))
+    # ruleProcessor.explain_fired_rules(str(output_files['rulegen_response_fired']), str(output_files['clingo_output']), str(output_files['explanation']))
 
 
 if __name__ == '__main__':
