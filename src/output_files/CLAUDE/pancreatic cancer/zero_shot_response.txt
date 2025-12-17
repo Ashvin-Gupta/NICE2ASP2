@@ -1,0 +1,105 @@
+I'll translate these clinical guidelines into ASP rules. Let me organize them by section:
+
+[1.1.1]
+offer_pancreatic_protocol_ct_scan(P) :- person(P), has_obstructive_jaundice(P), suspected_pancreatic_cancer(P), not has_bile_duct_drained(P).
+
+[1.1.2]
+offer_fdg_pet_ct(P) :- person(P), has_obstructive_jaundice(P), suspected_pancreatic_cancer(P), has_pancreatic_protocol_ct_scan(P), diagnosis_unclear(P).
+offer_eus_with_tissue_sampling(P) :- person(P), has_obstructive_jaundice(P), suspected_pancreatic_cancer(P), has_pancreatic_protocol_ct_scan(P), diagnosis_unclear(P).
+
+[1.1.3]
+take_biliary_brushing_cytology(P) :- person(P), using_ercp_for_biliary_obstruction(P), not has_tissue_diagnosis(P).
+
+[1.1.4]
+offer_pancreatic_protocol_ct_scan(P) :- person(P), has_pancreatic_abnormalities_on_imaging(P), not has_jaundice(P).
+
+[1.1.5]
+offer_fdg_pet_ct(P) :- person(P), has_pancreatic_abnormalities_on_imaging(P), not has_jaundice(P), has_pancreatic_protocol_ct_scan(P), diagnosis_unclear(P).
+offer_eus_with_tissue_sampling(P) :- person(P), has_pancreatic_abnormalities_on_imaging(P), not has_jaundice(P), has_pancreatic_protocol_ct_scan(P), diagnosis_unclear(P).
+
+[1.1.6]
+offer_eus_with_tissue_sampling(P) :- person(P), needs_cytological_samples(P).
+offer_eus_with_tissue_sampling(P) :- person(P), needs_histological_samples(P).
+
+[1.1.7]
+offer_pancreatic_protocol_ct_scan(P) :- person(P), has_pancreatic_cysts(P), not has_mri_mrcp(P).
+offer_mri_mrcp(P) :- person(P), has_pancreatic_cysts(P), not has_pancreatic_protocol_ct_scan(P).
+offer_mri_mrcp(P) :- person(P), has_pancreatic_cysts(P), has_pancreatic_protocol_ct_scan(P), needs_more_information(P).
+offer_pancreatic_protocol_ct_scan(P) :- person(P), has_pancreatic_cysts(P), has_mri_mrcp(P), needs_more_information(P).
+
+[1.1.8]
+refer_for_resection(P) :- person(P), has_obstructive_jaundice(P), has_cystic_lesions_head_pancreas(P).
+refer_for_resection(P) :- person(P), has_enhancing_solid_component_in_cyst(P).
+refer_for_resection(P) :- person(P), main_pancreatic_duct_diameter_gte_10mm(P).
+
+[1.1.9]
+offer_eus(P) :- person(P), has_pancreatic_cysts(P), has_pancreatic_protocol_ct_scan(P), has_mri_mrcp(P), needs_malignancy_likelihood_info(P).
+offer_eus(P) :- person(P), has_pancreatic_cysts(P), has_pancreatic_protocol_ct_scan(P), has_mri_mrcp(P), unclear_if_surgery_needed(P).
+
+[1.1.10]
+consider_fine_needle_aspiration(P) :- person(P), having_eus(P), needs_malignancy_likelihood_info(P).
+
+[1.1.11]
+perform_cea_assay(P) :- person(P), using_fine_needle_aspiration(P), has_sufficient_sample(P).
+perform_cytology(P) :- person(P), using_fine_needle_aspiration(P).
+
+[1.1.12]
+follow_staging_recommendations(P) :- person(P), has_cysts(P), cysts_thought_malignant(P).
+
+[1.1.13]
+ask_about_family_history(P) :- person(P), has_pancreatic_cancer(P).
+
+[1.1.14]
+offer_surveillance(P) :- person(P), has_hereditary_pancreatitis(P), has_prss1_mutation(P).
+offer_surveillance(P) :- person(P), has_brca1_mutation(P), has_first_degree_relative_with_pancreatic_cancer(P).
+offer_surveillance(P) :- person(P), has_brca2_mutation(P), has_first_degree_relative_with_pancreatic_cancer(P).
+offer_surveillance(P) :- person(P), has_palb2_mutation(P), has_first_degree_relative_with_pancreatic_cancer(P).
+offer_surveillance(P) :- person(P), has_cdkn2a_mutation(P), has_first_degree_relative_with_pancreatic_cancer(P).
+offer_surveillance(P) :- person(P), has_peutz_jeghers_syndrome(P).
+
+[1.1.15]
+consider_surveillance(P) :- person(P), has_two_plus_first_degree_relatives_with_pancreatic_cancer(P), across_two_plus_generations(P).
+consider_surveillance(P) :- person(P), has_lynch_syndrome(P), has_first_degree_relative_with_pancreatic_cancer(P).
+
+[1.1.16]
+consider_mri_mrcp_for_surveillance(P) :- person(P), needs_pancreatic_surveillance(P), not has_hereditary_pancreatitis(P).
+consider_eus_for_surveillance(P) :- person(P), needs_pancreatic_surveillance(P), not has_hereditary_pancreatitis(P).
+
+[1.1.17]
+consider_pancreatic_protocol_ct_for_surveillance(P) :- person(P), has_hereditary_pancreatitis(P), has_prss1_mutation(P).
+
+[1.1.18]
+:- offer_eus_for_detection(P), person(P), has_hereditary_pancreatitis(P).
+
+[1.3.1]
+offer_pancreatic_protocol_ct_with_chest_abdomen_pelvis(P) :- person(P), newly_diagnosed_pancreatic_cancer(P), not has_pancreatic_protocol_ct_scan(P).
+
+[1.3.2]
+offer_fdg_pet_ct(P) :- person(P), has_localised_disease_on_ct(P), will_have_cancer_treatment(P).
+
+[1.3.3]
+consider_mri(P) :- person(P), suspected_liver_metastases(P), needs_more_info_for_management(P).
+consider_eus(P) :- person(P), needs_more_info_tumor_node_staging(P), needs_more_info_for_management(P).
+consider_laparoscopy_with_ultrasound(P) :- person(P), suspected_small_volume_peritoneal_metastases(P), resectional_surgery_possible(P), needs_more_info_for_management(P).
+consider_laparoscopy_with_ultrasound(P) :- person(P), suspected_small_volume_liver_metastases(P), resectional_surgery_possible(P), needs_more_info_for_management(P).
+
+[1.13.2]
+carry_out_assessment(P) :- person(P), has_unexplained_weight_loss(P).
+offer_urgent_investigation_or_referral(P) :- person(P), has_unexplained_weight_loss(P).
+
+[1.13.3]
+carry_out_assessment(P) :- person(P), has_unexplained_appetite_loss(P).
+offer_urgent_investigation_or_referral(P) :- person(P), has_unexplained_appetite_loss(P).
+
+[1.2.4]
+refer_suspected_cancer_pathway(P) :- person(P), age_gte_40(P), has_jaundice(P).
+
+[1.2.5]
+consider_urgent_ct_scan(P) :- person(P), age_gte_60(P), has_weight_loss(P), has_diarrhoea(P).
+consider_urgent_ct_scan(P) :- person(P), age_gte_60(P), has_weight_loss(P), has_back_pain(P).
+consider_urgent_ct_scan(P) :- person(P), age_gte_60(P), has_weight_loss(P), has_abdominal_pain(P).
+consider_urgent_ct_scan(P) :- person(P), age_gte_60(P), has_weight_loss(P), has_nausea(P).
+consider_urgent_ct_scan(P) :- person(P), age_gte_60(P), has_weight_loss(P), has_vomiting(P).
+consider_urgent_ct_scan(P) :- person(P), age_gte_60(P), has_weight_loss(P), has_constipation(P).
+consider_urgent_ct_scan(P) :- person(P), age_gte_60(P), has_weight_loss(P), has_new_onset_diabetes(P).
+consider_urgent_ultrasound(P) :- person(P), age_gte_60(P), has_weight_loss(P), ct_not_available(P), has_relevant_symptom(P).

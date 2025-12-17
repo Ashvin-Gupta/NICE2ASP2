@@ -1,0 +1,115 @@
+I'll analyze the clinical guideline text and convert it to ASP rules following the specified format.
+
+## Constants and Predicates Identified:
+
+**Constants:**
+- Imaging: "pancreatic protocol CT", "FDG-PET/CT", "MRI/MRCP", "MRI", "CT scan", "ultrasound"
+- Procedures: "EUS", "EUS-guided tissue sampling", "ERCP", "laparoscopy", "laparoscopic ultrasound"
+- Techniques: "biliary brushing", "fine-needle aspiration", "CEA assay"
+- Symptoms: "obstructive jaundice", "jaundice", "pancreatic abnormalities", "pancreatic cysts", "unexplained weight loss", "unexplained appetite loss", "diarrhoea", "back pain", "abdominal pain", "nausea", "vomiting", "constipation", "new-onset diabetes"
+- Conditions: "suspected pancreatic cancer", "pancreatic cancer", "hereditary pancreatitis", "PRSS1", "BRCA1", "BRCA2", "PALB2", "CDKN2A", "Peutz-Jeghers syndrome", "Lynch syndrome", "MLH1", "MSH2", "MSH6", "PMS2"
+- Features: "cystic lesions in head of pancreas", "enhancing solid component", "main pancreatic duct 10mm or larger", "localised disease", "liver metastases", "peritoneal metastases"
+- General findings: "unclear diagnosis", "no tissue diagnosis", "more information needed"
+
+**Predicates:**
+- offer(I), offer(P), offer(P,T), offer(I,Purpose)
+- consider(I), consider(P), consider(P,T)
+- refer(Pathway, Cancer)
+- have(S), have(C), have(F)
+- findings(I, Gf)
+- offered(I), offered(P)
+- need(Gf)
+- available(I)
+- first_degree_relative(Disease, Person)
+- age(X)
+- performing(P)
+- suspected(C)
+- possibility(Treatment)
+
+## ASP Rules:
+
+[1.1.1]
+offer("pancreatic protocol CT") :- have("obstructive jaundice"), suspected("pancreatic cancer").
+
+[1.1.2]
+1{offer("FDG-PET/CT"); offer("EUS", "EUS-guided tissue sampling")}2 :- have("obstructive jaundice"), suspected("pancreatic cancer"), offered("pancreatic protocol CT"), findings("pancreatic protocol CT", "unclear diagnosis").
+
+[1.1.3]
+offer("biliary brushing", "cytology") :- performing("ERCP"), have("obstructive jaundice"), not have("tissue diagnosis").
+
+[1.1.4]
+offer("pancreatic protocol CT") :- have("pancreatic abnormalities"), not have("jaundice").
+
+[1.1.5]
+1{offer("FDG-PET/CT"); offer("EUS", "EUS-guided tissue sampling")}2 :- have("pancreatic abnormalities"), not have("jaundice"), offered("pancreatic protocol CT"), findings("pancreatic protocol CT", "unclear diagnosis").
+
+[1.1.6]
+offer("EUS", "EUS-guided tissue sampling") :- need("cytological samples").
+offer("EUS", "EUS-guided tissue sampling") :- need("histological samples").
+
+[1.1.7]
+1{offer("pancreatic protocol CT"); offer("MRI/MRCP")}1 :- have("pancreatic cysts").
+offer("MRI/MRCP") :- have("pancreatic cysts"), offered("pancreatic protocol CT"), need("more information").
+offer("pancreatic protocol CT") :- have("pancreatic cysts"), offered("MRI/MRCP"), need("more information").
+
+[1.1.8]
+refer("resection", "pancreatic cancer") :- have("obstructive jaundice"), have("cystic lesions in head of pancreas").
+refer("resection", "pancreatic cancer") :- have("enhancing solid component").
+refer("resection", "pancreatic cancer") :- have("main pancreatic duct 10mm or larger").
+
+[1.1.9]
+offer("EUS") :- have("pancreatic cysts"), offered("pancreatic protocol CT"), offered("MRI/MRCP"), need("more information on likelihood of malignancy").
+offer("EUS") :- have("pancreatic cysts"), offered("pancreatic protocol CT"), offered("MRI/MRCP"), need("clarity on surgery").
+
+[1.1.10]
+consider("EUS", "fine-needle aspiration") :- need("more information on likelihood of malignancy"), have("pancreatic cysts").
+
+[1.1.11]
+offer("CEA assay") :- performing("fine-needle aspiration"), have("sufficient sample").
+
+[1.1.14]
+offer("surveillance", "pancreatic cancer") :- have("hereditary pancreatitis"), have("PRSS1").
+offer("surveillance", "pancreatic cancer") :- 1{have("BRCA1"); have("BRCA2"); have("PALB2"); have("CDKN2A")}4, first_degree_relative("pancreatic cancer", _).
+offer("surveillance", "pancreatic cancer") :- have("Peutz-Jeghers syndrome").
+
+[1.1.15]
+consider("surveillance", "pancreatic cancer") :- first_degree_relative("pancreatic cancer", X), first_degree_relative("pancreatic cancer", Y), X!=Y.
+consider("surveillance", "pancreatic cancer") :- 1{have("MLH1"); have("MSH2"); have("MSH6"); have("PMS2")}4, first_degree_relative("pancreatic cancer", _).
+
+[1.1.16]
+consider("MRI/MRCP") :- need("surveillance"), not have("hereditary pancreatitis").
+consider("EUS") :- need("surveillance"), not have("hereditary pancreatitis").
+
+[1.1.17]
+consider("pancreatic protocol CT") :- need("surveillance"), have("hereditary pancreatitis"), have("PRSS1").
+
+[1.1.18]
+:- offer("EUS"), have("hereditary pancreatitis"), need("detect pancreatic cancer").
+
+[1.3.1]
+offer("pancreatic protocol CT") :- have("pancreatic cancer"), not offered("pancreatic protocol CT").
+
+[1.3.2]
+offer("FDG-PET/CT") :- have("localised disease"), have("pancreatic cancer").
+
+[1.3.3]
+consider("MRI") :- suspected("liver metastases"), need("more information").
+consider("EUS") :- need("more information on tumor staging").
+consider("EUS") :- need("more information on node staging").
+consider("laparoscopy", "laparoscopic ultrasound") :- suspected("peritoneal metastases"), possibility("resectional surgery").
+consider("laparoscopy", "laparoscopic ultrasound") :- suspected("liver metastases"), possibility("resectional surgery").
+
+[1.13.2]
+offer("urgent investigation") :- have("unexplained weight loss").
+refer("suspected cancer pathway", "cancer") :- have("unexplained weight loss").
+
+[1.13.3]
+offer("urgent investigation") :- have("unexplained appetite loss").
+refer("suspected cancer pathway", "cancer") :- have("unexplained appetite loss").
+
+[1.2.4]
+refer("suspected cancer pathway", "pancreatic cancer") :- age(X), have("jaundice"), X>=40.
+
+[1.2.5]
+consider("CT scan") :- age(X), have("weight loss"), 1{have("diarrhoea"); have("back pain"); have("abdominal pain"); have("nausea"); have("vomiting"); have("constipation"); have("new-onset diabetes")}7, X>=60.
+consider("ultrasound") :- age(X), have("weight loss"), 1{have("diarrhoea"); have("back pain"); have("abdominal pain"); have("nausea"); have("vomiting"); have("constipation"); have("new-onset diabetes")}7, X>=60, not available("CT scan").

@@ -1,2 +1,4 @@
 experiment,adjacency_similarity
 D2K-Pipeline,0.83348
+In-Context,0.77754
+No-Pipeline,0.42218

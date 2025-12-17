@@ -4,7 +4,7 @@ experiment:
   model: "claude-opus-4-1-20250805"
   family: "claude"
   temperature: 0.0
-  version: D2K-Pipeline
+  version: No-Pipeline
   cancer_type: "pancreatic cancer"
 
 input_files:
