@@ -1,8 +1,17 @@
+Looking at the clinical guideline text, I'll identify the predicates needed to capture all relationships:
+
+**Predicates:**
+
+```
 offer(I)
 offer(P)
+offer(P, P)
 offer(M, D)
+offer(Tr)
+offer(M)
 consider(I)
 consider(P)
+consider(P, P)
 consider(M, D)
 refer(M, D)
 refer(Tr)
@@ -11,11 +20,17 @@ have(Fp)
 have(Gd)
 have(Ip)
 have(D)
+have(S, Gf)
+suspected(D)
 findings(I, Gf)
 findings(P, Gf)
 offered(I)
 offered(P)
-relieve(P, Gf)
-assess(I, D)
+need(Gf)
+perform(P)
+drain(As)
+relieve(As)
+take(P, P)
 ask(Ip)
-carry_out_assessment(S)
+assess(D)
+```

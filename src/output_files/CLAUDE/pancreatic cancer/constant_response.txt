@@ -1,12 +1,12 @@
 Constants:
 Disease: "pancreatic cancer", "colorectal", "gastro-oesophageal", "lung", "prostate", "urological cancer", "oesophageal", "stomach", "bladder", "renal cancer".
 Symptoms: "obstructive jaundice", "jaundice", "weight loss", "appetite loss", "diarrhoea", "back pain", "abdominal pain", "nausea", "vomiting", "constipation", "new-onset diabetes".
-Imaging: "pancreatic protocol CT", "FDG-PET/CT", "MRI/MRCP", "CT", "ultrasound", "MRI", "laparoscopic ultrasound".
-Procedures: "EUS", "EUS-guided tissue sampling", "biliary brushing", "ERCP", "fine-needle aspiration", "CEA assay", "cytology", "endoscopic ultrasound", "laparoscopy".
+Imaging: "pancreatic protocol CT", "CT", "ultrasound", "MRI", "MRI/MRCP".
+Procedures: "FDG-PET/CT", "EUS", "EUS-guided tissue sampling", "ERCP", "biliary brushing", "cytology", "fine-needle aspiration", "CEA assay", "laparoscopy", "laparoscopic ultrasound".
 Finding_of_pancreas: "pancreatic abnormalities", "pancreatic cysts", "cystic lesions in the head of the pancreas", "enhancing solid component in the cyst", "main pancreatic duct that is 10 mm diameter or larger".
 Genetic_disease: "hereditary pancreatitis", "PRSS1", "BRCA1", "BRCA2", "PALB2", "CDKN2A (p16)", "Peutz–Jeghers syndrome", "Lynch syndrome", "MLH1", "MSH2", "MSH6", "PMS2".
-Management: "surveillance", "suspected cancer pathway referral".
-Treatments: "surgery", "radiotherapy", "systemic therapy".
-Anatomical_structures: "bile duct", "chest", "abdomen", "pelvis", "liver", "peritoneal".
-Information_about_patient: "18", "40", "60", "first-degree relatives", "first-degree relatives with pancreatic cancer", "2 or more first-degree relatives with pancreatic cancer", "inherited high risk".
-General_findings: "unclear", "no tissue diagnosis", "biliary obstruction", "localised disease", "liver metastases", "peritoneal and/or liver metastases".
+Management: "surveillance", "suspected cancer pathway referral", "urgent investigation".
+Treatments: "surgery", "radiotherapy", "systemic therapy", "resection", "resectional surgery".
+Anatomical_structures: "bile duct", "biliary obstruction", "chest", "abdomen", "pelvis", "liver metastases", "peritoneal", "tumour", "node".
+Information_about_patient: "18", "40", "60", "first-degree relatives", "first-degree relatives with pancreatic cancer", "inherited high risk", "2 or more first-degree relatives with pancreatic cancer, across 2 or more generations".
+General_findings: "unclear diagnosis", "no tissue diagnosis", "more information", "more information on the likelihood of malignancy", "localised disease", "unexplained".

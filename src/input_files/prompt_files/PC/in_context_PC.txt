@@ -25,7 +25,6 @@ Background knowledge:
     offer("ct scan") :- have("pain") is also correct.
 
 Reasoning Pattern
-
 1. Identify who the rule applies to (conditions → body).
 2. Identify what is being offered, referred, or done (action → head).
 3. Identify exceptions or negations (not have(S) or :- ...).
@@ -39,7 +38,7 @@ Offer a pancreatic protocol CT scan to people with pancreatic abnormalities but 
 
 ASP:
 offer("pancreatic_protocol_ct") :- have("pancreatic_abnormalities"), not have("jaundice").
-1 {{offer("FDG-PET/CT"); offer("EUS_with_tissue")}} 2 :- have("pancreatic_abnormalities"), not have("jaundice"), offered("pancreatic_protocol_ct"), findings("pancreatic_protocol_ct", "diagnosis_unclear").
+1 {{offer("FDG-PET/CT"); offer("EUS", "EUS-guided tissue sampling")}} 2 :- have("pancreatic_abnormalities"), not have("jaundice"), offered("pancreatic_protocol_ct"), findings("pancreatic_protocol_ct", "diagnosis_unclear").
 
 Reasoning:
 Main action: offer CT → offer("pancreatic_protocol_ct") from first statement. offer FDG-PET/CT or EUR with tissue → offer("FDG-PET/CT"), offer("EUS_with_tissue") from second statement.
@@ -52,14 +51,25 @@ Temporal rule: if CT was offered and diagnosis still unclear → offer further p
 % Note the offered(I) predicate is VERY important here as it allows us to have temporal relationships within our rules.
 
 Example 2:
-People with obstructive jaundice:
-Take a biliary brushing for cytology if: endoscopic retrograde cholangiopancreatography (ERCP) is being used to relieve the biliary obstruction and there is no tissue diagnosis.
+People with pancreatic cysts:
+Consider fine-needle aspiration during EUS if more information on the likelihood of malignancy is needed.
+
+Constants:
+Procedures: "EUS".
+Techniques: "fine-needle aspiration"
+General_findings: "more information on the likelihood of malignancy".
+Symptoms: "pancreatic cysts".
+
+Predicates:
+consider(P, T)
+need(Gf)
+have(S)
 
 ASP:
-offer("biliary_brushing") :- have("obstructive_jaundice"), findings("no_tissue_diagnosis"), offer("ERCP", "bilary_obstruction").
+consider("EUS", "fine-needle aspiration") :- need("more information on the likelihood of malignancy"), have("pancreatic cysts").
 
 % This rule reads as: 
-% If the patient has obstructive jaundice and there is no tissue diagnosis and ERCP is being used to treat bilary obstruction then offer bilary brushin.
+% If the patient has pancreatic cysts and we need more information on the liklihood of malignancy then consider EUS with fine-needle aspiration.
 
 Example 3:
 People with inherited high risk of pancreatic cancer: 

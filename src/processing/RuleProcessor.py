@@ -45,7 +45,10 @@ class RuleProcessor:
                 formatted = ""
                 if context_block:
                     formatted += "\n".join(context_block)
-
+                    # Add a newline separator between context and rule if both exist
+                    if rule_block:
+                        formatted += "\n\n"
+                
                 formatted += "\n".join(rule_block)
 
                 lookup[current_rule_id] = formatted.strip()

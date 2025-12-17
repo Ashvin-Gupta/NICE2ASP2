@@ -26,7 +26,6 @@ Background knowledge:
     offer("ct scan") :- have("pain") is also correct.
 
 Reasoning Pattern
-
 1. Identify who the rule applies to (conditions → body).
 2. Identify what is being offered, referred, or done (action → head).
 3. Identify exceptions or negations (not have(S) or :- ...).
@@ -42,23 +41,24 @@ Constants:
 Imaging: "pancreatic protocol CT".
 Finding_of_pancreas: "pancreatic abnormalities".
 Symptoms: "jaundice".
-Procedures: "FDG-PET/CT", "EUS", "EUS with tissue".
+Procedures: "FDG-PET/CT", "EUS", "EUS-guided tissue sampling".
 General_findings: "unclear diagnosis".
 
 Predicates:
 offer(I)
 offer(P)
+offer(P, P)
 have(Fp)
 have(S)
 findings(I, Gf)
 offered(I)
 
 ASP:
-offer("pancreatic_protocol_ct") :- have("pancreatic_abnormalities"), not have("jaundice").
-1 {{offer("FDG-PET/CT"); offer("EUS_with_tissue")}} 2 :- have("pancreatic_abnormalities"), not have("jaundice"), offered("pancreatic_protocol_ct"), findings("pancreatic_protocol_ct", "diagnosis_unclear").
+offer("pancreatic protocol CT") :- have("pancreatic abnormalities"), not have("jaundice").
+1 {{offer("FDG-PET/CT"); offer("EUS", "EUS-guided tissue sampling")}} 2 :- have("pancreatic abnormalities"), not have("jaundice"), offered("pancreatic protocol CT"), findings("pancreatic protocol CT", "diagnosis unclear").
 
 Reasoning:
-Main action: offer CT → offer("pancreatic_protocol_ct") from first statement. offer FDG-PET/CT or EUR with tissue → offer("FDG-PET/CT"), offer("EUS_with_tissue") from second statement.
+Main action: offer CT → offer("pancreatic protocol CT") from first statement. offer FDG-PET/CT or EUS-guided tissue sampling → offer("FDG-PET/CT"), offer("EUS-guided tissue sampling") from second statement.
 Conditions: have abnormalities, not have jaundice from the first statement. findings of CT procedure means an unclear from the second statement.
 Temporal rule: if CT was offered and diagnosis still unclear → offer further procedures. Symptoms from first conditions carry on over as statements are linked.
 
@@ -68,25 +68,25 @@ Temporal rule: if CT was offered and diagnosis still unclear → offer further p
 % Note the offered(I) predicate is VERY important here as it allows us to have temporal relationships within our rules.
 
 Example 2:
-People with obstructive jaundice:
-Take a biliary brushing for cytology if: endoscopic retrograde cholangiopancreatography (ERCP) is being used to relieve the biliary obstruction and there is no tissue diagnosis.
+People with pancreatic cysts:
+Consider fine-needle aspiration during EUS if more information on the likelihood of malignancy is needed.
 
 Constants:
-Procedures: "bilary brushing", "ERCP".
-Understanding_of_diagnosis: "no tissue diagnosis".
-Symptoms: "bilary obstruction", "obstructive jaundice".
+Procedures: "EUS".
+Techniques: "fine-needle aspiration"
+General_findings: "more information on the likelihood of malignancy".
+Symptoms: "pancreatic cysts".
 
 Predicates:
-offer(P)
+consider(P, T)
+need(Gf)
 have(S)
-findings(Gf)
-offer(P, S)
 
 ASP:
-offer("biliary_brushing") :- have("obstructive_jaundice"), findings("no_tissue_diagnosis"), offer("ERCP", "bilary_obstruction").
+consider("EUS", "fine-needle aspiration") :- need("more information on the likelihood of malignancy"), have("pancreatic cysts").
 
 % This rule reads as: 
-% If the patient has obstructive jaundice and there is no tissue diagnosis and ERCP is being used to treat bilary obstruction then offer bilary brushin.
+% If the patient has pancreatic cysts and we need more information on the liklihood of malignancy then consider EUS with fine-needle aspiration.
 
 Example 3:
 People with inherited high risk of pancreatic cancer: 
@@ -107,8 +107,8 @@ have(Ip)
 first_degree_relative(D, PersonID)
 
 ASP:
-offer("surveillance", "pancreatic_cancer") :- have("inherited_high_risk"), have("hereditary_pancreatitis"), have("PRSS1").
-offer("surveillance", "pancreatic_cancer") :- have("inherited_high_risk"), 1{{have("BRCA1"); have("BRCA2"); have("PALB2"); have("CDKN2A")}}4, first_degree_relative("pancreatic_cancer",_).
+offer("surveillance", "pancreatic cancer") :- have("inherited high risk"), have("hereditary_pancreatitis"), have("PRSS1").
+offer("surveillance", "pancreatic cancer") :- have("inherited high risk"), 1{{have("BRCA1"); have("BRCA2"); have("PALB2"); have("CDKN2A")}}4, first_degree_relative("pancreatic cancer",_).
 
 % These rules read as: 
 % If the patient has inherited high risk, hereditary pancreatitis and PRSS1 then offer surveillance for pancreatic cancer.
@@ -133,7 +133,7 @@ have(Gd)
 have(Ip)
 
 ASP:
-:- have("inherited_high_risk"), offer("EUS"), have("hereditary_pancreatitis").
+:- have("inherited high risk"), offer("EUS"), have("hereditary pancreatitis").
 
 % This rule reads as: 
 % Do not offer EUS if the patient has inherited high risk and hereditary pancreatitis
@@ -153,7 +153,7 @@ have(S)
 have(Ip)
 
 ASP:
-refer("suspected_cancer_pathway", "pancreatic_cancer") :- age(X), have("jaundice"), X>=40.
+refer("suspected cancer pathway", "pancreatic cancer") :- age(X), have("jaundice"), X>=40.
 
 % These rules read as: 
 % If the patient is above the age of 40 and has jaundice then refer to the suspected cancer pathway
@@ -179,8 +179,8 @@ consider(I)
 have(S)
 
 ASP:
-consider("CT_scan") :- age(X), have("unexplained_weight_loss"), 1{{have("diarrhoea"); have("back_pain"); have("abdominal_pain"); have("nausea"); have("vomiting"); have("constipation"); have("new_onset_diabetes")}}7, X>60.
-consider("ultrasound") :- age(X), have("unexplained_weight_loss"), 1{{have("diarrhoea"); have("back_pain"); have("abdominal_pain"); have("nausea"); have("vomiting"); have("constipation"); have("new_onset_diabetes")}}7, X>60, not available("CT_scan").
+consider("CT scan") :- age(X), have("unexplained weight loss"), 1{{have("diarrhoea"); have("back pain"); have("abdominal pain"); have("nausea"); have("vomiting"); have("constipation"); have("new onset diabetes")}}7, X>60.
+consider("ultrasound") :- age(X), have("unexplained_weight_loss"), 1{{have("diarrhoea"); have("back pain"); have("abdominal pain"); have("nausea"); have("vomiting"); have("constipation"); have("new onset diabetes")}}7, X>60, not available("CT_scan").
 
 % These rules are read as
 % If the patient is over the age of 60, has unexplained weight loss and any one of diarrhoea, back pain, abdominal pain, nausea, vomiting, constipation or new-onset diabetes then consider an urgent CT scan.

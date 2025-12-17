@@ -17,7 +17,7 @@ Category definitions:
 8. Treatments: Interventions for treating disease (e.g., "chemotherapy").
 9. Anatomical_structures: Named body parts or regions.
 10. Information_about_patient: Demographic or risk-related details (e.g., "40", "first-degree relatives").
-11. General_findings: Concepts describing diagnostic uncertainty or test results (e.g., "unclear diagnosis").
+11. General_findings: Concepts describing diagnostic uncertainty or test results (e.g., "unclear diagnosis", "more information").
 
 Examples:
 
@@ -29,19 +29,19 @@ Constants:
 Imaging: "pancreatic protocol CT".
 Finding_of_pancreas: "pancreatic abnormalities".
 Symptoms: "jaundice".
-Procedures: "FDG-PET/CT", "EUS", "EUS with tissue".
+Procedures: "FDG-PET/CT", "EUS", "EUS-guided tissue sampling".
 General_findings: "unclear diagnosis".
 
 (Reasoning: “jaundice” → Symptom; “pancreatic protocol CT” → Imaging; “FDG-PET/CT” → Procedure; “unclear diagnosis” → General finding)
 
 Example 2:
-People with obstructive jaundice:
-Take a biliary brushing for cytology if: endoscopic retrograde cholangiopancreatography (ERCP) is being used to relieve the biliary obstruction and there is no tissue diagnosis.
+People with pancreatic cysts:
+Consider fine-needle aspiration during EUS if more information on the likelihood of malignancy is needed.
 
 Constants:
-Procedures: "bilary brushing", "ERCP".
-Understanding_of_diagnosis: "no tissue diagnosis".
-Symptoms: "bilary obstruction", "obstructive jaundice".
+Procedures: "EUS", "fine-needle aspiration".
+Understanding_of_diagnosis: "more information on the likelihood of malignancy".
+Symptoms: "pancreatic cysts".
 
 Example 3:
 People with inherited high risk of pancreatic cancer: 

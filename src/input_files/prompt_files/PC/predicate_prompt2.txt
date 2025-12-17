@@ -43,34 +43,36 @@ Constants:
 Imaging: "pancreatic protocol CT".
 Finding_of_pancreas: "pancreatic abnormalities".
 Symptoms: "jaundice".
-Procedures: "FDG-PET/CT", "EUS", "EUS with tissue".
+Procedures: "FDG-PET/CT", "EUS", "EUS-guided tissue sampling".
 General_findings: "unclear diagnosis".
 
 Predicates:
 offer(I)
 offer(P)
+offer(P, P)
 have(Fp)
 have(S)
 findings(I, Gf)
 offered(I)
 
 % Note the offered(I) predicate is VERY important here as it allows us to have temporal relationships within our rules.
-% Note the predicate findings(I, Gf). This predicate should be used in situations where we have a finding Gf from an imaging I where the finding could be information such as 'diagnosis unclear', 'more information needed', 'localised disease', 'malignant' etc.
+% Note the predicate findings(I, Gf). This predicate should be used in situations where we have a finding Gf from an imaging I where the finding could be information such as 'diagnosis unclear', 'localised disease', 'malignant' etc.
+% Note we can have multiple predicates with the same name but different arity such as offer(P), offer(P, P), where a higher arity predicate is able to express more specific relations. 
 
 Example 2:
-People with obstructive jaundice:
-Take a biliary brushing for cytology if: endoscopic retrograde cholangiopancreatography (ERCP) is being used to relieve the biliary obstruction and there is no tissue diagnosis.
+People with pancreatic cysts:
+Consider fine-needle aspiration during EUS if more information on the likelihood of malignancy is needed.
 
 Constants:
-Procedures: "bilary brushing", "ERCP".
-Understanding_of_diagnosis: "no tissue diagnosis".
-Symptoms: "bilary obstruction", "obstructive jaundice".
+Procedures: "EUS".
+Techniques: "fine-needle aspiration"
+General_findings: "more information on the likelihood of malignancy".
+Symptoms: "pancreatic cysts".
 
 Predicates:
-offer(P)
+consider(P, T)
+need(Gf)
 have(S)
-findings(Gf)
-offer(P, S)
 
 Example 3:
 People with inherited high risk of pancreatic cancer: 
