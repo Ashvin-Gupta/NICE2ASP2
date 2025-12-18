@@ -1,113 +1,109 @@
-Looking at this clinical guideline text, I'll systematically convert each numbered guideline into ASP rules.
+Looking at this clinical guideline text, I'll identify the logical conditions and actions, then express them as ASP rules.
 
-```
+First, let me identify the key constants and predicates needed:
+
+**Constants:**
+- Procedures: "sputum cytology", "bronchoscopy", "contrast-enhanced chest CT", "ultrasound", "MRI", "PET-CT", "EBUS-TBNA", "EUS-FNA", "flexible bronchoscopy", "image-guided biopsy", "surgical mediastinal staging", "brain CT", "brain MRI", "X-ray", "bone scintigraphy"
+- Conditions: "lung cancer", "NSCLC", "central lesions", "peripheral lung lesions", "superior sulcus tumours"
+- Symptoms/findings: "haemoptysis", "cough", "fatigue", "shortness of breath", "chest pain", "weight loss", "appetite loss", "chest infection", "finger clubbing", "lymphadenopathy", "neurological symptoms", "bone metastases"
+
+**Predicates:**
+- offer(P)
+- consider(P)
+- use(P)
+- have(C)
+- have(S)
+- decline(P)
+- cannot_tolerate(P)
+- age(X)
+- refer(Pathway, Condition)
+- findings(P, F)
+- stage(S)
+- treatment_intent(T)
+- nodal_size(Size)
+- affects_treatment(N)
+
+**ASP Rules:**
+
 [1.3.1]
-offer("sputum_cytology") :- have("suspected_lung_cancer"), have("centrally_placed_nodules_or_masses"), decline("bronchoscopy").
-offer("sputum_cytology") :- have("suspected_lung_cancer"), have("centrally_placed_nodules_or_masses"), cannot_tolerate("bronchoscopy").
-offer("sputum_cytology") :- have("suspected_lung_cancer"), have("centrally_placed_nodules_or_masses"), decline("invasive_tests").
-offer("sputum_cytology") :- have("suspected_lung_cancer"), have("centrally_placed_nodules_or_masses"), cannot_tolerate("invasive_tests").
+use("sputum cytology") :- have("suspected lung cancer"), have("centrally placed nodules"), decline("bronchoscopy").
+use("sputum cytology") :- have("suspected lung cancer"), have("centrally placed nodules"), cannot_tolerate("bronchoscopy").
+use("sputum cytology") :- have("suspected lung cancer"), have("centrally placed nodules"), decline("invasive tests").
+use("sputum cytology") :- have("suspected lung cancer"), have("centrally placed nodules"), cannot_tolerate("invasive tests").
 
 [1.3.2]
-offer("contrast_enhanced_chest_ct") :- have("known_or_suspected_lung_cancer").
-
-[1.3.3]
-consider("ultrasound") :- assessing("mediastinal_and_chest_wall_invasion"), have("doubt").
+offer("contrast-enhanced chest CT") :- have("suspected lung cancer").
+offer("contrast-enhanced chest CT") :- have("lung cancer").
 
 [1.3.4]
-offer("pet_ct") :- have("lung_cancer"), could_have("treatment_with_curative_intent").
+offer("PET-CT") :- have("lung cancer"), treatment_intent("curative").
 
 [1.3.6]
-:- offer("mri"), assess("t_stage"), have("nsclc"), not have("superior_sulcus_tumours").
+:- use("MRI"), assess("T-stage"), have("NSCLC"), not necessary.
 
 [1.3.7]
-offer("mri") :- have("superior_sulcus_tumours"), assess("extent_of_disease").
+use("MRI") :- have("superior sulcus tumours"), assess("extent of disease").
 
 [1.3.8]
-offer("ebus_tbna") :- have("paratracheal_lesions").
-offer("ebus_tbna") :- have("peri_bronchial_intra_parenchymal_lung_lesions").
-
-[1.3.13]
-choose("investigations_with_most_information_least_risk") :- have("suspected_lung_cancer").
-
-[1.3.14]
-offer("contrast_enhanced_ct") :- have("suspected_lung_cancer"), not offered("biopsy").
+offer("EBUS-TBNA") :- have("paratracheal lesions").
+offer("EBUS-TBNA") :- have("peri-bronchial intra-parenchymal lung lesions").
 
 [1.3.15]
-offer("image_guided_biopsy") :- have("peripheral_lung_lesions"), can_plan_treatment("image_guided_biopsy").
-
-[1.3.16]
-offer("biopsy", "intrathoracic_nodes") :- have("enlarged_intrathoracic_nodes"), node_size(X), X>=10, affects_treatment("nodal_stage").
+offer("image-guided biopsy") :- have("peripheral lung lesions"), treatment_planned_on_test.
 
 [1.3.17]
-offer("flexible_bronchoscopy") :- have("central_lesions_on_ct"), not affects_treatment("nodal_staging").
+offer("flexible bronchoscopy") :- have("central lesions"), not affects_treatment("nodal staging").
 
 [1.3.18]
-offer("pet_ct") :- have("lung_cancer"), could_have("treatment_with_curative_intent"), have("low_probability_nodal_malignancy"), node_size(X), X<10.
+offer("PET-CT") :- have("lung cancer"), treatment_intent("curative"), nodal_size(X), X<10.
 
 [1.3.19]
-offer("pet_ct") :- have("suspected_lung_cancer"), have("enlarged_intrathoracic_lymph_nodes"), node_size(X), X>=10, could_have("treatment_with_curative_intent"), not offered("pet_ct").
-offer("ebus_tbna") :- have("suspected_lung_cancer"), have("enlarged_intrathoracic_lymph_nodes"), node_size(X), X>=10, could_have("treatment_with_curative_intent"), offered("pet_ct").
-offer("eus_fna") :- have("suspected_lung_cancer"), have("enlarged_intrathoracic_lymph_nodes"), node_size(X), X>=10, could_have("treatment_with_curative_intent"), offered("pet_ct").
-
-[1.3.20]
-offer("ebus_tbna") :- have("pet_ct_positive_nodes"), affects_treatment("nodal_status").
-offer("eus_fna") :- have("pet_ct_positive_nodes"), affects_treatment("nodal_status").
-offer("ebus_tbna") :- have("enlarged_intrathoracic_nodes"), affects_treatment("nodal_status").
-offer("eus_fna") :- have("enlarged_intrathoracic_nodes"), affects_treatment("nodal_status").
+offer("PET-CT") :- have("suspected lung cancer"), nodal_size(X), X>=10, treatment_intent("curative"), not offered("PET-CT").
+offer("EBUS-TBNA") :- have("suspected lung cancer"), nodal_size(X), X>=10, treatment_intent("curative"), offered("PET-CT").
+offer("EUS-FNA") :- have("suspected lung cancer"), nodal_size(X), X>=10, treatment_intent("curative"), offered("PET-CT").
 
 [1.3.21]
-consider("surgical_mediastinal_staging") :- findings("ebus_tbna", "negative"), have("high_clinical_suspicion_nodal_malignancy"), affects_treatment("nodal_status").
-consider("surgical_mediastinal_staging") :- findings("eus_fna", "negative"), have("high_clinical_suspicion_nodal_malignancy"), affects_treatment("nodal_status").
-
-[1.3.22]
-offer("biopsy") :- have("isolated_distant_metastases"), being_considered_for("treatment_with_curative_intent").
-offer("biopsy") :- have("synchronous_tumours"), being_considered_for("treatment_with_curative_intent").
-offer("mri") :- have("isolated_distant_metastases"), being_considered_for("treatment_with_curative_intent").
-offer("mri") :- have("synchronous_tumours"), being_considered_for("treatment_with_curative_intent").
-offer("pet_ct") :- have("isolated_distant_metastases"), being_considered_for("treatment_with_curative_intent").
-offer("pet_ct") :- have("synchronous_tumours"), being_considered_for("treatment_with_curative_intent").
+consider("surgical mediastinal staging") :- findings("EBUS-TBNA", "negative"), clinical_suspicion("nodal malignancy", "high"), affects_treatment("nodal status").
+consider("surgical mediastinal staging") :- findings("EUS-FNA", "negative"), clinical_suspicion("nodal malignancy", "high"), affects_treatment("nodal status").
 
 [1.3.23]
-:- offer("brain_imaging"), have("clinical_stage_i_nsclc"), not have("neurological_symptoms"), having("treatment_with_curative_intent").
+:- offer("brain imaging"), stage("clinical stage I"), have("NSCLC"), not have("neurological symptoms"), treatment_intent("curative").
 
 [1.3.24]
-offer("contrast_enhanced_brain_ct") :- have("clinical_stage_ii_nsclc"), having("treatment_with_curative_intent").
-offer("contrast_enhanced_brain_mri") :- have("clinical_stage_ii_nsclc"), having("treatment_with_curative_intent"), findings("ct", "suspected_brain_metastases").
+offer("contrast-enhanced brain CT") :- stage("clinical stage II"), have("NSCLC"), treatment_intent("curative").
+offer("contrast-enhanced brain MRI") :- stage("clinical stage II"), have("NSCLC"), treatment_intent("curative"), findings("brain CT", "suspected brain metastases").
 
 [1.3.25]
-offer("contrast_enhanced_brain_mri") :- have("stage_iii_nsclc"), having("treatment_with_curative_intent").
+offer("contrast-enhanced brain MRI") :- stage("stage III"), have("NSCLC"), treatment_intent("curative").
 
 [1.3.26]
-offer("ct_head") :- have("clinical_features_suggestive_intracranial_pathology").
-offer("mri") :- have("clinical_features_suggestive_intracranial_pathology"), findings("ct_head", "normal").
-offer("mri") :- have("clinical_features_suggestive_intracranial_pathology").
+offer("head CT") :- have("intracranial pathology features").
+offer("brain MRI") :- have("intracranial pathology features"), findings("head CT", "normal").
 
 [1.3.27]
-offer("xray") :- have("localised_signs_or_symptoms_bone_metastasis").
-offer("bone_scintigraphy") :- have("localised_signs_or_symptoms_bone_metastasis"), findings("xray", "negative").
-offer("bone_scintigraphy") :- have("localised_signs_or_symptoms_bone_metastasis"), findings("xray", "inconclusive").
-offer("mri") :- have("localised_signs_or_symptoms_bone_metastasis"), findings("xray", "negative").
-offer("mri") :- have("localised_signs_or_symptoms_bone_metastasis"), findings("xray", "inconclusive").
+perform("X-ray") :- have("localised signs of bone metastasis").
+perform("X-ray") :- have("localised symptoms of bone metastasis").
+offer("bone scintigraphy") :- have("localised signs of bone metastasis"), findings("X-ray", "negative").
+offer("bone scintigraphy") :- have("localised signs of bone metastasis"), findings("X-ray", "inconclusive").
+offer("MRI scan") :- have("localised signs of bone metastasis"), findings("X-ray", "negative").
+offer("MRI scan") :- have("localised signs of bone metastasis"), findings("X-ray", "inconclusive").
 
 [1.3.28]
-:- offer("bone_scintigraphy"), findings("pet_ct", "no_bone_metastases").
-
-[1.3.30]
-refer("lung_cancer_mdt_member") :- have("suspected_diagnosis_lung_cancer").
+:- use("bone scintigraphy"), findings("PET-CT", "no bone metastases").
 
 [1.1.1]
-refer("suspected_cancer_pathway", "lung_cancer") :- findings("chest_xray", "suggest_lung_cancer").
-refer("suspected_cancer_pathway", "lung_cancer") :- age(X), X>=40, have("unexplained_haemoptysis").
+refer("suspected cancer pathway", "lung cancer") :- findings("chest X-ray", "suggest lung cancer").
+refer("suspected cancer pathway", "lung cancer") :- age(X), X>=40, have("unexplained haemoptysis").
 
 [1.1.2]
-offer("urgent_chest_xray") :- age(X), X>=40, 2{have("unexplained_cough"); have("unexplained_fatigue"); have("unexplained_shortness_of_breath"); have("unexplained_chest_pain"); have("unexplained_weight_loss"); have("unexplained_appetite_loss")}6.
-offer("urgent_chest_xray") :- age(X), X>=40, have("ever_smoked"), 1{have("unexplained_cough"); have("unexplained_fatigue"); have("unexplained_shortness_of_breath"); have("unexplained_chest_pain"); have("unexplained_weight_loss"); have("unexplained_appetite_loss")}6.
+offer("urgent chest X-ray") :- age(X), X>=40, 2{have("cough"); have("fatigue"); have("shortness of breath"); have("chest pain"); have("weight loss"); have("appetite loss")}6.
+offer("urgent chest X-ray") :- age(X), X>=40, ever_smoked, 1{have("cough"); have("fatigue"); have("shortness of breath"); have("chest pain"); have("weight loss"); have("appetite loss")}6.
 
 [1.1.3]
-consider("urgent_chest_xray") :- age(X), X>=40, have("persistent_or_recurrent_chest_infection").
-consider("urgent_chest_xray") :- age(X), X>=40, have("finger_clubbing").
-consider("urgent_chest_xray") :- age(X), X>=40, have("supraclavicular_lymphadenopathy").
-consider("urgent_chest_xray") :- age(X), X>=40, have("persistent_cervical_lymphadenopathy").
-consider("urgent_chest_xray") :- age(X), X>=40, have("chest_signs_consistent_with_lung_cancer").
-consider("urgent_chest_xray") :- age(X), X>=40, have("thrombocytosis").
-```
+consider("urgent chest X-ray") :- age(X), X>=40, have("persistent chest infection").
+consider("urgent chest X-ray") :- age(X), X>=40, have("recurrent chest infection").
+consider("urgent chest X-ray") :- age(X), X>=40, have("finger clubbing").
+consider("urgent chest X-ray") :- age(X), X>=40, have("supraclavicular lymphadenopathy").
+consider("urgent chest X-ray") :- age(X), X>=40, have("persistent cervical lymphadenopathy").
+consider("urgent chest X-ray") :- age(X), X>=40, have("chest signs consistent with lung cancer").
+consider("urgent chest X-ray") :- age(X), X>=40, have("thrombocytosis").

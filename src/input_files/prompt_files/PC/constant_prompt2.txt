@@ -11,7 +11,7 @@ Category definitions:
 2. Symptoms: Observable signs or symptoms (e.g., "jaundice", "weight loss").
 3. Imaging: Diagnostic imaging modalities (e.g., "CT", "MRI").
 4. Procedures: Medical interventions or diagnostic techniques (e.g., "EUS", "biopsy").
-5. Finding_of_pancreas: Imaging or pathology findings specific to pancreas.
+5. Finding_of_lung: Imaging or pathology findings specific to lung.
 6. Genetic_disease: Inherited or genetic syndromes or mutations.
 7. Management: Clinical management pathways or types of referral.
 8. Treatments: Interventions for treating disease (e.g., "chemotherapy").

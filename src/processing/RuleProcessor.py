@@ -374,6 +374,83 @@ class RuleProcessor:
         
         return rule_map
     
+    def _build_rule_map_from_llm_txt(self, txt_content: str) -> dict:
+        """
+        Build a mapping of rule_id -> rule_text from an LLM response
+        file like in_context_response.txt or zero_shot_response.txt.
+
+        Expects sections like:
+
+            [1.1.1]
+            rule1 :- ...
+            rule2 :- ...
+
+        For each guideline ID, multiple rules are split and given
+        IDs: 1.1.1, 1.1.1_B, 1.1.1_C, ... (like append_fired_rules).
+        """
+        rule_map = {}
+
+        current_guideline_id = None
+        current_rule_lines: list[str] = []
+
+        # Helper to flush collected ASP rule lines for one guideline
+        def flush_guideline():
+            nonlocal current_guideline_id, current_rule_lines, rule_map
+            if not current_guideline_id or not current_rule_lines:
+                current_rule_lines = []
+                return
+
+            # Each non-empty line that looks like a rule becomes a separate entry.
+            # You can adjust the "looks like a rule" heuristic as needed.
+            rule_counter = 0
+            for line in current_rule_lines:
+                stripped = line.strip()
+                if not stripped:
+                    continue
+
+                # Only treat lines that are likely ASP rules
+                if ":-" not in stripped and not stripped.startswith(":-"):
+                    # Skip narrative/comment lines
+                    continue
+
+                rule_counter += 1
+                if rule_counter == 1:
+                    rule_id = current_guideline_id
+                else:
+                    # 2nd rule -> _B, 3rd -> _C, etc., same as append_fired_rules
+                    suffix = chr(ord("B") + rule_counter - 2)
+                    rule_id = f"{current_guideline_id}_{suffix}"
+
+                rule_map[rule_id] = stripped.rstrip(".")
+
+            current_rule_lines = []
+
+        for raw in txt_content.splitlines():
+            line = raw.rstrip()
+            stripped = line.strip()
+
+            # New guideline header: [1.1.1]
+            m = re.match(r"^\[([\d.]+)\]", stripped)
+            if m:
+                # flush rules collected for previous guideline
+                flush_guideline()
+                current_guideline_id = m.group(1)
+                current_rule_lines = []
+                continue
+
+            # Skip everything before the first header
+            if current_guideline_id is None:
+                continue
+
+            # Collect potential rule lines inside this guideline block
+            if stripped:
+                current_rule_lines.append(stripped)
+
+        # Flush last guideline at EOF
+        flush_guideline()
+
+        return rule_map
+    
     def run_clingo_for_patients(self, lp_file_path: str, atoms_file_path: str, output_file_path: str, debug_id: int = None) -> dict:
         """
         For each patient in the atoms file:

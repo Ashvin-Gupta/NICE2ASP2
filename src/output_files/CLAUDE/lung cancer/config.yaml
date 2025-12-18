@@ -4,7 +4,7 @@ experiment:
   model: "claude-opus-4-1-20250805"
   family: "claude"
   temperature: 0.0
-  version: D2K-Pipeline
+  version: D2K-Pipeline # No-Pipeline, In-Context, D2K-Pipeline
   cancer_type: "lung cancer"
 
 input_files:
@@ -18,7 +18,7 @@ input_files:
   llm_only_prompt: "src/input_files/prompt_files/Baselines/llm_only.txt"
   zero_shot_prompt: "src/input_files/prompt_files/PC/zero_shot.txt"
   in_context_prompt: "src/input_files/prompt_files/PC/in_context_PC.txt"
-  
-# llm_params:
-  # constant_inference_iterations: 1
-  # predicate_inference_iterations: 1
+
+
+# Models
+  # model: "gpt-5.1-2025-11-13"

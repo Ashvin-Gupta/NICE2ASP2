@@ -44,7 +44,13 @@ def build_rule_review_dataset(guideline_path: str, lp_file_path: str) -> List[Ru
     processor = RuleProcessor(guideline_path)
     file_manager = FileManager()
     lp_content = file_manager.load_file(lp_file_path)
-    rule_map = processor._build_rule_map_from_lp(lp_content)
+
+    # Choose parser based on file type / content
+    if lp_file_path.endswith(".lp"):
+        rule_map = processor._build_rule_map_from_lp(lp_content)
+    else:
+        # LLM text outputs like in_context_response.txt / zero_shot_response.txt
+        rule_map = processor._build_rule_map_from_llm_txt(lp_content)
 
     # Group ASP rules by their base guideline ID (strip suffixes like _B).
     asp_groups: Dict[str, List[Dict[str, str]]] = {}

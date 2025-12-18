@@ -25,7 +25,7 @@ D  – Disease
 S  – Symptoms
 I  – Imaging
 P  – Procedures
-Fp – Finding_of_pancreas
+Fl – Finding_of_lung
 Gd – Genetic_disease
 M  – Management
 Tr – Treatments

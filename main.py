@@ -63,20 +63,20 @@ def main():
     # ------------------------------------------------------------
 
     if config['experiment']['version'] == 'D2K-Pipeline':
-        # Constant extraction
-        llmExtractor.run_constant_inference(
-            config['input_files']['constant_prompt'],
-            config['input_files']['problem_text'],
-            str(output_files['constant_response']),
-        )
+        # # Constant extraction
+        # llmExtractor.run_constant_inference(
+        #     config['input_files']['constant_prompt'],
+        #     config['input_files']['problem_text'],
+        #     str(output_files['constant_response']),
+        # )
 
-        # Extracting the predicates
-        llmExtractor.run_predicate_inference(
-            config['input_files']['predicate_prompt'],
-            config['input_files']['problem_text'],
-            str(output_files['constant_response']),
-            str(output_files['predicate_response']),
-        )
+        # # Extracting the predicates
+        # llmExtractor.run_predicate_inference(
+        #     config['input_files']['predicate_prompt'],
+        #     config['input_files']['problem_text'],
+        #     str(output_files['constant_response']),
+        #     str(output_files['predicate_response']),
+        # )
 
         # Rule generation
         llmExtractor.run_rulegen_inference(

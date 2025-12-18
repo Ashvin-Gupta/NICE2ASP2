@@ -1,4 +1,4 @@
-experiment,emd_adjusted_similarity,wl_similarity,adjacency_similarity,nodal_similarity
-No-Pipeline,0.51778,0.18687,0.28923,0.07692
-In-Context,0.7754,0.27207,0.51646,0.52564
-D2K-Pipeline,0.81196,0.34194,0.77258,0.55128
+experiment,adjacency_similarity
+D2K-Pipeline,0.71003
+In-Context,0.5267
+No-Pipeline,0.41074

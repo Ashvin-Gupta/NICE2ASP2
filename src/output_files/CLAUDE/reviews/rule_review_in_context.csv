@@ -1,0 +1,172 @@
+guideline_id,guideline_text,asp_rule_id,asp_rule_text,asp_rule_index,total_asp_rules,rating,comment
+1.1.1,"People with obstructive jaundice
+
+For people with obstructive jaundice and suspected pancreatic cancer, offer a pancreatic protocol CT scan before draining the bile duct",1.1.1,"offer(""pancreatic protocol CT"") :- have(""obstructive jaundice""), suspected(""pancreatic cancer"")",0,1,3,Missing the bile duct information
+1.1.2,"People with obstructive jaundice
+
+If the diagnosis is still unclear, offer fluorodeoxyglucose-positron emission tomography/CT (FDG-PET/CT) and/or endoscopic ultrasound (EUS) with EUS-guided tissue sampling",1.1.2,"1{offer(""FDG-PET/CT""); offer(""EUS"", ""EUS-guided tissue sampling"")}2 :- have(""obstructive jaundice""), suspected(""pancreatic cancer""), offered(""pancreatic protocol CT""), findings(""pancreatic protocol CT"", ""unclear diagnosis"")",0,1,1,
+1.1.3,"People with obstructive jaundice
+
+Take a biliary brushing for cytology if:
+• endoscopic retrograde cholangiopancreatography (ERCP) is being used to relieve the biliary obstruction and
+• there is no tissue diagnosis.",1.1.3,"offer(""biliary brushing"", ""cytology"") :- performing(""ERCP""), have(""obstructive jaundice""), not have(""tissue diagnosis"")",0,1,1,
+1.1.4,"People without jaundice who have pancreatic abnormalities on imaging
+
+Offer a pancreatic protocol CT scan to people with pancreatic abnormalities but no jaundice",1.1.4,"offer(""pancreatic protocol CT"") :- have(""pancreatic abnormalities""), not have(""jaundice"")",0,1,1,
+1.1.5,"People without jaundice who have pancreatic abnormalities on imaging
+
+If the diagnosis is still unclear, offer FDG-PET/CT and/or EUS with EUS-guided tissue sampling",1.1.5,"1{offer(""FDG-PET/CT""); offer(""EUS"", ""EUS-guided tissue sampling"")}2 :- have(""pancreatic abnormalities""), not have(""jaundice""), offered(""pancreatic protocol CT""), findings(""pancreatic protocol CT"", ""unclear diagnosis"")",0,1,1,
+1.1.6,"People without jaundice who have pancreatic abnormalities on imaging
+
+If cytological or histological samples are needed, offer EUS with EUS-guided tissue sampling",1.1.6,"offer(""EUS"", ""EUS-guided tissue sampling"") :- need(""cytological samples"")",0,2,1,
+1.1.6,"People without jaundice who have pancreatic abnormalities on imaging
+
+If cytological or histological samples are needed, offer EUS with EUS-guided tissue sampling",1.1.6_B,"offer(""EUS"", ""EUS-guided tissue sampling"") :- need(""histological samples"")",1,2,1,
+1.1.7,"People with pancreatic cysts
+
+Offer a pancreatic protocol CT scan or magnetic resonance cholangiopancreatography (MRI/MRCP) to people with pancreatic cysts. If more information is needed after one of these tests, offer the other one",1.1.7,"1{offer(""pancreatic protocol CT""); offer(""MRI/MRCP"")}1 :- have(""pancreatic cysts"")",0,3,1,
+1.1.7,"People with pancreatic cysts
+
+Offer a pancreatic protocol CT scan or magnetic resonance cholangiopancreatography (MRI/MRCP) to people with pancreatic cysts. If more information is needed after one of these tests, offer the other one",1.1.7_B,"offer(""MRI/MRCP"") :- have(""pancreatic cysts""), offered(""pancreatic protocol CT""), need(""more information"")",1,3,1,
+1.1.7,"People with pancreatic cysts
+
+Offer a pancreatic protocol CT scan or magnetic resonance cholangiopancreatography (MRI/MRCP) to people with pancreatic cysts. If more information is needed after one of these tests, offer the other one",1.1.7_C,"offer(""pancreatic protocol CT"") :- have(""pancreatic cysts""), offered(""MRI/MRCP""), need(""more information"")",2,3,1,
+1.1.8,"People with pancreatic cysts
+
+Refer people with any of these high-risk features for resection:
+• obstructive jaundice with cystic lesions in the head of the pancreas
+• enhancing solid component in the cyst
+• a main pancreatic duct that is 10 mm diameter or larger.",1.1.8,"refer(""resection"", ""pancreatic cancer"") :- have(""obstructive jaundice""), have(""cystic lesions in head of pancreas"")",0,3,1,
+1.1.8,"People with pancreatic cysts
+
+Refer people with any of these high-risk features for resection:
+• obstructive jaundice with cystic lesions in the head of the pancreas
+• enhancing solid component in the cyst
+• a main pancreatic duct that is 10 mm diameter or larger.",1.1.8_B,"refer(""resection"", ""pancreatic cancer"") :- have(""enhancing solid component"")",1,3,3,Missing information about systs
+1.1.8,"People with pancreatic cysts
+
+Refer people with any of these high-risk features for resection:
+• obstructive jaundice with cystic lesions in the head of the pancreas
+• enhancing solid component in the cyst
+• a main pancreatic duct that is 10 mm diameter or larger.",1.1.8_C,"refer(""resection"", ""pancreatic cancer"") :- have(""main pancreatic duct 10mm or larger"")",2,3,1,
+1.1.9,"People with pancreatic cysts
+
+Offer EUS after CT and MRI/MRCP if more information on the likelihood of malignancy is needed, or if it is not clear whether surgery is needed",1.1.9,"offer(""EUS"") :- have(""pancreatic cysts""), offered(""pancreatic protocol CT""), offered(""MRI/MRCP""), need(""more information on likelihood of malignancy"")",0,2,1,
+1.1.9,"People with pancreatic cysts
+
+Offer EUS after CT and MRI/MRCP if more information on the likelihood of malignancy is needed, or if it is not clear whether surgery is needed",1.1.9_B,"offer(""EUS"") :- have(""pancreatic cysts""), offered(""pancreatic protocol CT""), offered(""MRI/MRCP""), need(""clarity on surgery"")",1,2,1,
+1.1.10,"People with pancreatic cysts
+
+Consider fine-needle aspiration during EUS if more information on the likelihood of malignancy is needed",1.1.10,"consider(""EUS"", ""fine-needle aspiration"") :- need(""more information on likelihood of malignancy""), have(""pancreatic cysts"")",0,1,2,Missing fact that assuming EUS is already happening
+1.1.11,"People with pancreatic cysts
+
+When using fine-needle aspiration, perform carcinoembryonic antigen (CEA) assay in addition to cytology if there is sufficient sample",1.1.11,"offer(""CEA assay"") :- performing(""fine-needle aspiration""), have(""sufficient sample"")",0,1,3,Missing cytology information
+1.1.12,"People with pancreatic cysts
+
+For people with cysts that are thought to be malignant, follow the recommendations on staging",,,0,0,0,No translation
+1.1.13,"People with inherited high risk of pancreatic cancer
+
+Ask people with pancreatic cancer if any of their first-degree relatives has had it",,,0,0,0,No translation
+1.1.14,"People with inherited high risk of pancreatic cancer
+
+Offer surveillance for pancreatic cancer to people with:
+• hereditary pancreatitis and a PRSS1 mutation
+• BRCA1, BRCA2, PALB2 or CDKN2A (p16) mutations, and one or more first-degree relatives with pancreatic cancer
+• Peutz–Jeghers syndrome.",1.1.14,"offer(""surveillance"", ""pancreatic cancer"") :- have(""hereditary pancreatitis""), have(""PRSS1"")",0,3,1,
+1.1.14,"People with inherited high risk of pancreatic cancer
+
+Offer surveillance for pancreatic cancer to people with:
+• hereditary pancreatitis and a PRSS1 mutation
+• BRCA1, BRCA2, PALB2 or CDKN2A (p16) mutations, and one or more first-degree relatives with pancreatic cancer
+• Peutz–Jeghers syndrome.",1.1.14_B,"offer(""surveillance"", ""pancreatic cancer"") :- 1{have(""BRCA1""); have(""BRCA2""); have(""PALB2""); have(""CDKN2A"")}4, first_degree_relative(""pancreatic cancer"", _)",1,3,1,
+1.1.14,"People with inherited high risk of pancreatic cancer
+
+Offer surveillance for pancreatic cancer to people with:
+• hereditary pancreatitis and a PRSS1 mutation
+• BRCA1, BRCA2, PALB2 or CDKN2A (p16) mutations, and one or more first-degree relatives with pancreatic cancer
+• Peutz–Jeghers syndrome.",1.1.14_C,"offer(""surveillance"", ""pancreatic cancer"") :- have(""Peutz-Jeghers syndrome"")",2,3,1,
+1.1.15,"People with inherited high risk of pancreatic cancer
+
+Consider surveillance for pancreatic cancer for people with:
+• 2 or more first-degree relatives with pancreatic cancer, across 2 or more generations
+• Lynch syndrome (mismatch repair gene [MLH1, MSH2, MSH6 or PMS2] mutations) and any first-degree relatives with pancreatic cancer.",1.1.15,"consider(""surveillance"", ""pancreatic cancer"") :- first_degree_relative(""pancreatic cancer"", X), first_degree_relative(""pancreatic cancer"", Y), X!=Y",0,2,1,
+1.1.15,"People with inherited high risk of pancreatic cancer
+
+Consider surveillance for pancreatic cancer for people with:
+• 2 or more first-degree relatives with pancreatic cancer, across 2 or more generations
+• Lynch syndrome (mismatch repair gene [MLH1, MSH2, MSH6 or PMS2] mutations) and any first-degree relatives with pancreatic cancer.",1.1.15_B,"consider(""surveillance"", ""pancreatic cancer"") :- 1{have(""MLH1""); have(""MSH2""); have(""MSH6""); have(""PMS2"")}4, first_degree_relative(""pancreatic cancer"", _)",1,2,1,
+1.1.16,"People with inherited high risk of pancreatic cancer
+
+Consider an MRI/MRCP or EUS for pancreatic cancer surveillance in people without hereditary pancreatitis",1.1.16,"consider(""MRI/MRCP"") :- need(""surveillance""), not have(""hereditary pancreatitis"")",0,2,3,Does not say surveillance for which cancer
+1.1.16,"People with inherited high risk of pancreatic cancer
+
+Consider an MRI/MRCP or EUS for pancreatic cancer surveillance in people without hereditary pancreatitis",1.1.16_B,"consider(""EUS"") :- need(""surveillance""), not have(""hereditary pancreatitis"")",1,2,3,Does not say surveillance for which cancer
+1.1.17,"People with inherited high risk of pancreatic cancer
+
+Consider a pancreatic protocol CT scan for pancreatic cancer surveillance in people with hereditary pancreatitis and a PRSS1 mutation",1.1.17,"consider(""pancreatic protocol CT"") :- need(""surveillance""), have(""hereditary pancreatitis""), have(""PRSS1"")",0,1,3,Does not say surveillance for which cancer
+1.1.18,"People with inherited high risk of pancreatic cancer
+
+Do not offer EUS to detect pancreatic cancer in people with hereditary pancreatitis",1.1.18,":- offer(""EUS""), have(""hereditary pancreatitis""), need(""detect pancreatic cancer"")",0,1,1,
+1.2.4,"Pancreatic cancer
+
+Refer people using a suspected cancer pathway referral for pancreatic cancer if they are aged 40 and over and have jaundice",1.2.4,"refer(""suspected cancer pathway"", ""pancreatic cancer"") :- age(X), have(""jaundice""), X>=40",0,1,1,
+1.2.5,"Pancreatic cancer
+
+Consider an urgent, direct access CT scan (to be done within 2 weeks), or an urgent ultrasound scan if CT is not available, to assess for pancreatic cancer in people aged 60 and over with weight loss and any of the following:
+•	diarrhoea
+•   back pain
+•   abdominal pain
+•   nausea
+•   vomiting
+•   constipation
+•   new-onset diabetes.",1.2.5,"consider(""CT scan"") :- age(X), have(""weight loss""), 1{have(""diarrhoea""); have(""back pain""); have(""abdominal pain""); have(""nausea""); have(""vomiting""); have(""constipation""); have(""new-onset diabetes"")}7, X>=60",0,2,1,
+1.2.5,"Pancreatic cancer
+
+Consider an urgent, direct access CT scan (to be done within 2 weeks), or an urgent ultrasound scan if CT is not available, to assess for pancreatic cancer in people aged 60 and over with weight loss and any of the following:
+•	diarrhoea
+•   back pain
+•   abdominal pain
+•   nausea
+•   vomiting
+•   constipation
+•   new-onset diabetes.",1.2.5_B,"consider(""ultrasound"") :- age(X), have(""weight loss""), 1{have(""diarrhoea""); have(""back pain""); have(""abdominal pain""); have(""nausea""); have(""vomiting""); have(""constipation""); have(""new-onset diabetes"")}7, X>=60, not available(""CT scan"")",1,2,1,
+1.3.1,"For people with newly diagnosed pancreatic cancer who have not had a pancreatic protocol CT scan, offer a pancreatic protocol CT scan that includes the chest, abdomen and pelvis",1.3.1,"offer(""pancreatic protocol CT"") :- have(""pancreatic cancer""), not offered(""pancreatic protocol CT"")",0,1,3,"Missing infor about chest, abdomen and pelvis"
+1.3.2,"Offer fluorodeoxyglucose-positron emission tomography/CT (FDG-PET/CT) to people with localised disease on CT who will be having cancer treatment (surgery, radiotherapy or systemic therapy)",1.3.2,"offer(""FDG-PET/CT"") :- have(""localised disease""), have(""pancreatic cancer"")",0,1,3,Missing information on treatments
+1.3.3,"If more information is needed to decide the person's clinical management, consider one or more of the following:
+• MRI, for suspected liver metastases
+• endoscopic ultrasound, if more information is needed for tumour and node staging
+• laparoscopy with laparoscopic ultrasound, for suspected small-volume peritoneal and/or liver metastases if resectional surgery is a possibility.",1.3.3,"consider(""MRI"") :- suspected(""liver metastases""), need(""more information"")",0,5,1,
+1.3.3,"If more information is needed to decide the person's clinical management, consider one or more of the following:
+• MRI, for suspected liver metastases
+• endoscopic ultrasound, if more information is needed for tumour and node staging
+• laparoscopy with laparoscopic ultrasound, for suspected small-volume peritoneal and/or liver metastases if resectional surgery is a possibility.",1.3.3_B,"consider(""EUS"") :- need(""more information on tumor staging"")",1,5,1,
+1.3.3,"If more information is needed to decide the person's clinical management, consider one or more of the following:
+• MRI, for suspected liver metastases
+• endoscopic ultrasound, if more information is needed for tumour and node staging
+• laparoscopy with laparoscopic ultrasound, for suspected small-volume peritoneal and/or liver metastases if resectional surgery is a possibility.",1.3.3_C,"consider(""EUS"") :- need(""more information on node staging"")",2,5,1,
+1.3.3,"If more information is needed to decide the person's clinical management, consider one or more of the following:
+• MRI, for suspected liver metastases
+• endoscopic ultrasound, if more information is needed for tumour and node staging
+• laparoscopy with laparoscopic ultrasound, for suspected small-volume peritoneal and/or liver metastases if resectional surgery is a possibility.",1.3.3_D,"consider(""laparoscopy"", ""laparoscopic ultrasound"") :- suspected(""peritoneal metastases""), possibility(""resectional surgery"")",3,5,1,
+1.3.3,"If more information is needed to decide the person's clinical management, consider one or more of the following:
+• MRI, for suspected liver metastases
+• endoscopic ultrasound, if more information is needed for tumour and node staging
+• laparoscopy with laparoscopic ultrasound, for suspected small-volume peritoneal and/or liver metastases if resectional surgery is a possibility.",1.3.3_E,"consider(""laparoscopy"", ""laparoscopic ultrasound"") :- suspected(""liver metastases""), possibility(""resectional surgery"")",4,5,1,
+1.13.2,"For people with unexplained weight loss, which is a symptom of several cancers including colorectal, gastro-oesophageal, lung, prostate, pancreatic and urological cancer:
+•	carry out an assessment for additional symptoms, signs or findings that may help to clarify which cancer is most likely and
+•	offer urgent investigation or a suspected cancer pathway referral.",1.13.2,"offer(""urgent investigation"") :- have(""unexplained weight loss"")",0,2,1,
+1.13.2,"For people with unexplained weight loss, which is a symptom of several cancers including colorectal, gastro-oesophageal, lung, prostate, pancreatic and urological cancer:
+•	carry out an assessment for additional symptoms, signs or findings that may help to clarify which cancer is most likely and
+•	offer urgent investigation or a suspected cancer pathway referral.",1.13.2_B,"refer(""suspected cancer pathway"", ""cancer"") :- have(""unexplained weight loss"")",1,2,1,
+1.13.2,"For people with unexplained weight loss, which is a symptom of several cancers including colorectal, gastro-oesophageal, lung, prostate, pancreatic and urological cancer:
+•	carry out an assessment for additional symptoms, signs or findings that may help to clarify which cancer is most likely and
+•	offer urgent investigation or a suspected cancer pathway referral.",1.13.2_B,"refer(""suspected cancer pathway"", ""cancer"") :- have(""unexplained weight loss"")",3,3,0,Missing additional symptoms
+1.13.3,"For people with unexplained appetite loss, which is a symptom of several cancers including lung, oesophageal, stomach, colorectal, pancreatic, bladder and renal cancer:
+•	carry out an assessment for additional symptoms, signs or findings that may help to clarify which cancer is most likely and
+•	offer urgent investigation or a suspected cancer pathway referral.",1.13.3,"offer(""urgent investigation"") :- have(""unexplained appetite loss"")",0,2,1,
+1.13.3,"For people with unexplained appetite loss, which is a symptom of several cancers including lung, oesophageal, stomach, colorectal, pancreatic, bladder and renal cancer:
+•	carry out an assessment for additional symptoms, signs or findings that may help to clarify which cancer is most likely and
+•	offer urgent investigation or a suspected cancer pathway referral.",1.13.3_B,"refer(""suspected cancer pathway"", ""cancer"") :- have(""unexplained appetite loss"")",1,2,1,
+1.13.3,"For people with unexplained appetite loss, which is a symptom of several cancers including lung, oesophageal, stomach, colorectal, pancreatic, bladder and renal cancer:
+•	carry out an assessment for additional symptoms, signs or findings that may help to clarify which cancer is most likely and
+•	offer urgent investigation or a suspected cancer pathway referral.",1.13.3_B,"refer(""suspected cancer pathway"", ""cancer"") :- have(""unexplained appetite loss"")",2,3,0,Missing additional symptoms
