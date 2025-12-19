@@ -123,3 +123,12 @@ fired("1.2.5_B") :- age(X), X>=60, have("weight loss"), 1{have("diarrhoea"); hav
 
 #show fired/1.
 #show constraint_ok/1.
+
+% Patient 2 facts
+age(63).
+have("back pain").
+have("weight loss").
+have("weight loss", "unexplained").
+have("pancreatic abnormalities").
+findings("pancreatic protocol CT", "unclear diagnosis").
+suspected("liver metastases").

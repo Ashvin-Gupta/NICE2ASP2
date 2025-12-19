@@ -1,0 +1,162 @@
+Let me analyze the rules to identify all elements that appear in the rule bodies:
+
+**Analysis of rule body elements:**
+
+From the rules, I can identify these predicates and their possible arguments that appear in rule bodies:
+- `age(X)` - with variable X or specific values
+- `have(...)` - with various symptoms/conditions
+- `suspected(...)` - with various conditions
+- `offered(...)` - with various procedures
+- `findings(...)` - with procedure and result
+- `need(...)` - with various information needs
+- `drain(...)` - with anatomical structures
+- `relieve(...)` - with conditions
+- `first_degree_relative(...)` - with conditions and variables
+- `available(...)` - with procedures
+
+Now, let me map each patient description to the relevant atoms:
+
+**Patient 1:**
+age(63).
+have("abdominal pain").
+have("diabetes").
+have("pancreatic abnormalities").
+findings("pancreatic protocol CT", "unclear diagnosis").
+
+**Patient 2:**
+age(63).
+have("back pain").
+have("weight loss").
+have("weight loss", "unexplained").
+have("pancreatic abnormalities").
+findings("pancreatic protocol CT", "unclear diagnosis").
+suspected("liver metastases").
+
+**Patient 3:**
+age(78).
+have("abdominal pain").
+have("weight loss").
+have("weight loss", "unexplained").
+have("pancreatic abnormalities").
+have("pancreatic cysts").
+have("cystic lesions in the head of the pancreas").
+findings("pancreatic protocol CT", "unclear diagnosis").
+suspected("liver metastases").
+
+**Patient 4:**
+age(82).
+have("abdominal pain").
+have("jaundice").
+have("pancreatic abnormalities").
+have("localised disease").
+findings("pancreatic protocol CT", "unclear diagnosis").
+
+**Patient 5:**
+age(84).
+have("pancreatic abnormalities").
+findings("pancreatic protocol CT", "unclear diagnosis").
+
+**Patient 6:**
+age(48).
+have("abdominal pain").
+have("pancreatic abnormalities").
+findings("pancreatic protocol CT", "unclear diagnosis").
+
+**Patient 7:**
+age(58).
+have("abdominal pain").
+have("jaundice").
+have("weight loss").
+have("weight loss", "unexplained").
+have("pancreatic abnormalities").
+findings("pancreatic protocol CT", "unclear diagnosis").
+
+**Patient 8:**
+age(56).
+have("pancreatic abnormalities").
+findings("pancreatic protocol CT", "unclear diagnosis").
+
+**Patient 9:**
+age(60).
+have("abdominal pain").
+have("nausea").
+have("pancreatic abnormalities").
+findings("pancreatic protocol CT", "unclear diagnosis").
+
+**Patient 10:**
+age(62).
+have("abdominal pain").
+have("pancreatic abnormalities").
+findings("pancreatic protocol CT", "unclear diagnosis").
+
+**Patient 11:**
+age(54).
+have("abdominal pain").
+have("pancreatic abnormalities").
+suspected("liver metastases").
+findings("pancreatic protocol CT", "unclear diagnosis").
+
+**Patient 12:**
+age(74).
+have("pancreatic abnormalities").
+
+**Patient 13:**
+age(41).
+have("abdominal pain").
+have("weight loss").
+have("weight loss", "unexplained").
+have("pancreatic abnormalities").
+findings("pancreatic protocol CT", "unclear diagnosis").
+
+**Patient 14:**
+age(79).
+have("weight loss").
+have("weight loss", "unexplained").
+have("new-onset diabetes").
+have("pancreatic abnormalities").
+findings("pancreatic protocol CT", "unclear diagnosis").
+
+**Patient 15:**
+age(76).
+have("weight loss").
+have("weight loss", "unexplained").
+have("new-onset diabetes").
+relieve("biliary obstruction").
+findings("pancreatic protocol CT", "unclear diagnosis").
+
+**Patient 16:**
+age(77).
+have("obstructive jaundice").
+relieve("biliary obstruction").
+have("no tissue diagnosis").
+findings("pancreatic protocol CT", "unclear diagnosis").
+
+**Patient 17:**
+age(59).
+have("pancreatic cysts").
+have("enhancing solid component in the cyst").
+need("more information").
+need("more information on the likelihood of malignancy").
+
+**Patient 18:**
+age(57).
+have("weight loss").
+have("weight loss", "unexplained").
+have("abdominal pain").
+have("pancreatic abnormalities").
+findings("pancreatic protocol CT", "unclear diagnosis").
+
+**Patient 19:**
+age(68).
+have("abdominal pain").
+have("pancreatic abnormalities").
+suspected("liver metastases").
+findings("pancreatic protocol CT", "unclear diagnosis").
+need("more information").
+
+**Patient 20:**
+age(67).
+have("pancreatic abnormalities").
+have("pancreatic cysts").
+have("cystic lesions in the head of the pancreas").
+findings("pancreatic protocol CT", "unclear diagnosis").

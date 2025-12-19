@@ -11,13 +11,13 @@ Return:
 The elements in the body of the rules that are required for rules to fire in the program for that specific patient.
 Make sure that everything in the patient description is presented properly from the elements that appear in the body of the rules.
 
-For example:
-
+Here are two examples:
+Example 1:
 Rules:
-consider("CT_scan") :- age(X), have("unexplained_weight_loss"), have("abdominal_pain"), X>60.
-consider("CT_scan") :- age(X), have("unexplained_weight_loss"), have("new_onset_diabetes"), X>60.
-offer("pancreatic_protocol_ct") :- have("pancreatic_abnormalities"), not have("jaundice").
-1 {{offer("FDG-PET/CT"); offer("EUS_with_tissue")}} 2 :- findings_from_procedure("pancreatic_protocol_ct", "unclear_diagnosis"), offered("pancreatic_protocol_CT"), have("pancreatic_abnormalities"), not have("jaundice").
+consider("CT scan") :- age(X), have("unexplained weight loss"), have("abdominal pain"), X>60.
+consider("CT scan") :- age(X), have("unexplained weight loss"), have("new onset diabetes"), X>60.
+offer("pancreatic protocol ct") :- have("pancreatic abnormalities"), not have("jaundice").
+1 {{offer("FDG-PET/CT"); offer("EUS with tissue")}} 2 :- findings_from_procedure("pancreatic protocol ct", "unclear diagnosis"), offered("pancreatic protocol CT"), have("pancreatic abnormalities"), not have("jaundice").
 
 Patient 1 description:
 Patient is 63 year old male. Symptoms include abdominal pain, diabetes. 
@@ -26,11 +26,36 @@ On EUS there was desmoplastic ductal adenocarcinoma and on biopsy there was MMR 
 
 Return:
 age(63).
-have("abdominal_pain").
-have("new_onset_diabetes").
-have("pancreatic_abnormalities").
-have("MMR_wild_type").
-findings_from_procedure("pancreatic_protocol_ct", "unclear_diagnosis").
+have("abdominal pain").
+have("diabetes").
+have("pancreatic abnormalities").
+have("MMR wild type").
+findings_from_procedure("pancreatic protocol ct", "unclear diagnosis").
+suspected("pancreatic cancer").
+
+Example 2: 
+Rules:
+consider("CT") :- age(X), X>=60, have("weight loss"), 1{{have("diarrhoea"); have("back pain"); have("abdominal pain"); have("nausea"); have("vomiting"); have("constipation"); have("new-onset diabetes")}}7.
+offer("pancreatic protocol CT") :- have("pancreatic abnormalities"), not have("jaundice").
+1{{offer("FDG-PET/CT"); offer("EUS", "EUS-guided tissue sampling")}}2 :- have("pancreatic abnormalities"), not have("jaundice"), offered("pancreatic protocol CT"), findings("pancreatic protocol CT", "unclear diagnosis").
+consider("MRI") :- suspected("liver metastases"), need("more information").
+assess("additional symptoms") :- have("weight loss", "unexplained").
+
+Patient 2 description:
+Patient is 63 year old male. Symptoms include indigestion, back pain, unexplained weight loss and pancreatic abnormalities on imaging. 
+Upon doing a pancreatic protocol CT scan, the diagnosis was unlcear. 
+There is suspected liver metastases, more information is needed to verify. 
+
+Return:
+age(78).
+have("indigestion").
+have("back pain").
+have("weight loss").
+have("weight loss", "unexplained").
+have("pancreatic abnormalities").
+findings_from_procedure("pancreatic protocol CT", "unclear diagnosis").
+need("more information"). 
+suspected("liver metastases").
 
 
 For this task you should first analyse the rules and look at all of the elements that are present in the body of the rules. 
