@@ -28,7 +28,7 @@ If someone has given you a link to download the code:
 
 **OR** if you have Git installed:
 ```bash
-git clone https://github.com/YOUR_USERNAME/NICE2ASP2.git
+git clone https://github.com/Ashvin-Gupta/NICE2ASP2.git
 cd NICE2ASP2
 ```
 
