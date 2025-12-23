@@ -46,7 +46,7 @@ Before you begin, ensure you have the following installed on your system:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/NICE2ASP2.git
+git clone https://github.com/Ashvin-Gupta/NICE2ASP2.git
 cd NICE2ASP2
 ```
 
@@ -314,40 +314,4 @@ See [README_REVIEWER.md](README_REVIEWER.md) for detailed review instructions.
 4. **CUDA/PyTorch errors**: The requirements include CUDA support. If you don't have NVIDIA GPU, PyTorch will fall back to CPU automatically.
 
 5. **Memory issues**: Some graph analysis operations can be memory-intensive. Close other applications if needed.
-
-## Contributing
-
-If you'd like to contribute to this project:
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Submit a pull request
-
-## License
-
-[Add your license information here]
-
-## Citation
-
-If you use this code in your research, please cite:
-
-```bibtex
-[Add your citation information here]
-```
-
-## Contact
-
-[Add contact information here]
-
-## Acknowledgments
-
-This project uses:
-- Clingo ASP solver from Potassco
-- OpenAI, Anthropic, and Groq API services
-- Various open-source Python libraries
-
----
-
-For rule review instructions, see [README_REVIEWER.md](README_REVIEWER.md).
 
