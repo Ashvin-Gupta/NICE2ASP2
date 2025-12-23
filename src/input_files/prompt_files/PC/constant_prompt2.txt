@@ -88,6 +88,7 @@ Constants:
 Symptoms: "weight loss", "diarrhoea", "back pain", "abdominal pain", "nausea", "vomiting", "constipation", "new-onset diabetes".
 Imaging: "CT", "ultrasound".
 Information_about_patient: "60".
+General_findings: "urgent".
 
 Output Format:
 Constants:

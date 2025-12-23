@@ -103,12 +103,12 @@ Information_about_patient: "firstdegree relatives with pancreatic cancer", "inhe
 Predicates:
 offer(M, D)
 have(Gd)
-have(Ip)
+have(Ip, D)
 first_degree_relative(D, PersonID)
 
 ASP:
-offer("surveillance", "pancreatic cancer") :- have("inherited high risk"), have("hereditary_pancreatitis"), have("PRSS1").
-offer("surveillance", "pancreatic cancer") :- have("inherited high risk"), 1{{have("BRCA1"); have("BRCA2"); have("PALB2"); have("CDKN2A")}}4, first_degree_relative("pancreatic cancer",_).
+offer("surveillance", "pancreatic cancer") :- have("inherited high risk", "pancreatic cancer"), have("hereditary_pancreatitis"), have("PRSS1").
+offer("surveillance", "pancreatic cancer") :- have("inherited high risk", "pancreatic cancer"), 1{{have("BRCA1"); have("BRCA2"); have("PALB2"); have("CDKN2A")}}4, first_degree_relative("pancreatic cancer",_).
 
 % These rules read as: 
 % If the patient has inherited high risk, hereditary pancreatitis and PRSS1 then offer surveillance for pancreatic cancer.
@@ -130,7 +130,7 @@ Information_about_patient: "inherited high risk".
 Predicates:
 offer(P)
 have(Gd)
-have(Ip)
+have(Ip, D)
 
 ASP:
 :- have("inherited high risk"), offer("EUS"), have("hereditary pancreatitis").
@@ -173,14 +173,15 @@ Constants:
 Symptoms: "weight loss", "diarrhoea", "back pain", "abdominal pain", "nausea", "vomiting", "constipation", "new-onset diabetes".
 Imaging: "CT", "ultrasound".
 Information_about_patient: "60".
+General_findings: "urgent".
 
 Predicates:
-consider(I)
+consider(I, Gf)
 have(S)
 
 ASP:
-consider("CT scan") :- age(X), have("unexplained weight loss"), 1{{have("diarrhoea"); have("back pain"); have("abdominal pain"); have("nausea"); have("vomiting"); have("constipation"); have("new onset diabetes")}}7, X>60.
-consider("ultrasound") :- age(X), have("unexplained_weight_loss"), 1{{have("diarrhoea"); have("back pain"); have("abdominal pain"); have("nausea"); have("vomiting"); have("constipation"); have("new onset diabetes")}}7, X>60, not available("CT_scan").
+consider("CT scan", "urgent") :- age(X), have("unexplained weight loss"), 1{{have("diarrhoea"); have("back pain"); have("abdominal pain"); have("nausea"); have("vomiting"); have("constipation"); have("new onset diabetes")}}7, X>60.
+consider("ultrasound", "urgent") :- age(X), have("unexplained_weight_loss"), 1{{have("diarrhoea"); have("back pain"); have("abdominal pain"); have("nausea"); have("vomiting"); have("constipation"); have("new onset diabetes")}}7, X>60, not available("CT_scan").
 
 % These rules are read as
 % If the patient is over the age of 60, has unexplained weight loss and any one of diarrhoea, back pain, abdominal pain, nausea, vomiting, constipation or new-onset diabetes then consider an urgent CT scan.

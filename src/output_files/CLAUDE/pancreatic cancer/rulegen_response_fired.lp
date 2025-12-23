@@ -55,29 +55,29 @@ perform("cytology") :- offered("fine-needle aspiration").
 fired("1.1.11_B") :- offered("fine-needle aspiration").
 
 % [1.1.14]
-offer("surveillance", "pancreatic cancer") :- have("inherited high risk"), have("hereditary pancreatitis"), have("PRSS1").
-fired("1.1.14") :- have("inherited high risk"), have("hereditary pancreatitis"), have("PRSS1").
-offer("surveillance", "pancreatic cancer") :- have("inherited high risk"), 1{have("BRCA1"); have("BRCA2"); have("PALB2"); have("CDKN2A (p16)")}4, first_degree_relative("pancreatic cancer", _).
-fired("1.1.14_B") :- have("inherited high risk"), 1{have("BRCA1"); have("BRCA2"); have("PALB2"); have("CDKN2A (p16)")}4, first_degree_relative("pancreatic cancer", _).
-offer("surveillance", "pancreatic cancer") :- have("inherited high risk"), have("Peutz–Jeghers syndrome").
-fired("1.1.14_C") :- have("inherited high risk"), have("Peutz–Jeghers syndrome").
+offer("surveillance", "pancreatic cancer") :- have("inherited high risk", "pancreatic cancer"), have("hereditary pancreatitis"), have("PRSS1").
+fired("1.1.14") :- have("inherited high risk", "pancreatic cancer"), have("hereditary pancreatitis"), have("PRSS1").
+offer("surveillance", "pancreatic cancer") :- have("inherited high risk", "pancreatic cancer"), 1{have("BRCA1"); have("BRCA2"); have("PALB2"); have("CDKN2A (p16)")}4, first_degree_relative("pancreatic cancer", _).
+fired("1.1.14_B") :- have("inherited high risk", "pancreatic cancer"), 1{have("BRCA1"); have("BRCA2"); have("PALB2"); have("CDKN2A (p16)")}4, first_degree_relative("pancreatic cancer", _).
+offer("surveillance", "pancreatic cancer") :- have("inherited high risk", "pancreatic cancer"), have("Peutz–Jeghers syndrome").
+fired("1.1.14_C") :- have("inherited high risk", "pancreatic cancer"), have("Peutz–Jeghers syndrome").
 
 % [1.1.15]
-consider("surveillance", "pancreatic cancer") :- have("inherited high risk"), first_degree_relative("pancreatic cancer", X), first_degree_relative("pancreatic cancer", Y), X!=Y.
-fired("1.1.15") :- have("inherited high risk"), first_degree_relative("pancreatic cancer", X), first_degree_relative("pancreatic cancer", Y), X!=Y.
-consider("surveillance", "pancreatic cancer") :- have("inherited high risk"), have("Lynch syndrome"), first_degree_relative("pancreatic cancer", _).
-fired("1.1.15_B") :- have("inherited high risk"), have("Lynch syndrome"), first_degree_relative("pancreatic cancer", _).
+consider("surveillance", "pancreatic cancer") :- have("inherited high risk", "pancreatic cancer"), first_degree_relative("pancreatic cancer", X), first_degree_relative("pancreatic cancer", Y), X!=Y.
+fired("1.1.15") :- have("inherited high risk", "pancreatic cancer"), first_degree_relative("pancreatic cancer", X), first_degree_relative("pancreatic cancer", Y), X!=Y.
+consider("surveillance", "pancreatic cancer") :- have("inherited high risk", "pancreatic cancer"), have("Lynch syndrome"), first_degree_relative("pancreatic cancer", _).
+fired("1.1.15_B") :- have("inherited high risk", "pancreatic cancer"), have("Lynch syndrome"), first_degree_relative("pancreatic cancer", _).
 
 % [1.1.16]
-1{consider("MRI/MRCP"); consider("EUS")}1 :- have("inherited high risk"), not have("hereditary pancreatitis").
-fired("1.1.16") :- have("inherited high risk"), not have("hereditary pancreatitis").
+1{consider("MRI/MRCP"); consider("EUS")}1 :- have("inherited high risk", "pancreatic cancer"), not have("hereditary pancreatitis").
+fired("1.1.16") :- have("inherited high risk", "pancreatic cancer"), not have("hereditary pancreatitis").
 
 % [1.1.17]
-consider("pancreatic protocol CT") :- have("inherited high risk"), have("hereditary pancreatitis"), have("PRSS1").
-fired("1.1.17") :- have("inherited high risk"), have("hereditary pancreatitis"), have("PRSS1").
+consider("pancreatic protocol CT") :- have("inherited high risk", "pancreatic cancer"), have("hereditary pancreatitis"), have("PRSS1").
+fired("1.1.17") :- have("inherited high risk", "pancreatic cancer"), have("hereditary pancreatitis"), have("PRSS1").
 
 % [1.1.18]
-:- have("inherited high risk"), offer("EUS"), have("hereditary pancreatitis").
+:- have("inherited high risk", "pancreatic cancer"), offer("EUS"), have("hereditary pancreatitis").
 fired("1.1.18").
 constraint_ok("1.1.18").
 
@@ -116,9 +116,9 @@ refer("suspected cancer pathway referral", "pancreatic cancer") :- age(X), X>=40
 fired("1.2.4") :- age(X), X>=40, have("jaundice").
 
 % [1.2.5]
-consider("CT") :- age(X), X>=60, have("weight loss"), 1{have("diarrhoea"); have("back pain"); have("abdominal pain"); have("nausea"); have("vomiting"); have("constipation"); have("new-onset diabetes")}7.
+consider("CT", "urgent") :- age(X), X>=60, have("weight loss"), 1{have("diarrhoea"); have("back pain"); have("abdominal pain"); have("nausea"); have("vomiting"); have("constipation"); have("new-onset diabetes")}7.
 fired("1.2.5") :- age(X), X>=60, have("weight loss"), 1{have("diarrhoea"); have("back pain"); have("abdominal pain"); have("nausea"); have("vomiting"); have("constipation"); have("new-onset diabetes")}7.
-consider("ultrasound") :- age(X), X>=60, have("weight loss"), 1{have("diarrhoea"); have("back pain"); have("abdominal pain"); have("nausea"); have("vomiting"); have("constipation"); have("new-onset diabetes")}7, not available("CT").
+consider("ultrasound", "urgent") :- age(X), X>=60, have("weight loss"), 1{have("diarrhoea"); have("back pain"); have("abdominal pain"); have("nausea"); have("vomiting"); have("constipation"); have("new-onset diabetes")}7, not available("CT").
 fired("1.2.5_B") :- age(X), X>=60, have("weight loss"), 1{have("diarrhoea"); have("back pain"); have("abdominal pain"); have("nausea"); have("vomiting"); have("constipation"); have("new-onset diabetes")}7, not available("CT").
 
 #show fired/1.
