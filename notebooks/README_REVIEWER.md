@@ -4,14 +4,9 @@ This guide will help you review and evaluate the quality of automatically genera
 
 ## Table of Contents
 - [What You'll Be Doing](#what-youll-be-doing)
-- [Prerequisites](#prerequisites)
 - [Installation & Setup](#installation--setup)
 - [Understanding the Task](#understanding-the-task)
 - [Step-by-Step Review Process](#step-by-step-review-process)
-- [Rating Guidelines](#rating-guidelines)
-- [Tips for Reviewers](#tips-for-reviewers)
-- [Troubleshooting](#troubleshooting)
-- [FAQs](#faqs)
 
 ## What You'll Be Doing
 
@@ -124,12 +119,14 @@ In the notebook, find **Cell 3** (the one that starts with `PROJECT_ROOT = Path.
 
 You'll see this line:
 ```python
-response_file = "zero_shot_response.txt"
+response_file = "rule_response.txt"
 ```
 
 **Change this** depending on what you're reviewing:
-- For the main pipeline results: `"rulegen_response_fired.lp"`
+- For the main pipeline results: `"rulegen_response.txt"`
 - For in-context learning results: `"in_context_response.txt"`
+
+You only need to complete the review for these two files, not the zero-shot response. 
 
 **Also check** the cancer type in the config file. The notebook loads settings from `src/configs/config.yaml`. Make sure it points to the correct guidelines:
 - For **pancreatic cancer**: `cancer_type: "pancreatic cancer"`

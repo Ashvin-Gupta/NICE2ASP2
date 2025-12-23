@@ -10,7 +10,6 @@ This repository contains the implementation of a pipeline for translating clinic
 - [Running the Pipeline](#running-the-pipeline)
 - [Project Structure](#project-structure)
 - [Experiments](#experiments)
-- [Citation](#citation)
 
 ## Overview
 
