@@ -152,7 +152,7 @@ Offer PET-CT (if not already done), followed by EBUS-TBNA and/or EUS-FNA, to peo
 Offer PET-CT (if not already done), followed by EBUS-TBNA and/or EUS-FNA, to people with suspected lung cancer who have enlarged intrathoracic lymph nodes (lymph nodes greater than or equal to 10 mm short axis on CT) and who could potentially have treatment with curative intent",1.3.19_C,"offer(""EUS-FNA"") :- have(""lung cancer""), enlarged(""intrathoracic lymph nodes""), treatment(""treatment with curative intent""), offered(""PET-CT"")",2,3,1,
 1.3.20,"Intrathoracic lymph node assessment
 
-Evaluate PET-CT-positive or enlarged intrathoracic nodes using a systematic approach (sampling any suspicious node on CT, PET or USS) with EBUS-TBNA and/or EUS-FNA if nodal status would affect the treatment plan",1.3.20,"1{use(""EBUS-TBNA""); use(""EUS-FNA"")}2 :- enlarged(""intrathoracic lymph nodes""), affect(""intrathoracic lymph nodes"", ""treatment with curative intent"")",0,2,0,Quite complex rule
+Evaluate PET-CT-positive or enlarged intrathoracic nodes using a systematic approach (sampling any suspicious node on CT, PET or USS) with EBUS-TBNA and/or EUS-FNA if nodal status would affect the treatment plan",1.3.20,"1{use(""EBUS-TBNA""); use(""EUS-FNA"")}2 :- enlarged(""intrathoracic lymph nodes""), affect(""intrathoracic lymph nodes"", ""treatment with curative intent"")",0,2,2,Quite complex rule
 1.3.20,"Intrathoracic lymph node assessment
 
 Evaluate PET-CT-positive or enlarged intrathoracic nodes using a systematic approach (sampling any suspicious node on CT, PET or USS) with EBUS-TBNA and/or EUS-FNA if nodal status would affect the treatment plan",1.3.20_B,"1{use(""EBUS-TBNA""); use(""EUS-FNA"")}2 :- findings(""PET-CT"", ""intrathoracic lymph nodes""), affect(""intrathoracic lymph nodes"", ""treatment with curative intent"")",1,2,0,
@@ -197,7 +197,7 @@ Perform an X-ray as the first test for people with localised signs or symptoms o
 Perform an X-ray as the first test for people with localised signs or symptoms of bone metastasis. If the results are negative or inconclusive, offer bone scintigraphy or an MRI scan",1.3.27_B,"1{offer(""bone scintigraphy""); offer(""MRI"")}1 :- have(""bone metastasis""), negative(""X-ray"")",1,3,1,
 1.3.27,"Further staging
 
-Perform an X-ray as the first test for people with localised signs or symptoms of bone metastasis. If the results are negative or inconclusive, offer bone scintigraphy or an MRI scan",1.3.27_C,"offer(""MRI"") :- have(""bone metastasis""), negative(""X-ray"")",2,3,0,Already included
+Perform an X-ray as the first test for people with localised signs or symptoms of bone metastasis. If the results are negative or inconclusive, offer bone scintigraphy or an MRI scan",1.3.27_C,"offer(""MRI"") :- have(""bone metastasis""), negative(""X-ray"")",2,3,2,Already included
 1.3.28,"Further staging
 
 Avoid bone scintigraphy when PET-CT has not shown bone metastases",1.3.28,":- use(""bone scintigraphy""), not show(""PET-CT"", ""bone metastasis"")",0,1,1,
