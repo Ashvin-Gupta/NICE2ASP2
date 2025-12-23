@@ -15,3 +15,5 @@ venv/
 .env.test.local
 
 .env.production.local
+
+src/resources/API_KEYS.py
